@@ -18,6 +18,21 @@ struct MealDetails: View {
     @EnvironmentObject private var cart: CartManager
 
     var body: some View {
+        
+        if let index = cart.cartItems.firstIndex(where: { $0.product.id == mealDetails.id }) {
+            EmptyView()
+
+            //                cart.cartItems[index].quantity += 1
+//            print(cart.cartItems)
+//            print(cart.cartItems[index])
+        } else {
+            EmptyView()
+
+//            print(cart.cartItems)
+            //cart.cartItems.append(CartItem(product: product, quantity: 1))
+            //print(cart.cartItems)
+        }
+        
         VStack {
             ScrollView(.vertical, showsIndicators: false, content: {
                 ZStack {
@@ -92,7 +107,7 @@ struct MealDetails: View {
 //                        Text("Quantity ")
 //                            .font(.title3)
 //                            .bold()
-//                       
+//
 //                        Stepper("",
 //                                onIncrement: {
 //                                    quantity+=1
@@ -102,11 +117,11 @@ struct MealDetails: View {
 //                            .foregroundColor(.black)
 //                            .background(Color.white)
 //                            .frame(width: 100)
-//                        
+//
 //                        Text(String(quantity+1))
 //                            .font(.title2)
 //                            .bold()
-//                        
+//
 //                    }.padding(.top, 10)
 
                     HStack {
@@ -132,9 +147,16 @@ struct MealDetails: View {
 
             HStack{
                 Spacer()
+                
                 Button(action: {
                     cart.addToCart(product: mealDetails, Qty: quantity)
                     isCartClick.toggle()
+                    
+                    if !isCartClick {
+                        
+                    } else {
+                        
+                    }
                     
                 }, label: {
                     Text(isCartClick ? "Go To Cart" : "Add to Cart")
@@ -151,6 +173,35 @@ struct MealDetails: View {
 
             .edgesIgnoringSafeArea(.all)
             .background(Color.white.edgesIgnoringSafeArea(.all))
+        }
+        .onAppear(
+//            if !showGreeting {
+//                           DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//                               showGreeting = true
+//                           }
+//                       }
+          
+//            if let index = cart.cartItems.firstIndex(where: { $0.product.id == mealDetails.id }) {
+////                cart.cartItems[index].quantity += 1
+//                print(cart.cartItems)
+//                print(cart.cartItems[index])
+//            } else {
+//                print(cart.cartItems)
+//                //cart.cartItems.append(CartItem(product: product, quantity: 1))
+//                //print(cart.cartItems)
+//            }
+        )
+    }
+    
+    func checkProd() {
+        if let index = cart.cartItems.firstIndex(where: { $0.product.id == mealDetails.id }) {
+            //                cart.cartItems[index].quantity += 1
+            print(cart.cartItems)
+            print(cart.cartItems[index])
+        } else {
+            print(cart.cartItems)
+            //cart.cartItems.append(CartItem(product: product, quantity: 1))
+            //print(cart.cartItems)
         }
     }
     

@@ -13,22 +13,22 @@ class CartManager: ObservableObject {
     @Published var cartItems: [CartItem] = []
 //    @Published var products: [TrendingCard] = []
 
-//    func addToCart(product: TrendingCard) {
-//        if let index = cartItems.firstIndex(where: { $0.product.id == product.id }) {
-//            cartItems[index].quantity += 1
-//            print(cartItems[index])
-//        } else {
-//            print(cartItems)
-//            cartItems.append(CartItem(product: product, quantity: 1))
-//            print(cartItems)
-//        }
-//    }
-    
     func addToCart(product: TrendingCard, Qty: Int) {
-        print(cartItems)
-        cartItems.append(CartItem(product: product, quantity: Qty + 1))
-        print(cartItems)
+        if let index = cartItems.firstIndex(where: { $0.product.id == product.id }) {
+            cartItems[index].quantity += 1
+            print(cartItems[index])
+        } else {
+            print(cartItems)
+            cartItems.append(CartItem(product: product, quantity: 1))
+            print(cartItems)
+        }
     }
+    
+//    func addToCart(product: TrendingCard, Qty: Int) {
+//        print(cartItems)
+//        cartItems.append(CartItem(product: product, quantity: Qty + 1))
+//        print(cartItems)
+//    }
     
 //    func addToCart(product: TrendingCard) {
 //        products.append(product)
