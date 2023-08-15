@@ -21,32 +21,86 @@ struct CartItem: Identifiable {
 
 struct ShoppingCartView: View {
     
-//    @ObservedObject var cartManager: CartManager
-    @EnvironmentObject var model: CartManager
+    @EnvironmentObject private var cart: CartManager
+    @State private var quantity = 0
+    @State private var stepperValue = 1
 
     var body: some View {
         VStack {
-            ForEach(model.cartItems) { item in
-                HStack {
-                    Image("categ-2")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 60, height: 60)
+            Text("Cart")
+                .font(.title)
+                .padding()
+            
+            List {
+                ForEach(cart.cartItems) { product in
                     
-                    VStack(alignment: .leading) {
-                        Text("dddddd")
-                        Text("$\(String(format: "%.2f", 25.00))")
-                            .foregroundColor(.secondary)
-                    }
-                    Spacer()
-                    Text("Qty: \(5)")
-                    Button("Remove") {
+                    HStack {
+                        Image(product.product.image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 60, height: 60)
+                        
+                        VStack(alignment: .leading) {
+                            Text(product.product.title)
+                            Text("$\(String(format: "%.2f", product.product.price))")
+                                .foregroundColor(.secondary)
+                        }
+ 
+                        Stepper("\(stepperValue)",
+                                onIncrement: {
+                            stepperValue += 1
+                            
+                        }, onDecrement: {
+                            stepperValue -= 1
+                        })
+                        .foregroundColor(.black)
+                        .background(Color.white)
+                        .frame(width: 100)
+                        
+
+                        Text("\(stepperValue)")
+                            .font(.headline)
+                            .padding()
+                        
+//                        Stepper(quantity == 0 ? String(product.quantity) : String(quantity),
+//                                onIncrement: {
+//                            quantity = product.quantity
+//                            quantity += 1
+//                            print(quantity)
+//
+//                        }, onDecrement: {
+//                            quantity = product.quantity
+//                            quantity -= 1
+//                            print(quantity)
+//                        })
+//                        .foregroundColor(.black)
+//                        .background(Color.white)
+//                        .frame(width: 100)
+                        
+                        // Button("Remove") {
                         //                            cartManager.removeFromCart(cartItem: cartItem)
+                        //}
                     }
                 }
-                .padding()
+                .onDelete { indexSet in
+                    //cart.products.remove(atOffsets: indexSet)
+                }
             }
+            .listStyle(InsetGroupedListStyle())
+            
+            Button(action: {
+                //cart.products.removeAll()
+            }) {
+                Text("Clear Cart")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.red)
+                    .cornerRadius(10)
+            }
+            .padding()
         }
+        .navigationBarTitle("Shopping Cart")
     }
     //                .navigationBarTitle("Cart")
     //                .navigationBarItems(trailing: Text("Total: $\(String(format: "%.2f", cartManager.totalCost()))"))

@@ -12,9 +12,10 @@ struct MealDetails: View {
     @State var mealDetails : TrendingCard
     @State private var quantity = 0
     @State var heart = "heart.fill"
-    var placeHolder = "Nine years earlier, Lorem ipsum dolor sit amet,Morbi sed purus nulla. Curabitur dapibus ultrices lorem vitae tincidunt. Pellentesque quis arcu sit amet urna commodo porttitor. Aenean sit "
+    @State private var isCartClick = false
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var cartManager = CartManager()
+//    @ObservedObject var cartManager = CartManager()
+    @EnvironmentObject private var cart: CartManager
 
     var body: some View {
         VStack {
@@ -83,32 +84,38 @@ struct MealDetails: View {
                     Text("Description")
                         .font(.system(size: 25, weight: .bold))
 
-                    Text(placeHolder)
+                    Text(mealDetails.longDescrip)
                         .padding(.top, 10)
                         .fixedSize(horizontal: false, vertical: true)
 
-                    HStack {
-                        Text("Quantity ")
-                            .font(.title3)
-                            .bold()
-                        Spacer()
-                        Stepper("",
-                                onIncrement: {
-                                    quantity+=1
-                                }, onDecrement: {
-                                    quantity-=1
-                                })
-                            .foregroundColor(.black)
-                            .background(Color.white)
-                            .frame(width: 100)
-                    }.padding(.top, 10)
+//                    HStack(spacing: 30) {
+//                        Text("Quantity ")
+//                            .font(.title3)
+//                            .bold()
+//                       
+//                        Stepper("",
+//                                onIncrement: {
+//                                    quantity+=1
+//                                }, onDecrement: {
+//                                    quantity-=1
+//                                })
+//                            .foregroundColor(.black)
+//                            .background(Color.white)
+//                            .frame(width: 100)
+//                        
+//                        Text(String(quantity+1))
+//                            .font(.title2)
+//                            .bold()
+//                        
+//                    }.padding(.top, 10)
 
                     HStack {
                         Text("Price ")
                             .font(.title3)
                             .bold()
                         Spacer()
-                        Text("$\(quantity+1).00")
+                        
+                        Text("$\(forTrailingZero(mealDetails.price))")
                             .font(.title2)
                             .bold()
                     }
@@ -126,18 +133,17 @@ struct MealDetails: View {
             HStack{
                 Spacer()
                 Button(action: {
-//                    cartManager.addToCartCard(item: mealDetails)
-                    cartManager.addToCart(product: mealDetails)
-
+                    cart.addToCart(product: mealDetails, Qty: quantity)
+                    isCartClick.toggle()
+                    
                 }, label: {
-                    Text("Add to Cart")
+                    Text(isCartClick ? "Go To Cart" : "Add to Cart")
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                         .padding(.vertical, 10)
                         .padding(.horizontal, 100)
                         .background(Color.blue.opacity(0.9))
                         .cornerRadius(10)
-
                 })
                 Spacer()
             }
@@ -146,6 +152,11 @@ struct MealDetails: View {
             .edgesIgnoringSafeArea(.all)
             .background(Color.white.edgesIgnoringSafeArea(.all))
         }
+    }
+    
+    func forTrailingZero(_ temp: Double) -> String {
+        var tempVar = String(format: "%g", temp)
+        return tempVar
     }
 }
 

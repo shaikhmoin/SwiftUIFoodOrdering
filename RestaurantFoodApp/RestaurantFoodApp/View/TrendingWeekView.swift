@@ -39,8 +39,8 @@ struct TrendingWeekView: View {
                         .font(.subheadline)
                 }
                 Spacer()
-                
-                Text(String(trendingMeal.price))
+
+                Text("$\(forTrailingZero(trendingMeal.price))")
                     .font(.subheadline)
                     .bold()
             }
@@ -52,6 +52,11 @@ struct TrendingWeekView: View {
         
         .frame(width: 250, height: 250)
         .cornerRadius(10)
+    }
+    
+    func forTrailingZero(_ temp: Double) -> String {
+        var tempVar = String(format: "%g", temp)
+        return tempVar
     }
 }
 
