@@ -10,7 +10,7 @@ import SwiftUI
 struct TrendingWeekView: View {
     
     @State var trendingMeal : TrendingCard
-
+    
     var body: some View {
         VStack {
             Image(trendingMeal.image)
@@ -39,7 +39,7 @@ struct TrendingWeekView: View {
                         .font(.subheadline)
                 }
                 Spacer()
-
+                
                 Text("$\(forTrailingZero(trendingMeal.price))")
                     .font(.subheadline)
                     .bold()

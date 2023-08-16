@@ -32,7 +32,7 @@ struct CardView: View {
                 .padding()
             
         }
-//        .background(.yellow)
+        //        .background(.yellow)
         .padding()
         .offset(x: 0, y: 210)
     }

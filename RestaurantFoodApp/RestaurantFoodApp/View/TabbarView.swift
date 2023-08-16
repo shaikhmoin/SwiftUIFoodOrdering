@@ -11,8 +11,8 @@ struct TabbarView: View {
     
     @State private var selectedTabIndex = 0
     @State var providedValue : Bool = true
-//    @ObservedObject var cartManager: CartManager
-
+    //    @ObservedObject var cartManager: CartManager
+    
     init() {
         UITabBar.appearance().backgroundColor = UIColor.white
     }
@@ -22,7 +22,7 @@ struct TabbarView: View {
         TabView(selection: $selectedTabIndex) {
             
             HomeView(loggedIn: $providedValue)
-
+            
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
@@ -57,7 +57,7 @@ struct TabbarView: View {
         }
         .accentColor(Color.blue)
         .onAppear() {
-//            UITabBar.appearance().barTintColor = .yellow
+            //            UITabBar.appearance().barTintColor = .yellow
         }
         .navigationBarHidden(true)
     }

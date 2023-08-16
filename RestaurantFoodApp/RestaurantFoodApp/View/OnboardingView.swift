@@ -12,7 +12,7 @@ struct OnboardingView: View {
     @State var selectedPage = 0
     @State private var isPresenting : Bool = false
     @Binding var loggedIn: Bool //For login-logout
-
+    
     var body: some View {
         
         NavigationStack {
@@ -106,7 +106,7 @@ struct OnboardingView: View {
 }
 
 struct OnboardingView_Previews: PreviewProvider {
-  
+    
     // we show the simulated view, not the BoolButtonView itself
     static var previews: some View {
         OtherView()

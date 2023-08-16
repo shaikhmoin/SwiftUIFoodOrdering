@@ -22,7 +22,7 @@ struct OurPicksView: View {
                     .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 
             }.edgesIgnoringSafeArea(.top)
-     
+            
             HStack {
                 Text(ourPickesDT.title)
                     .bold()
