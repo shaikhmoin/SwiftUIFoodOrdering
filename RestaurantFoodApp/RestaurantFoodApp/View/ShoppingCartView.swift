@@ -24,17 +24,43 @@ struct ShoppingCartView: View {
     @EnvironmentObject private var cart: CartManager
     @State private var quantity = 0
     @State private var stepperValue = 1
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         
         VStack {
-            Text("Cart")
-                .font(.title)
-                .padding()
             
-            Text("Total: $\(String(format: "%.2f", cart.totalCost()))")
-                .font(.title)
-                .padding()
+            VStack {
+                HStack {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                        
+                    }) {
+                        Image(systemName: "chevron.backward")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(.white)
+                            .frame(width: 25, height: 25)
+                            .padding(.leading, 10)
+                    }
+                    
+                    Text("Shopping Cart")
+                        .font(.title)
+                        .padding()
+                        .foregroundColor(.white)
+                    
+                    Spacer()
+                }
+            }
+            .padding([.top], 50)
+            
+            HStack {
+                Spacer()
+                Text("Total: $\(String(format: "%.2f", cart.totalCost()))")
+                    .font(.title)
+                    .bold()
+                Spacer()
+            }
             
             List {
                 ForEach(cart.cartItems) { product in
@@ -72,7 +98,6 @@ struct ShoppingCartView: View {
                             .font(.headline)
                             .padding()
                     }
-                    
                 }
                 .onDelete { indexSet in
                     let indexPath = IndexPath(indexes: indexSet)
@@ -84,20 +109,37 @@ struct ShoppingCartView: View {
                 }
             }
             .listStyle(InsetGroupedListStyle())
+            .shadow(radius: 3)
             
-            Button(action: {
-                cart.removeAll()
-            }) {
-                Text("Clear Cart")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.red)
-                    .cornerRadius(10)
+            HStack(spacing: 10) {
+                Button(action: {
+                    cart.removeAll()
+                }) {
+                    Text("Clear Cart")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue.opacity(0.6))
+                        .cornerRadius(10)
+                }
+                
+                Button(action: {
+                    
+                }) {
+                    Text("Checkout")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue.opacity(0.6))
+                        .cornerRadius(10)
+                }
             }
-            .padding()
+            .padding(.bottom, 50)
         }
-        .navigationBarTitle("Shopping Cart")
+        
+        .background(.blue.opacity(0.4))
+        .edgesIgnoringSafeArea(.all)
+        .navigationBarHidden(true)
     }
 }
 

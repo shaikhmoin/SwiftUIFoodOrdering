@@ -9,8 +9,9 @@ import SwiftUI
 
 struct OurPicksView: View {
     
+//    @State var ourPickesDT : OurPicksCard
     @State var ourPickesDT : OurPicksCard
-    
+
     var body: some View {
         
         VStack {
@@ -47,7 +48,7 @@ struct OurPicksView: View {
                 }
                 Spacer()
                 
-                Text(ourPickesDT.price)
+                Text("$\(forTrailingZero(ourPickesDT.price))")
                     .font(.subheadline)
                     .bold()
             }
@@ -56,7 +57,12 @@ struct OurPicksView: View {
             .padding(.trailing, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
             .padding(.leading, 20)
             .padding(.trailing,20)
-        }
+        }        
+    }
+    
+    func forTrailingZero(_ temp: Double) -> String {
+        var tempVar = String(format: "%g", temp)
+        return tempVar
     }
 }
 

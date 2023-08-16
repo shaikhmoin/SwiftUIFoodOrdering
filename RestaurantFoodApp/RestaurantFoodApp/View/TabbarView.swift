@@ -47,7 +47,7 @@ struct TabbarView: View {
                     Label("Cart", systemImage: "cart.fill")
                 }
                 .tag(3)
-                .badge(12)
+//                .badge(12)
             
             Text("Profile")
                 .tabItem {

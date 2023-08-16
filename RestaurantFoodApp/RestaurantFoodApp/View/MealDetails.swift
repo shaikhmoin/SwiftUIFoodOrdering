@@ -73,7 +73,7 @@ struct MealDetails: View {
                         
                         HStack(spacing: 10){
                             
-                            ForEach(1..<5){_ in
+                            ForEach(0..<mealDetails.stars){_ in
                                 
                                 Image(systemName: "star.fill")
                                     .foregroundColor(.yellow)

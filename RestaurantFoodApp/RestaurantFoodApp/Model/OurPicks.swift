@@ -8,16 +8,21 @@
 import Foundation
 
 struct OurPicksCard : Identifiable {
-    var id : Int
+    let id = UUID()
     var image : String
     var title : String
     var descrip : String
+    var longDescrip : String
     var stars : Int
-    var price = "$25.00"
+    //    var price = "$25.00"
+    var price : Double
     var expand : Bool
+    var Qty : Int = 1
+
+    var isAdded : Bool = false
 }
 
 var testOurPicksData:[OurPicksCard] = [
-    OurPicksCard(id: 0, image: "maxresdefault1", title: "Crispy Chicken Sandwich", descrip: "KoreanBBQ",stars: 5, expand: false),
-    OurPicksCard(id: 1, image: "maxresdefault2", title: "Shrimp Fries", descrip: "Hot Sauce",stars: 3, expand: false),
+    OurPicksCard(image: "maxresdefault1", title: "Crispy Fried Sandwich", descrip: "KoreanBBQ", longDescrip: "Nine years earlier, Lorem ipsum dolor sit amet,Morbi sed purus nulla. Curabitur dapibus ultrices lorem vitae tincidunt. Pellentesque quis arcu sit amet urna commodo porttitor. Aenean sit",stars: 5, price: 25.0, expand: false, Qty: 1),
+    OurPicksCard(image: "maxresdefault2", title: "Shrimp Fries", descrip: "Hot Sauce", longDescrip: "Nine years earlier, Lorem ipsum dolor sit amet,Morbi sed purus nulla. Curabitur dapibus ultrices lorem vitae tincidunt. Pellentesque quis arcu sit amet urna commodo porttitor. Aenean sit",stars: 3, price: 14.0, expand: false, Qty: 1),
 ]

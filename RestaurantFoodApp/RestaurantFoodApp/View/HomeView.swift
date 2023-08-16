@@ -18,7 +18,6 @@ struct HomeView: View {
         GridItem(.flexible()),
         GridItem(.flexible()),
         GridItem(.flexible()),
-        GridItem(.flexible()),
     ]
     
     var body: some View {
@@ -107,61 +106,7 @@ struct HomeView: View {
                             .padding(.horizontal)
                         }
                         .frame(maxHeight: 500)
-                        
-                        //Categories View
-                        HStack {
-                            Text("Categories")
-                                .font(.headline)
-                                .fontWeight(.bold)
-                            
-                            Spacer()
-                            
-                            Button {
-                                print("View all click")
-                            } label: {
-                                Text("View all >")
-                                    .foregroundColor(.red)
-                            }
-                        }
-                        .padding()
-                        
-                        // Categories View
-                        HStack(spacing: 15) {
-                            ForEach(1 ..< 5) { i in
-                                VStack {
-                                    Image("categ-\(String(i))")
-                                    Text(FoodTypes[Int(i)-1])
-                                        .font(.subheadline)
-                                        .bold()
-                                }
-                                .onTapGesture {
-                                    print("Test cat")
-                                }
-                                .frame(width: 80, height: 100, alignment: .center)
-                                .background(Color.white)
-                                .cornerRadius(15)
-                                .shadow(radius: 1)
-                            }
-                        }
-                        
-                        HStack(spacing: 15) {
-                            ForEach(3 ..< 7) { i in
-                                VStack {
-                                    Image("categ-\(String(i))")
-                                    Text(FoodTypes[Int(i)-1])
-                                        .font(.subheadline)
-                                        .bold()
-                                }
-                                .onTapGesture {
-                                    print("Test cat")
-                                }
-                                .frame(width: 80, height: 100, alignment: .center)
-                                .background(Color.white)
-                                .cornerRadius(15)
-                                .shadow(radius: 1)
-                            }
-                        }
-                        
+              
                         //Our picks View
                         HStack {
                             Text("Our Picks")
