@@ -19,19 +19,19 @@ struct MealDetails: View {
 
     var body: some View {
         
-        if let index = cart.cartItems.firstIndex(where: { $0.product.id == mealDetails.id }) {
-            EmptyView()
-
-            //                cart.cartItems[index].quantity += 1
-//            print(cart.cartItems)
-//            print(cart.cartItems[index])
-        } else {
-            EmptyView()
-
-//            print(cart.cartItems)
-            //cart.cartItems.append(CartItem(product: product, quantity: 1))
-            //print(cart.cartItems)
-        }
+//        if let index = cart.cartItems.firstIndex(where: { $0.product.id == mealDetails.id }) {
+//            EmptyView()
+//
+//            //                cart.cartItems[index].quantity += 1
+////            print(cart.cartItems)
+////            print(cart.cartItems[index])
+//        } else {
+//            EmptyView()
+//
+////            print(cart.cartItems)
+//            //cart.cartItems.append(CartItem(product: product, quantity: 1))
+//            //print(cart.cartItems)
+//        }
         
         VStack {
             ScrollView(.vertical, showsIndicators: false, content: {
@@ -153,7 +153,10 @@ struct MealDetails: View {
                     isCartClick.toggle()
                     
                     if !isCartClick {
-                        
+//                        NavigationLink(destination: EditTraining(training: training)) {
+//                            Text("Edit Training Details")
+//                        }
+
                     } else {
                         
                     }
