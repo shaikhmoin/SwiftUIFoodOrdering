@@ -12,7 +12,8 @@ import SwiftUI
 struct HomeView: View {
     
 //    @Binding var loggedIn: Bool //For login-logout
-    
+    @AppStorage("log_Status") var log_status = false
+
     var body: some View {
         VStack {
             ScrollView(.vertical) {

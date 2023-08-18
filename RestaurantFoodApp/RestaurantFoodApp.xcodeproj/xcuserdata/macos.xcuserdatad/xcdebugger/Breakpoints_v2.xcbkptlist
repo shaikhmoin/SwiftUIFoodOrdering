@@ -492,57 +492,10 @@
             filePath = "RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "Verify()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "DA6DB04B-CAD0-40B3-9BFA-E25C52E56BCB - 893a6cfbae85c40d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RestaurantFoodApp.LoginView.Verify() -&gt; ()"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "156"
-                  endingLineNumber = "156"
-                  offsetFromSymbolStart = "684">
-               </Location>
-               <Location
-                  uuid = "DA6DB04B-CAD0-40B3-9BFA-E25C52E56BCB - 893a6cfbae85c40d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RestaurantFoodApp.LoginView.Verify() -&gt; ()"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "156"
-                  endingLineNumber = "156"
-                  offsetFromSymbolStart = "713">
-               </Location>
-               <Location
-                  uuid = "DA6DB04B-CAD0-40B3-9BFA-E25C52E56BCB - 893a6cfbae85c452"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RestaurantFoodApp.LoginView.Verify() -&gt; ()"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "155"
-                  endingLineNumber = "155"
-                  offsetFromSymbolStart = "713">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -555,57 +508,10 @@
             filePath = "RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "Verify()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F58F90E4-20C8-445F-9F08-49EEF60F3605 - 893a6cfbae85c4ee"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RestaurantFoodApp.LoginView.Verify() -&gt; ()"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "159"
-                  endingLineNumber = "159"
-                  offsetFromSymbolStart = "852">
-               </Location>
-               <Location
-                  uuid = "F58F90E4-20C8-445F-9F08-49EEF60F3605 - 893a6cfbae85c4ee"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RestaurantFoodApp.LoginView.Verify() -&gt; ()"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "159"
-                  endingLineNumber = "159"
-                  offsetFromSymbolStart = "884">
-               </Location>
-               <Location
-                  uuid = "F58F90E4-20C8-445F-9F08-49EEF60F3605 - 893a6cfbae85c4cf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RestaurantFoodApp.LoginView.Verify() -&gt; ()"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "158"
-                  endingLineNumber = "158"
-                  offsetFromSymbolStart = "884">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1085,7 +991,71 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0ACBD54F-D8AF-4949-9783-DDD5A730413B"
+            uuid = "E1F6560F-EFCB-47EB-8707-97FD89982736"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3B065430-1154-4AAC-8C32-3E68060D9757"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestaurantFoodApp/View/HomeScreen/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "3B065430-1154-4AAC-8C32-3E68060D9757 - c13527fe6fa11f0c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0 in RestaurantFoodApp.HomeView.body.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/HomeScreen/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "468">
+               </Location>
+               <Location
+                  uuid = "3B065430-1154-4AAC-8C32-3E68060D9757 - e05b8e32e484e7f9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(RestaurantFoodApp.SearchBar, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0 in RestaurantFoodApp.HomeView.body.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/HomeScreen/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "82">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B037E723-A213-4F57-99FB-B3E004CF2685"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1098,41 +1068,11 @@
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "0ACBD54F-D8AF-4949-9783-DDD5A730413B - 4142d2b4691a2c53"
+                  uuid = "B037E723-A213-4F57-99FB-B3E004CF2685 - cde900cb44b96d3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;__C.ASAuthorization, Swift.Error&gt;) -&gt; () in RestaurantFoodApp.SignInButtonView.body.getter : some"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "223"
-                  endingLineNumber = "223"
-                  offsetFromSymbolStart = "2655">
-               </Location>
-               <Location
-                  uuid = "0ACBD54F-D8AF-4949-9783-DDD5A730413B - 4142d2b4691a2c72"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;__C.ASAuthorization, Swift.Error&gt;) -&gt; () in RestaurantFoodApp.SignInButtonView.body.getter : some"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "222"
-                  endingLineNumber = "222"
-                  offsetFromSymbolStart = "2655">
-               </Location>
-               <Location
-                  uuid = "0ACBD54F-D8AF-4949-9783-DDD5A730413B - 4142d2b4691a2c11"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;__C.ASAuthorization, Swift.Error&gt;) -&gt; () in RestaurantFoodApp.SignInButtonView.body.getter : some"
+                  symbolName = "property wrapper backing initializer of RestaurantFoodApp.SignInButtonView.emailID : Swift.String"
                   moduleName = "RestaurantFoodApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
@@ -1140,7 +1080,82 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "221"
                   endingLineNumber = "221"
-                  offsetFromSymbolStart = "2655">
+                  offsetFromSymbolStart = "38">
+               </Location>
+               <Location
+                  uuid = "B037E723-A213-4F57-99FB-B3E004CF2685 - 143d6c04292a57cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestaurantFoodApp.SignInButtonView.emailID.getter : Swift.String"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "221"
+                  endingLineNumber = "221"
+                  offsetFromSymbolStart = "87">
+               </Location>
+               <Location
+                  uuid = "B037E723-A213-4F57-99FB-B3E004CF2685 - 1514b62b38c477e4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestaurantFoodApp.SignInButtonView.emailID.setter : Swift.String"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "221"
+                  endingLineNumber = "221"
+                  offsetFromSymbolStart = "119">
+               </Location>
+               <Location
+                  uuid = "B037E723-A213-4F57-99FB-B3E004CF2685 - 4624a0fa35140fca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestaurantFoodApp.SignInButtonView.emailID.modify : Swift.String"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "221"
+                  endingLineNumber = "221"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "B037E723-A213-4F57-99FB-B3E004CF2685 - 3cc82bea3f9b4711"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestaurantFoodApp.SignInButtonView.emailID.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "221"
+                  endingLineNumber = "221"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  uuid = "B037E723-A213-4F57-99FB-B3E004CF2685 - aecbc274bcea5cc9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestaurantFoodApp.SignInButtonView.$emailID.getter : SwiftUI.Binding&lt;Swift.String&gt;"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "221"
+                  endingLineNumber = "221"
+                  offsetFromSymbolStart = "103">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1148,142 +1163,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2B8CD9E8-0DA2-48DA-BB14-0D903D21224B"
+            uuid = "85C328DA-47ED-4B8A-ADE0-9A04D3620E11"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "body"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "2B8CD9E8-0DA2-48DA-BB14-0D903D21224B - 4142d2b4691a2d5b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;__C.ASAuthorization, Swift.Error&gt;) -&gt; () in RestaurantFoodApp.SignInButtonView.body.getter : some"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "231"
-                  endingLineNumber = "231"
-                  offsetFromSymbolStart = "3982">
-               </Location>
-               <Location
-                  uuid = "2B8CD9E8-0DA2-48DA-BB14-0D903D21224B - 4142d2b4691a529d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;__C.ASAuthorization, Swift.Error&gt;) -&gt; () in RestaurantFoodApp.SignInButtonView.body.getter : some"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "233"
-                  endingLineNumber = "233"
-                  offsetFromSymbolStart = "4161">
-               </Location>
-               <Location
-                  uuid = "2B8CD9E8-0DA2-48DA-BB14-0D903D21224B - 4142d2b4691a52bc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;__C.ASAuthorization, Swift.Error&gt;) -&gt; () in RestaurantFoodApp.SignInButtonView.body.getter : some"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "232"
-                  endingLineNumber = "232"
-                  offsetFromSymbolStart = "4161">
-               </Location>
-               <Location
-                  uuid = "2B8CD9E8-0DA2-48DA-BB14-0D903D21224B - 4142d2b4691a2d5b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;__C.ASAuthorization, Swift.Error&gt;) -&gt; () in RestaurantFoodApp.SignInButtonView.body.getter : some"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "231"
-                  endingLineNumber = "231"
-                  offsetFromSymbolStart = "4161">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E1F6560F-EFCB-47EB-8707-97FD89982736"
+            uuid = "1BB9036F-FB72-4C27-AE8D-D322E7971F7B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "body"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "E1F6560F-EFCB-47EB-8707-97FD89982736 - 4142d2b4691a5262"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;__C.ASAuthorization, Swift.Error&gt;) -&gt; () in RestaurantFoodApp.SignInButtonView.body.getter : some"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "238"
-                  endingLineNumber = "238"
-                  offsetFromSymbolStart = "4329">
-               </Location>
-               <Location
-                  uuid = "E1F6560F-EFCB-47EB-8707-97FD89982736 - 4142d2b4691a5262"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;__C.ASAuthorization, Swift.Error&gt;) -&gt; () in RestaurantFoodApp.SignInButtonView.body.getter : some"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "238"
-                  endingLineNumber = "238"
-                  offsetFromSymbolStart = "4347">
-               </Location>
-               <Location
-                  uuid = "E1F6560F-EFCB-47EB-8707-97FD89982736 - 4142d2b4691a5201"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;__C.ASAuthorization, Swift.Error&gt;) -&gt; () in RestaurantFoodApp.SignInButtonView.body.getter : some"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "237"
-                  endingLineNumber = "237"
-                  offsetFromSymbolStart = "4345">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6F3B24F8-988F-40A8-A0AD-84D64D1713FA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
