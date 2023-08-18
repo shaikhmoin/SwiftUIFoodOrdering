@@ -9,7 +9,6 @@ import SwiftUI
 
 struct OurPicksView: View {
     
-//    @State var ourPickesDT : OurPicksCard
     @State var ourPickesDT : OurPicksCard
 
     var body: some View {

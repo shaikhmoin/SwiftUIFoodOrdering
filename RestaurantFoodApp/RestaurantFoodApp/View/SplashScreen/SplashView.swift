@@ -10,8 +10,8 @@ import SwiftUI
 struct SplashView: View {
     
     @State var isActive:Bool = false
-    @State private var isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
-    
+    @State var isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
+
     var body: some View {
         
         ZStack {
@@ -23,14 +23,12 @@ struct SplashView: View {
                 //                } else {
                 OnboardingView(loggedIn: $isLoggedIn)
                 //                }
+                               
             } else {
                 Image("splashimage")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 300, height: 300)
-                
-                //                LottieView(filename: "delivery")
-                //                    .frame(width: 400, height: 400)
             }
         }
         .onAppear {

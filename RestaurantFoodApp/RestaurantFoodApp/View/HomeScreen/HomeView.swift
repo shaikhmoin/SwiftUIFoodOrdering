@@ -11,14 +11,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @Binding var loggedIn: Bool //For login-logout
-        
-    let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-    ]
+//    @Binding var loggedIn: Bool //For login-logout
     
     var body: some View {
         VStack {
@@ -81,32 +74,8 @@ struct HomeView: View {
                         }
                         .padding()
                         
-                        ScrollView {
-                            LazyVGrid(columns: columns, spacing: 20) {
-                                ForEach(1 ..< 7) { i in
-                                    VStack {
-                                        Image("categ-\(String(i))")
-                                        Text(FoodTypes[Int(i)-1])
-                                            .font(.subheadline)
-                                            .bold()
-                                    }
-                                    .onTapGesture {
-                                        print("Test cat")
-                                    }
-                                    
-                                    .frame(width: 80, height: 100, alignment: .center)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 15)
-                                            .stroke(Color.gray, lineWidth: 0.3)
-                                            .cornerRadius(15)
-                                            .shadow(radius: 1)
-                                    )
-                                }
-                            }
-                            .padding(.horizontal)
-                        }
-                        .frame(maxHeight: 500)
-              
+                        CategoriesView()
+                        
                         //Our picks View
                         HStack {
                             Text("Our Picks")
@@ -154,21 +123,24 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     
-    // we show the simulated view, not the BoolButtonView itself
     static var previews: some View {
-        OtherView()
-            .preferredColorScheme(.light)
+        HomeView()
     }
-    
-    // nested OTHER VIEW providing the one value for binding makes the trick
-    private struct OtherView : View {
-        
-        @State var providedValue : Bool = false
-        
-        var body: some View {
-            HomeView(loggedIn: $providedValue)
-        }
-    }
+    // we show the simulated view, not the BoolButtonView itself
+    //    static var previews: some View {
+    //        OtherView()
+    //            .preferredColorScheme(.light)
+    //    }
+    //
+    //    // nested OTHER VIEW providing the one value for binding makes the trick
+    //    private struct OtherView : View {
+    //
+    //        @State var providedValue : Bool = false
+    //
+    //        var body: some View {
+    //            HomeView(loggedIn: $providedValue)
+    //        }
+    //    }
 }
 
 struct SearchBar: View {
@@ -187,9 +159,12 @@ struct SearchBar: View {
                         .fontWeight(.bold)
                     
                     Spacer()
-                    Text("Filter")
-                        .font(.headline)
-                        .fontWeight(.regular)
+                    
+                    Button(action: {}) {
+                        Image("filter")
+                            .font(.system(size: 26, weight: .heavy))
+                            .foregroundColor(.white)
+                    }
                 }
                 .padding()
                 .foregroundColor(.white)

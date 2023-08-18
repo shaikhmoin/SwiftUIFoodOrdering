@@ -13,28 +13,14 @@ struct MealDetails: View {
     @State private var quantity = 0
     @State var heart = "heart.fill"
     @State private var isCartClick = false
+    @State private var show = true
+
     @Environment(\.presentationMode) var presentationMode
-    //    @ObservedObject var cartManager = CartManager()
     @EnvironmentObject private var cart: CartManager
     @State var buttonTitle: String = "Add to Cart"
     @State var selection: Int? = nil
 
     var body: some View {
-        
-        if let index = cart.cartItems.firstIndex(where: { $0.product.id == mealDetails.id }) {
-            
-            //EmptyView()
-            
-            //                cart.cartItems[index].quantity += 1
-            //            print(cart.cartItems)
-            //            print(cart.cartItems[index])
-        } else {
-            //EmptyView()
-            
-            //            print(cart.cartItems)
-            //cart.cartItems.append(CartItem(product: product, quantity: 1))
-            //print(cart.cartItems)
-        }
         
         NavigationView {
             VStack {
@@ -45,7 +31,6 @@ struct MealDetails: View {
                                 Image(mealDetails.image)
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
-                                
                                     .offset(y: -reader.frame(in: .global).minY)
                                 // going to add parallax effect....
                                     .frame(width: UIScreen.main.bounds.width, height:  reader.frame(in: .global).minY + 300)
@@ -131,8 +116,7 @@ struct MealDetails: View {
                 HStack{
                     Spacer()
        
-                    NavigationLink(destination: isCartClick == true ? ShoppingCartView() : ShoppingCartView()) {
-//                        Text((cart.cartItems.firstIndex(where: { $0.product.id == mealDetails.id }) != nil) ? "Go To Cart" : buttonTitle)
+                    NavigationLink(destination: isCartClick == true ? ShoppingCartView(show: $show) : ShoppingCartView(show: $show)) {
                         Text((cart.cartItems.firstIndex(where: { $0.product.id == mealDetails.id }) != nil) ? buttonTitle : buttonTitle)
 
                             .fontWeight(.bold)
@@ -153,47 +137,15 @@ struct MealDetails: View {
                         } else {
                             cart.addToCart(product: mealDetails, Qty: quantity)
                             isCartClick = true
-//                            buttonTitle = "Go To Cart"
                         }
                     })
                     
                     Spacer()
                 }
-                //            .padding(.all, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 
                 .edgesIgnoringSafeArea(.all)
                 .background(Color.white.edgesIgnoringSafeArea(.all))
             }
-        }
-
-        .onAppear(
-            //            if !showGreeting {
-            //                           DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            //                               showGreeting = true
-            //                           }
-            //                       }
-            
-            //            if let index = cart.cartItems.firstIndex(where: { $0.product.id == mealDetails.id }) {
-            ////                cart.cartItems[index].quantity += 1
-            //                print(cart.cartItems)
-            //                print(cart.cartItems[index])
-            //            } else {
-            //                print(cart.cartItems)
-            //                //cart.cartItems.append(CartItem(product: product, quantity: 1))
-            //                //print(cart.cartItems)
-            //            }
-        )
-    }
-    
-    func checkProd() {
-        if let index = cart.cartItems.firstIndex(where: { $0.product.id == mealDetails.id }) {
-            //                cart.cartItems[index].quantity += 1
-            print(cart.cartItems)
-            print(cart.cartItems[index])
-        } else {
-            print(cart.cartItems)
-            //cart.cartItems.append(CartItem(product: product, quantity: 1))
-            //print(cart.cartItems)
         }
     }
     

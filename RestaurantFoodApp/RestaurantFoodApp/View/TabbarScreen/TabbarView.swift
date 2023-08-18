@@ -11,6 +11,7 @@ struct TabbarView: View {
     
     @State private var selectedTabIndex = 0
     @State var providedValue : Bool = true
+    @State private var show = false
     //    @ObservedObject var cartManager: CartManager
     
     init() {
@@ -21,8 +22,9 @@ struct TabbarView: View {
         
         TabView(selection: $selectedTabIndex) {
             
-            HomeView(loggedIn: $providedValue)
-            
+//            HomeView(loggedIn: $providedValue)
+            HomeView()
+
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
@@ -42,16 +44,16 @@ struct TabbarView: View {
                 }
                 .tag(2)
             
-            ShoppingCartView()
+            ShoppingCartView(show: $show)
                 .tabItem {
                     Label("Cart", systemImage: "cart.fill")
                 }
                 .tag(3)
-//                .badge(12)
+            //                .badge(12)
             
-            Text("Profile")
+            SettingsView()
                 .tabItem {
-                    Label("Profile", systemImage: "person")
+                    Label("Settings", systemImage: "apple.logo")
                 }
                 .tag(4)
         }

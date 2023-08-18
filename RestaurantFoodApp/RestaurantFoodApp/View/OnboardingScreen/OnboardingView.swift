@@ -62,7 +62,7 @@ struct OnboardingView: View {
                     .offset(x: 0, y: 335)
                     
                     .navigationDestination(isPresented: $isPresenting) {
-                        CurrentLocationView()
+                        LoginView()
                     }
                     
                     //Lottie images
