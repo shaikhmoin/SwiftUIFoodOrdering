@@ -20,7 +20,6 @@ struct LoginView: View {
     @State var selection: Int? = nil
     @State var name = ""
     
-    @State private var isSignedIn = false
     @State private var provideValue: Int? = nil
     
     let borderColor = Color(red: 107.0/255.0, green: 164.0/255.0, blue: 252.0/255.0)
@@ -33,9 +32,9 @@ struct LoginView: View {
     
     @AppStorage("log_Status") var log_status = false
 
-//    private var isSignedIn: Bool {
-//        !userID.isEmpty
-//    }
+    private var isSignedIn: Bool {
+        !userID.isEmpty
+    }
     
     var body: some View {
         
@@ -118,9 +117,7 @@ struct LoginView: View {
                                 .default(Text("OK").fontWeight(.semibold)))
                     }
                 }
-                
-                
-                
+             
                 HStack(spacing: 5){
                     Text("Don't have an account ?")
                     
@@ -136,7 +133,7 @@ struct LoginView: View {
 
                 if !isSignedIn {
                     SignInButtonView { success in
-                        isSignedIn = success
+                        
                         if success {
                             provideValue = 1 // Activate NavigationLink
                         }
@@ -202,8 +199,6 @@ struct SignInButtonView: View {
     @AppStorage("userID") var userID: String = ""
     
     @AppStorage("log_Status") var log_status = false
-
-//    @State var provideValue: Int = 0
     
     let onCompletion: (Bool) -> Void
 
@@ -218,38 +213,35 @@ struct SignInButtonView: View {
                 print("Authorisation successful")
                 print(authResults.credential)
                 
-                onCompletion(true)
 
-//                switch authResults.credential {
-//                case let appleIDCredential as ASAuthorizationAppleIDCredential:
-//
-//                    //User ID
-//                    let userIdentifier = appleIDCredential.user
-//                    print(userIdentifier)
-//
-//                    //User Info
-//                    let userEmail = appleIDCredential.email
-//                    let identityToken = appleIDCredential.identityToken
-//                    let firstName = appleIDCredential.fullName?.givenName
-//                    let lastName = appleIDCredential.fullName?.familyName
-//
-//                    print(userEmail)
-//                    print(identityToken)
-//                    print(firstName)
-//                    print(lastName)
-//
-//                    self.emailID = userEmail ?? ""
-//                    self.userID = userIdentifier
-//                    self.firstName = firstName ?? ""
-//                    self.lastName = lastName ?? ""
-//
-////                    self.provideValue = true
-//
-//                    provideValue = 1 //Redirecting to home screen
-//
-//                default:
-//                    break
-//                }
+                switch authResults.credential {
+                case let appleIDCredential as ASAuthorizationAppleIDCredential:
+
+                    //User ID
+                    let userIdentifier = appleIDCredential.user
+                    print(userIdentifier)
+
+                    //User Info
+                    let userEmail = appleIDCredential.email
+                    let identityToken = appleIDCredential.identityToken
+                    let firstName = appleIDCredential.fullName?.givenName
+                    let lastName = appleIDCredential.fullName?.familyName
+
+                    print(userEmail)
+                    print(identityToken)
+                    print(firstName)
+                    print(lastName)
+
+                    self.emailID = userEmail ?? ""
+                    self.userID = userIdentifier
+                    self.firstName = firstName ?? ""
+                    self.lastName = lastName ?? ""
+
+                    onCompletion(true)
+
+                default:
+                    break
+                }
             case .failure(let error):
                 print("Authorisation failed: \(error.localizedDescription)")
                 onCompletion(false)

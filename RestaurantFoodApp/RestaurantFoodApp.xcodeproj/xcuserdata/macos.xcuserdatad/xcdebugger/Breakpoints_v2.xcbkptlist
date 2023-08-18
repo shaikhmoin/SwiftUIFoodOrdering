@@ -492,10 +492,42 @@
             filePath = "RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "Verify()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DA6DB04B-CAD0-40B3-9BFA-E25C52E56BCB - 893a6cfbae85c4a8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestaurantFoodApp.LoginView.Verify() -&gt; ()"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "684">
+               </Location>
+               <Location
+                  uuid = "DA6DB04B-CAD0-40B3-9BFA-E25C52E56BCB - 893a6cfbae85c4a8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestaurantFoodApp.LoginView.Verify() -&gt; ()"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "713">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -508,10 +540,42 @@
             filePath = "RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "Verify()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F58F90E4-20C8-445F-9F08-49EEF60F3605 - 893a6cfbae85c505"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestaurantFoodApp.LoginView.Verify() -&gt; ()"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "852">
+               </Location>
+               <Location
+                  uuid = "F58F90E4-20C8-445F-9F08-49EEF60F3605 - 893a6cfbae85c505"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestaurantFoodApp.LoginView.Verify() -&gt; ()"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "884">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -998,10 +1062,42 @@
             filePath = "RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "E1F6560F-EFCB-47EB-8707-97FD89982736 - 4142d2b4691a50cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Result&lt;__C.ASAuthorization, Swift.Error&gt;) -&gt; () in RestaurantFoodApp.SignInButtonView.body.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "251"
+                  endingLineNumber = "251"
+                  offsetFromSymbolStart = "771">
+               </Location>
+               <Location
+                  uuid = "E1F6560F-EFCB-47EB-8707-97FD89982736 - 4142d2b4691a536a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Result&lt;__C.ASAuthorization, Swift.Error&gt;) -&gt; () in RestaurantFoodApp.SignInButtonView.body.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "246"
+                  endingLineNumber = "246"
+                  offsetFromSymbolStart = "4391">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1062,100 +1158,40 @@
             filePath = "RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "B037E723-A213-4F57-99FB-B3E004CF2685 - cde900cb44b96d3"
+                  uuid = "B037E723-A213-4F57-99FB-B3E004CF2685 - 4142d2b4691a2f4c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "property wrapper backing initializer of RestaurantFoodApp.SignInButtonView.emailID : Swift.String"
+                  symbolName = "closure #2 (Swift.Result&lt;__C.ASAuthorization, Swift.Error&gt;) -&gt; () in RestaurantFoodApp.SignInButtonView.body.getter : some"
                   moduleName = "RestaurantFoodApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "221"
-                  endingLineNumber = "221"
-                  offsetFromSymbolStart = "38">
+                  startingLineNumber = "216"
+                  endingLineNumber = "216"
+                  offsetFromSymbolStart = "210">
                </Location>
                <Location
-                  uuid = "B037E723-A213-4F57-99FB-B3E004CF2685 - 143d6c04292a57cc"
+                  uuid = "B037E723-A213-4F57-99FB-B3E004CF2685 - 4142d2b4691a2cad"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "RestaurantFoodApp.SignInButtonView.emailID.getter : Swift.String"
+                  symbolName = "closure #2 (Swift.Result&lt;__C.ASAuthorization, Swift.Error&gt;) -&gt; () in RestaurantFoodApp.SignInButtonView.body.getter : some"
                   moduleName = "RestaurantFoodApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "221"
-                  endingLineNumber = "221"
-                  offsetFromSymbolStart = "87">
-               </Location>
-               <Location
-                  uuid = "B037E723-A213-4F57-99FB-B3E004CF2685 - 1514b62b38c477e4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RestaurantFoodApp.SignInButtonView.emailID.setter : Swift.String"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "221"
-                  endingLineNumber = "221"
-                  offsetFromSymbolStart = "119">
-               </Location>
-               <Location
-                  uuid = "B037E723-A213-4F57-99FB-B3E004CF2685 - 4624a0fa35140fca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RestaurantFoodApp.SignInButtonView.emailID.modify : Swift.String"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "221"
-                  endingLineNumber = "221"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "B037E723-A213-4F57-99FB-B3E004CF2685 - 3cc82bea3f9b4711"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RestaurantFoodApp.SignInButtonView.emailID.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "221"
-                  endingLineNumber = "221"
-                  offsetFromSymbolStart = "15">
-               </Location>
-               <Location
-                  uuid = "B037E723-A213-4F57-99FB-B3E004CF2685 - aecbc274bcea5cc9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RestaurantFoodApp.SignInButtonView.$emailID.getter : SwiftUI.Binding&lt;Swift.String&gt;"
-                  moduleName = "RestaurantFoodApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "221"
-                  endingLineNumber = "221"
-                  offsetFromSymbolStart = "103">
+                  startingLineNumber = "217"
+                  endingLineNumber = "217"
+                  offsetFromSymbolStart = "944">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1163,23 +1199,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "85C328DA-47ED-4B8A-ADE0-9A04D3620E11"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1BB9036F-FB72-4C27-AE8D-D322E7971F7B"
+            uuid = "544EEA8F-1FF9-4D86-B7DC-CF7C56514601"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1190,20 +1210,242 @@
             endingLineNumber = "138"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "544EEA8F-1FF9-4D86-B7DC-CF7C56514601 - f52901d93363df4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 (Swift.Bool) -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of SwiftUI.View.alert(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, content: () -&gt; SwiftUI.Alert) -&gt; some&gt;&gt;.0, RestaurantFoodApp.CurrentLocationView&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;RestaurantFoodApp.SignInButtonView, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, RestaurantFoodApp.HomeView&gt;&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarHidden(Swift.Bool) -&gt; some&gt;&gt;.0 in RestaurantFoodApp.LoginView.body.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "214">
+               </Location>
+               <Location
+                  uuid = "544EEA8F-1FF9-4D86-B7DC-CF7C56514601 - f52901d93363df4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 (Swift.Bool) -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of SwiftUI.View.alert(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, content: () -&gt; SwiftUI.Alert) -&gt; some&gt;&gt;.0, RestaurantFoodApp.CurrentLocationView&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;RestaurantFoodApp.SignInButtonView, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, RestaurantFoodApp.HomeView&gt;&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarHidden(Swift.Bool) -&gt; some&gt;&gt;.0 in RestaurantFoodApp.LoginView.body.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "109">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6F3B24F8-988F-40A8-A0AD-84D64D1713FA"
+            uuid = "AD069113-6EC9-49F0-A4D8-AC86D1E43B6B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "AD069113-6EC9-49F0-A4D8-AC86D1E43B6B - 25d5ed438411b4fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of SwiftUI.View.alert(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, content: () -&gt; SwiftUI.Alert) -&gt; some&gt;&gt;.0, RestaurantFoodApp.CurrentLocationView&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;RestaurantFoodApp.SignInButtonView, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, RestaurantFoodApp.HomeView&gt;&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarHidden(Swift.Bool) -&gt; some&gt;&gt;.0 in RestaurantFoodApp.LoginView.body.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "6745">
+               </Location>
+               <Location
+                  uuid = "AD069113-6EC9-49F0-A4D8-AC86D1E43B6B - 25d5ed438411b4fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of SwiftUI.View.alert(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, content: () -&gt; SwiftUI.Alert) -&gt; some&gt;&gt;.0, RestaurantFoodApp.CurrentLocationView&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;RestaurantFoodApp.SignInButtonView, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, RestaurantFoodApp.HomeView&gt;&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarHidden(Swift.Bool) -&gt; some&gt;&gt;.0 in RestaurantFoodApp.LoginView.body.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "6800">
+               </Location>
+               <Location
+                  uuid = "AD069113-6EC9-49F0-A4D8-AC86D1E43B6B - f52901d93363dd7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 (Swift.Bool) -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of SwiftUI.View.alert(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, content: () -&gt; SwiftUI.Alert) -&gt; some&gt;&gt;.0, RestaurantFoodApp.CurrentLocationView&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;RestaurantFoodApp.SignInButtonView, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, RestaurantFoodApp.HomeView&gt;&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarHidden(Swift.Bool) -&gt; some&gt;&gt;.0 in RestaurantFoodApp.LoginView.body.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "04379C38-0142-4E1F-9C36-98382B7D7209"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "04379C38-0142-4E1F-9C36-98382B7D7209 - 25d5ed438411b3e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of SwiftUI.View.alert(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, content: () -&gt; SwiftUI.Alert) -&gt; some&gt;&gt;.0, RestaurantFoodApp.CurrentLocationView&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;RestaurantFoodApp.SignInButtonView, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, RestaurantFoodApp.HomeView&gt;&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarHidden(Swift.Bool) -&gt; some&gt;&gt;.0 in RestaurantFoodApp.LoginView.body.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "7517">
+               </Location>
+               <Location
+                  uuid = "04379C38-0142-4E1F-9C36-98382B7D7209 - c65b66cc4c3f504f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #6 () -&gt; SwiftUI.EmptyView in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of SwiftUI.View.alert(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, content: () -&gt; SwiftUI.Alert) -&gt; some&gt;&gt;.0, RestaurantFoodApp.CurrentLocationView&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;RestaurantFoodApp.SignInButtonView, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, RestaurantFoodApp.HomeView&gt;&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarHidden(Swift.Bool) -&gt; some&gt;&gt;.0 in RestaurantFoodApp.LoginView.body.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "04379C38-0142-4E1F-9C36-98382B7D7209 - c65b66cc4c3f5068"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #6 () -&gt; SwiftUI.EmptyView in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of SwiftUI.View.alert(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, content: () -&gt; SwiftUI.Alert) -&gt; some&gt;&gt;.0, RestaurantFoodApp.CurrentLocationView&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;RestaurantFoodApp.SignInButtonView, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, RestaurantFoodApp.HomeView&gt;&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarHidden(Swift.Bool) -&gt; some&gt;&gt;.0 in RestaurantFoodApp.LoginView.body.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "06D35DAB-6DF9-489B-A981-8BD5E66F8BBD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "06D35DAB-6DF9-489B-A981-8BD5E66F8BBD - 2f2fb83b0a257b06"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestaurantFoodApp.SignInButtonView.body.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "206"
+                  endingLineNumber = "206"
+                  offsetFromSymbolStart = "751">
+               </Location>
+               <Location
+                  uuid = "06D35DAB-6DF9-489B-A981-8BD5E66F8BBD - 3c2e41d338dba140"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.ASAuthorizationAppleIDRequest) -&gt; () in RestaurantFoodApp.SignInButtonView.body.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "207"
+                  endingLineNumber = "207"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E630558-1387-46A0-A525-92D7E61313E6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BB30E5AC-0141-4513-B312-BEB905ABD09B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestaurantFoodApp/View/LoginRegisterScreen/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
