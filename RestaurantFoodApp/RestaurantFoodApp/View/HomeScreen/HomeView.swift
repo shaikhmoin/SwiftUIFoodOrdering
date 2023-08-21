@@ -13,6 +13,7 @@ struct HomeView: View {
     
 //    @Binding var loggedIn: Bool //For login-logout
     @AppStorage("log_Status") var log_status = false
+    @StateObject private var vm = CartManager()
 
     var body: some View {
         VStack {
@@ -43,7 +44,7 @@ struct HomeView: View {
                             HStack {
                                 ForEach(testTrendingData) { meals in
                                     NavigationLink(
-                                        destination: MealDetails(mealDetails: meals)
+                                        destination: MealDetails(mealDetails: meals).environmentObject(vm)
                                             .navigationBarHidden(true),
                                         label: {
                                             TrendingWeekView(trendingMeal: meals)
@@ -51,7 +52,6 @@ struct HomeView: View {
                                                 .cornerRadius(20)
                                                 .shadow(radius: 1)
                                         })
-                                    .buttonStyle(PlainButtonStyle())
                                 }
                                 .padding(.bottom, 10)
                                 .padding(.leading, 30)
@@ -119,6 +119,8 @@ struct HomeView: View {
                 //                UIScrollView.appearance().bounces = false
             }
         }
+        .navigationTitle("")
+        .navigationBarHidden(true)
     }
 }
 

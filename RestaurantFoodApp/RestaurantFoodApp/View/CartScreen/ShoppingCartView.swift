@@ -42,7 +42,8 @@ class CartViewModel: ObservableObject {
 
 struct ShoppingCartView: View {
     
-    @EnvironmentObject private var cart: CartManager
+    @EnvironmentObject var cart: CartManager
+//    @StateObject private var cart = CartManager()
     @State private var quantity = 0
     @State private var stepperValue = 1
     @Environment(\.presentationMode) var presentationMode
@@ -52,7 +53,7 @@ struct ShoppingCartView: View {
 
     var body: some View {
         
-        if cart.cartItems.count > 0 {
+//        if cart.cartItems.count > 0 {
             VStack {
                 HStack(spacing: 20) {
                     
@@ -124,9 +125,9 @@ struct ShoppingCartView: View {
             .background(Color.white.ignoresSafeArea())
             .navigationBarHidden(true)
             
-        } else {
-            Text("Please add your items")
-        }
+//        } else {
+//            Text("Please add your items")
+//        }
     }
 }
 

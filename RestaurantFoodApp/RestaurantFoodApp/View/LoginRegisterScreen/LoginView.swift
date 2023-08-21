@@ -21,6 +21,7 @@ struct LoginView: View {
     @State var name = ""
     
     @State private var provideValue: Int? = nil
+    @State private var isSHowHomeView: Bool = false
     
     let borderColor = Color(red: 107.0/255.0, green: 164.0/255.0, blue: 252.0/255.0)
     @Environment(\.colorScheme) var colorScheme
@@ -31,6 +32,8 @@ struct LoginView: View {
     @AppStorage("userID") var userID: String = ""
     
     @AppStorage("log_Status") var log_status = false
+    @EnvironmentObject var sessionManager:SessionManager
+
 
     private var isSignedIn: Bool {
         !userID.isEmpty
@@ -38,116 +41,114 @@ struct LoginView: View {
     
     var body: some View {
         
-        NavigationView {
-            VStack(){
-                //            Image("finance_app").resizable().frame(width: 300.0, height: 255.0, alignment: .top)
-                
-                LottieView(filename: "order")
-                    .frame(width: 300, height: 250)
-                    .shadow(color: .orange, radius: 1, x: 0, y: 0)
-                    .clipShape(Circle())
-                    .padding()
-                
-                Text("Sign in to your account")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding(.top, 15)
-                
-                TextField("Username or Email",text:self.$email)
-                    .autocapitalization(.none)
-                    .padding()
-                    .background(RoundedRectangle(cornerRadius:6).stroke(borderColor,lineWidth:2))
-                    .padding(.top, 0)
-                
-                HStack(spacing: 15){
-                    VStack{
-                        if self.visible {
-                            TextField("Password", text: self.$pass)
-                                .autocapitalization(.none)
-                        } else {
-                            SecureField("Password", text: self.$pass)
-                                .autocapitalization(.none)
-                        }
-                    }
-                    
-                    Button(action: {
-                        self.visible.toggle()
-                    }) {
-                        //Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
-                        Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
-                            .foregroundColor(self.color)
-                            .opacity(0.8)
-                    }
-                }
+        VStack{
+            //            Image("finance_app").resizable().frame(width: 300.0, height: 255.0, alignment: .top)
+            
+            LottieView(filename: "order")
+                .frame(width: 300, height: 250)
+                .shadow(color: .orange, radius: 1, x: 0, y: 0)
+                .clipShape(Circle())
                 .padding()
-                .background(RoundedRectangle(cornerRadius: 6)
-                    .stroke(borderColor,lineWidth: 2))
-                .padding(.top, 10)
-                
-                HStack{
-                    Spacer()
-                    Button(action: {
-                        print("Reset password click")
-                        // self.ResetPassword()
-                        self.visible.toggle()
-                    }) {
-                        Text("Forget Password")
-                            .fontWeight(.medium)
-                            .foregroundColor(Color("bg"))
-                    }.padding(.top, 10.0)
-                }
-                
-                // Sign in button
-                NavigationLink(destination: CurrentLocationView(), tag: 1, selection: $selection) {
-                    Button(action: {
-                        self.Verify()
-                        
-                    }) {
-                        Text("Sign in")
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                            .padding(.vertical)
-                            .frame(width: UIScreen.main.bounds.width - 50)
-                    }
-                    .background(Color("bg"))
-                    .cornerRadius(6)
-                    .padding(.top, 15)
-                    .alert(isPresented: $alert){()->Alert in
-                        return Alert(title: Text("\(self.title)"), message: Text("\(self.error)"), dismissButton:
-                                .default(Text("OK").fontWeight(.semibold)))
+            
+            Text("Sign in to your account")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding(.top, 15)
+            
+            TextField("Username or Email",text:self.$email)
+                .autocapitalization(.none)
+                .padding()
+                .background(RoundedRectangle(cornerRadius:6).stroke(borderColor,lineWidth:2))
+                .padding(.top, 0)
+            
+            HStack(spacing: 15){
+                VStack{
+                    if self.visible {
+                        TextField("Password", text: self.$pass)
+                            .autocapitalization(.none)
+                    } else {
+                        SecureField("Password", text: self.$pass)
+                            .autocapitalization(.none)
                     }
                 }
-             
-                HStack(spacing: 5){
-                    Text("Don't have an account ?")
+                
+                Button(action: {
+                    self.visible.toggle()
+                }) {
+                    //Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
+                    Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
+                        .foregroundColor(self.color)
+                        .opacity(0.8)
+                }
+            }
+            .padding()
+            .background(RoundedRectangle(cornerRadius: 6)
+                .stroke(borderColor,lineWidth: 2))
+            .padding(.top, 10)
+            
+            HStack{
+                Spacer()
+                Button(action: {
+                    print("Reset password click")
+                    // self.ResetPassword()
+                    self.visible.toggle()
+                }) {
+                    Text("Forget Password")
+                        .fontWeight(.medium)
+                        .foregroundColor(Color("bg"))
+                }.padding(.top, 10.0)
+            }
+            
+            // Sign in button
+            NavigationLink(destination: CurrentLocationView(), tag: 1, selection: $selection) {
+                Button(action: {
+                    self.Verify()
                     
-                    NavigationLink(destination: RegisterView()){
-                        Text("Sign up")
-                            .fontWeight(.bold)
-                            .foregroundColor(Color("bg"))
-                    }
-                    
-                    Text("now").multilineTextAlignment(.leading)
-                    
-                }.padding(.top, 25)
-
-                if !isSignedIn {
-                    SignInButtonView { success in
-                        
-                        if success {
-                            provideValue = 1 // Activate NavigationLink
-                        }
-                    }
-                } else {
-                    NavigationLink(destination: HomeView(), tag: 1, selection: $provideValue) {
-                        EmptyView()
-                    }
+                }) {
+                    Text("Sign in")
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                        .padding(.vertical)
+                        .frame(width: UIScreen.main.bounds.width - 50)
+                }
+                .background(Color("bg"))
+                .cornerRadius(6)
+                .padding(.top, 15)
+                .alert(isPresented: $alert){()->Alert in
+                    return Alert(title: Text("\(self.title)"), message: Text("\(self.error)"), dismissButton:
+                            .default(Text("OK").fontWeight(.semibold)))
                 }
             }
             
+            HStack(spacing: 5){
+                Text("Don't have an account ?")
+                
+                NavigationLink(destination: RegisterView()){
+                    Text("Sign up")
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("bg"))
+                }
+                
+                Text("now").multilineTextAlignment(.leading)
+                
+            }.padding(.top, 25)
+            
+            if !isSignedIn {
+                SignInButtonView { success in
+                    if success {
+                        isSHowHomeView = true
+                        sessionManager.signIn()
+                    } else {
+                        isSHowHomeView = false
+                    }
+                }
+            } else {
+                
+            }
+            NavigationLink("", destination: HomeView(), isActive: $isSHowHomeView)
+        }            
             .padding(.horizontal, 25)
             .navigationBarHidden(true)
-        }
     }
     
     private func showAppleLoginView() {

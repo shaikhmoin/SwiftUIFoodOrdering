@@ -12,10 +12,12 @@ struct OnboardingView: View {
     @State var selectedPage = 0
     @State private var isPresenting : Bool = false
     @Binding var loggedIn: Bool //For login-logout
+    @EnvironmentObject var sessionManager:SessionManager
+
     
     var body: some View {
         
-        NavigationStack {
+        NavigationView {
             ScrollView(.vertical) {
                 ZStack {
                     
@@ -47,7 +49,6 @@ struct OnboardingView: View {
                         
                         if selectedPage == 3 {
                             isPresenting = true
-                            UserDefaults.standard.set(true, forKey: "isLoggedIn")
                             loggedIn = true
                             
                         }
@@ -61,9 +62,11 @@ struct OnboardingView: View {
                     
                     .offset(x: 0, y: 335)
                     
-                    .navigationDestination(isPresented: $isPresenting) {
-                        LoginView()
-                    }
+                    NavigationLink("", destination: LoginView().environmentObject(sessionManager)
+                                   , isActive: $isPresenting)
+//                    .navigationDestination(isPresented: $isPresenting) {
+//                        LoginView()
+//                    }
                     
                     //Lottie images
                     if (selectedPage == 0)

@@ -115,30 +115,43 @@ struct MealDetails: View {
                 
                 HStack{
                     Spacer()
-       
-                    NavigationLink(destination: isCartClick == true ? ShoppingCartView(show: $show) : ShoppingCartView(show: $show)) {
-                        Text((cart.cartItems.firstIndex(where: { $0.product.id == mealDetails.id }) != nil) ? buttonTitle : buttonTitle)
-
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .padding(.vertical, 10)
-                            .padding(.horizontal, 100)
-                            .background(Color.blue.opacity(0.9))
-                            .cornerRadius(10)
-                    }
-                    .simultaneousGesture(TapGesture().onEnded{
-                        print("I am here in the action")
-                        
+                    
+                    Button {
                         if let index = cart.cartItems.firstIndex(where: { $0.product.id == mealDetails.id }) {
-                            print("Match")
-                            cart.addToCart(product: mealDetails, Qty: quantity)
-                            isCartClick = false
-                            
+                            //cart.addToCart(product: mealDetails, Qty: quantity)
+                            if cart.cartItems.count >= 1 {
+                                isCartClick = true
+                            } else {
+                                print(cart.cartItems.count)
+                                cart.addToCart(product: mealDetails, Qty: quantity)
+                                isCartClick = false
+                            }
                         } else {
                             cart.addToCart(product: mealDetails, Qty: quantity)
-                            isCartClick = true
+                            isCartClick = false
                         }
-                    })
+                    } label: {
+                        
+                        if let index = cart.cartItems.firstIndex(where: { $0.product.id == mealDetails.id }) {
+                            Text("Go to cart")
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding(.vertical, 10)
+                                .padding(.horizontal, 100)
+                                .background(Color.blue.opacity(0.9))
+                                .cornerRadius(10)
+                        } else {
+                            Text("Add to cart")
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding(.vertical, 10)
+                                .padding(.horizontal, 100)
+                                .background(Color.blue.opacity(0.9))
+                                .cornerRadius(10)
+                        }
+                    }
+
+                    NavigationLink("", destination: ShoppingCartView(show: $show), isActive: $isCartClick)
                     
                     Spacer()
                 }

@@ -21,6 +21,8 @@ struct TrendingWeekView: View {
                 Text(trendingMeal.title)
                     .bold()
                     .padding(.all, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.black)
+                
                 Spacer()
             }
             
@@ -43,6 +45,7 @@ struct TrendingWeekView: View {
                 Text("$\(forTrailingZero(trendingMeal.price))")
                     .font(.subheadline)
                     .bold()
+                    .foregroundColor(.black)
             }
             .padding(.bottom, 30)
             .padding(.leading, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)

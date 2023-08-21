@@ -11,7 +11,8 @@ struct SplashView: View {
     
     @State var isActive:Bool = false
     @State var isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
-
+    @EnvironmentObject var sessionManager:SessionManager
+    
     var body: some View {
         
         ZStack {
@@ -21,7 +22,7 @@ struct SplashView: View {
                 //                if isLoggedIn {
                 //                    HomeView(loggedIn: $isLoggedIn)
                 //                } else {
-                OnboardingView(loggedIn: $isLoggedIn)
+                OnboardingView(loggedIn: $isLoggedIn).environmentObject(sessionManager)
                 //                }
                                
             } else {

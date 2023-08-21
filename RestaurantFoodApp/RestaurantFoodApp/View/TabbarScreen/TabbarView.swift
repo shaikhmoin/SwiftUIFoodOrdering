@@ -11,9 +11,9 @@ struct TabbarView: View {
     
     @State private var selectedTabIndex = 0
     @State var providedValue : Bool = true
-    @State private var show = false
-    //    @ObservedObject var cartManager: CartManager
-    
+    @State private var show = true
+//    @EnvironmentObject private var cart: CartManager
+
     init() {
         UITabBar.appearance().backgroundColor = UIColor.white
     }
@@ -22,13 +22,16 @@ struct TabbarView: View {
         
         TabView(selection: $selectedTabIndex) {
             
-//            HomeView(loggedIn: $providedValue)
-            HomeView()
-
-                .tabItem {
-                    Label("Home", systemImage: "house")
-                }
-                .tag(0)
+            //            HomeView(loggedIn: $providedValue)
+            NavigationView {
+                HomeView()
+                
+            }
+            
+            .tabItem {
+                Label("Home", systemImage: "house")
+            }
+            .tag(0)
             
             VStack {
                 Text("Category")
@@ -44,7 +47,10 @@ struct TabbarView: View {
                 }
                 .tag(2)
             
+//            NavigationLink("", destination: ShoppingCartView(show: $show), isActive: $isCartClick)
             ShoppingCartView(show: $show)
+//            ShoppingCartView(show: $show).environmentObject(cart)
+
                 .tabItem {
                     Label("Cart", systemImage: "cart.fill")
                 }
