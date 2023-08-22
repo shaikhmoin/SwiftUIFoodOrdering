@@ -131,7 +131,6 @@ struct RegisterView: View {
                 
                 print("Success")
                 selection = 1
-                UserDefaults.standard.set(true, forKey: "isLoggedIn")
             }
             else{
                 

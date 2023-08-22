@@ -11,9 +11,9 @@ struct OnboardingView: View {
     
     @State var selectedPage = 0
     @State private var isPresenting : Bool = false
-    @Binding var loggedIn: Bool //For login-logout
+//    @Binding var loggedIn: Bool //For login-logout
     @EnvironmentObject var sessionManager:SessionManager
-
+    let action: () -> Void
     
     var body: some View {
         
@@ -49,7 +49,8 @@ struct OnboardingView: View {
                         
                         if selectedPage == 3 {
                             isPresenting = true
-                            loggedIn = true
+                            //loggedIn = true
+                            action()
                             
                         }
                     })
@@ -62,11 +63,9 @@ struct OnboardingView: View {
                     
                     .offset(x: 0, y: 335)
                     
-                    NavigationLink("", destination: LoginView().environmentObject(sessionManager)
-                                   , isActive: $isPresenting)
-//                    .navigationDestination(isPresented: $isPresenting) {
-//                        LoginView()
-//                    }
+                    //OLD
+//                    NavigationLink("", destination: LoginView().environmentObject(sessionManager)
+//                                   , isActive: $isPresenting)
                     
                     //Lottie images
                     if (selectedPage == 0)
@@ -108,21 +107,22 @@ struct OnboardingView: View {
     }
 }
 
-struct OnboardingView_Previews: PreviewProvider {
-    
-    // we show the simulated view, not the BoolButtonView itself
-    static var previews: some View {
-        OtherView()
-            .preferredColorScheme(.light)
-    }
-    
-    // nested OTHER VIEW providing the one value for binding makes the trick
-    private struct OtherView : View {
-        
-        @State var providedValue : Bool = false
-        
-        var body: some View {
-            OnboardingView(loggedIn: $providedValue)
-        }
-    }
-}
+//struct OnboardingView_Previews: PreviewProvider {
+//    
+//    // we show the simulated view, not the BoolButtonView itself
+//    static var previews: some View {
+//        OnboardingView()
+////        OtherView()
+////            .preferredColorScheme(.light)
+//    }
+//    
+//    // nested OTHER VIEW providing the one value for binding makes the trick
+////    private struct OtherView : View {
+////
+////        @State var providedValue : Bool = false
+////
+////        var body: some View {
+////            OnboardingView(loggedIn: $providedValue)
+////        }
+////    }
+//}

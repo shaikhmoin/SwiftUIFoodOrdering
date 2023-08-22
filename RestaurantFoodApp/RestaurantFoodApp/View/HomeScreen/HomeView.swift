@@ -12,8 +12,8 @@ import SwiftUI
 struct HomeView: View {
     
 //    @Binding var loggedIn: Bool //For login-logout
-    @AppStorage("log_Status") var log_status = false
     @StateObject private var vm = CartManager()
+    @EnvironmentObject private var session: SessionManager
 
     var body: some View {
         VStack {

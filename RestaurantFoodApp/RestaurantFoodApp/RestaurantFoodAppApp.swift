@@ -6,48 +6,59 @@
 //
 
 import SwiftUI
+import FirebaseCore
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        
+        return true
+    }
+}
 
 @main
 struct RestaurantFoodAppApp: App {
     
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     @StateObject private var session = SessionManager()
     @StateObject private var cart = CartManager()
-    @State var isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
+    
     
     var body: some Scene {
         WindowGroup {
             
-            //            switch session.currentState {
-            //            case .loggedIn:
-            //                SplashView()
-            //                    .transition(.opacity)
-            //                    .environmentObject(session)
-            //
-            //            default:
-            //                NavigationView {
-            //                    HomeView()
-            //                        .transition(.opacity)
-            //                }
-            //            }
-            
-            if isLoggedIn == true {
-                //                NavigationView {
-                //                    HomeView()
-                //                        .transition(.opacity)
-                //                }
-                
-                TabbarView()
-                    .navigationBarBackButtonHidden(true)
-                    .navigationBarHidden(true)
-                    .environmentObject(cart)
-                    .environmentObject(session)
-                
-            } else {
-                SplashView()
-                    .transition(.opacity)
-                    .environmentObject(cart)
-                    .environmentObject(session)
+            //New
+            ZStack {
+                switch session.currentState {
+                case .loggedIn:
+                    TabbarView()
+                        .environmentObject(session)
+                        .environmentObject(cart)
+                        .transition(.opacity)
+                    
+                case .loggedout:
+                    NavigationView {
+                        LoginView()
+                            .environmentObject(session)
+                            .transition(.opacity)
+                    }
+                    
+                case .onboarding:
+                    NavigationView {
+                        OnboardingView(action: session.completeOnboarding).navigationBarHidden(true)
+                    }
+                    
+                default:
+                    SplashView()
+                        .environmentObject(session)
+                        .transition(.opacity)
+                }
             }
+            
+            .animation(.easeOut, value: session.currentState)
+            // .onAppear(perform: session.configureCurrentState) //Login Or onboarding (Only once onboarding open and then set as useerdefault)           
         }
     }
 }

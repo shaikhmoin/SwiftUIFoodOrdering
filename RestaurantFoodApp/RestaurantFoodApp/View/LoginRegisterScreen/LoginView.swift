@@ -30,11 +30,12 @@ struct LoginView: View {
     @AppStorage("firstName") var firstName: String = ""
     @AppStorage("lastName") var lastName: String = ""
     @AppStorage("userID") var userID: String = ""
-    
     @AppStorage("log_Status") var log_status = false
+    
     @EnvironmentObject var sessionManager:SessionManager
 
-
+    @StateObject private var viewModel: LoginViewModel
+    
     private var isSignedIn: Bool {
         !userID.isEmpty
     }
@@ -55,7 +56,7 @@ struct LoginView: View {
                 .fontWeight(.bold)
                 .padding(.top, 15)
             
-            TextField("Username or Email",text:self.$email)
+            TextField("Username or Email",text:self.$viewModel.email)
                 .autocapitalization(.none)
                 .padding()
                 .background(RoundedRectangle(cornerRadius:6).stroke(borderColor,lineWidth:2))
@@ -64,10 +65,10 @@ struct LoginView: View {
             HStack(spacing: 15){
                 VStack{
                     if self.visible {
-                        TextField("Password", text: self.$pass)
+                        TextField("Password", text: self.$viewModel.password)
                             .autocapitalization(.none)
                     } else {
-                        SecureField("Password", text: self.$pass)
+                        SecureField("Password", text: self.$viewModel.password)
                             .autocapitalization(.none)
                     }
                 }
@@ -100,7 +101,7 @@ struct LoginView: View {
             }
             
             // Sign in button
-            NavigationLink(destination: CurrentLocationView(), tag: 1, selection: $selection) {
+            //NavigationLink(destination: CurrentLocationView(), tag: 1, selection: $selection) {
                 Button(action: {
                     self.Verify()
                     
@@ -118,7 +119,7 @@ struct LoginView: View {
                     return Alert(title: Text("\(self.title)"), message: Text("\(self.error)"), dismissButton:
                             .default(Text("OK").fontWeight(.semibold)))
                 }
-            }
+           // }
             
             HStack(spacing: 5){
                 Text("Don't have an account ?")
@@ -159,7 +160,7 @@ struct LoginView: View {
         if self.email != "" && self.pass != "" {
             print("Success")
             self.selection = 1
-            UserDefaults.standard.set(true, forKey: "isLoggedIn")
+            sessionManager.signIn()
             
         } else {
             self.title = "Login Error"

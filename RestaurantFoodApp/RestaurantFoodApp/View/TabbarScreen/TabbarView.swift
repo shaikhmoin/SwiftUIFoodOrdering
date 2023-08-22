@@ -12,8 +12,8 @@ struct TabbarView: View {
     @State private var selectedTabIndex = 0
     @State var providedValue : Bool = true
     @State private var show = true
-//    @EnvironmentObject private var cart: CartManager
-
+    //    @EnvironmentObject private var cart: CartManager
+    
     init() {
         UITabBar.appearance().backgroundColor = UIColor.white
     }
@@ -25,7 +25,6 @@ struct TabbarView: View {
             //            HomeView(loggedIn: $providedValue)
             NavigationView {
                 HomeView()
-                
             }
             
             .tabItem {
@@ -47,21 +46,24 @@ struct TabbarView: View {
                 }
                 .tag(2)
             
-//            NavigationLink("", destination: ShoppingCartView(show: $show), isActive: $isCartClick)
+            //            NavigationLink("", destination: ShoppingCartView(show: $show), isActive: $isCartClick)
             ShoppingCartView(show: $show)
-//            ShoppingCartView(show: $show).environmentObject(cart)
-
+            //            ShoppingCartView(show: $show).environmentObject(cart)
+            
                 .tabItem {
                     Label("Cart", systemImage: "cart.fill")
                 }
                 .tag(3)
             //                .badge(12)
             
-            SettingsView()
-                .tabItem {
-                    Label("Settings", systemImage: "apple.logo")
-                }
-                .tag(4)
+            NavigationView {
+                SettingsView()
+            }
+            
+            .tabItem {
+                Label("Settings", systemImage: "apple.logo")
+            }
+            .tag(4)
         }
         .accentColor(Color.blue)
         .onAppear() {

@@ -10,7 +10,6 @@ import SwiftUI
 struct SplashView: View {
     
     @State var isActive:Bool = false
-    @State var isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
     @EnvironmentObject var sessionManager:SessionManager
     
     var body: some View {
@@ -19,12 +18,28 @@ struct SplashView: View {
             //            Color("bg")
             
             if self.isActive {
-                //                if isLoggedIn {
-                //                    HomeView(loggedIn: $isLoggedIn)
-                //                } else {
-                OnboardingView(loggedIn: $isLoggedIn).environmentObject(sessionManager)
-                //                }
-                               
+
+                let hasCompletedOnboarding = UserDefaults.standard.bool(forKey: SessionManager.userDefaultsKey.hasSeenOnboarding)
+                if hasCompletedOnboarding {
+                    let hasCompletedSignin = UserDefaults.standard.bool(forKey: SessionManager.userDefaultsKey.hasSeenSingin)
+                    if hasCompletedSignin {
+                        TabbarView()
+                            .environmentObject(sessionManager)
+                            .transition(.opacity)
+                        
+                    } else {
+                        NavigationView {
+                            LoginView()
+                                .environmentObject(sessionManager)
+                                .transition(.opacity)
+                        }
+                    }
+                    
+                } else {
+                    OnboardingView(action: sessionManager.completeOnboarding).environmentObject(sessionManager)
+                }
+                
+                
             } else {
                 Image("splashimage")
                     .resizable()

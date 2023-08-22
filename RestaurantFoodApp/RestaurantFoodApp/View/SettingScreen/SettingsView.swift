@@ -12,7 +12,8 @@ struct SettingsView: View {
     @State private var isDarkModeEnabled: Bool = true
     @State private var downloadViaWifiEnabled: Bool = false
     @State private var languageIndex = 0
-    
+    @EnvironmentObject private var session: SessionManager
+
     var languageOptions = ["English", "Arabic", "Chinese", "Danish"]
     
     var body: some View {
@@ -87,14 +88,22 @@ struct SettingsView: View {
                         Image(systemName: "hand.raised.fingers.spread")
                         Text("About us")
                     }
-                    HStack{
-                        Image(uiImage: UIImage(named: "PlayInBackground")!)
-                        Text("Log out")
-                    }
                     
+                    Button(action: {
+                        print("Logout clicked")
+                        session.signOut()
+
+                    }) {
+                        HStack {
+                            Image(uiImage: UIImage(named: "PlayInBackground")!)
+                            Text("Log out")
+                                .foregroundColor(.black)
+                        }
+                    }
                 })
             }
             .navigationBarTitle("Settings")
+            .navigationBarHidden(true)
         }
     }
 }
