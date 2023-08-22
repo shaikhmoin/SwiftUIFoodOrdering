@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AuthenticationServices
+import FirebaseAuth
 
 struct LoginView: View {
     
@@ -17,7 +18,7 @@ struct LoginView: View {
     @State var alert = false
     @State var error = ""
     @State var title = ""
-    @State var selection: Int? = nil
+//    @State var selection: Int? = nil
     @State var name = ""
     
     @State private var provideValue: Int? = nil
@@ -33,9 +34,8 @@ struct LoginView: View {
     @AppStorage("log_Status") var log_status = false
     
     @EnvironmentObject var sessionManager:SessionManager
+    @StateObject var viewModel: LoginViewModel
 
-    @StateObject private var viewModel: LoginViewModel
-    
     private var isSignedIn: Bool {
         !userID.isEmpty
     }
@@ -146,7 +146,7 @@ struct LoginView: View {
             } else {
                 
             }
-            NavigationLink("", destination: HomeView(), isActive: $isSHowHomeView)
+            NavigationLink("", destination: HomeView(viewModel: viewModel), isActive: $isSHowHomeView)
         }            
             .padding(.horizontal, 25)
             .navigationBarHidden(true)
@@ -157,16 +157,31 @@ struct LoginView: View {
     }
     
     func Verify(){
-        if self.email != "" && self.pass != "" {
+        if viewModel.email != "" && viewModel.password != "" {
             print("Success")
-            self.selection = 1
-            sessionManager.signIn()
+//            self.selection = 1
+                        
+            
+            viewModel.signIn(completion: { result in
+                
+                switch result {
+                case .success(let message):
+                    print("Task completed successfully: \(message)")
+                    sessionManager.signIn()
+                    
+                case .failure(let error):
+                    print("Task failed with error: \(error)")
+                    self.title = "Login Error"
+                    self.error = error.localizedDescription
+                    self.alert = true
+                }
+            })
             
         } else {
             self.title = "Login Error"
-            self.error = "Please fill all the content property"
+            self.error = "Please fill all the content properly"
             self.alert = true
-            self.selection = 0
+//            self.selection = 0
         }
         //        if self.email != "" && self.pass != ""{
         //            Auth.auth().signIn(withEmail: self.email, password: self.pass) { (res, err) in
@@ -266,6 +281,8 @@ struct SignInButtonView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        
+        let loginViewModel = LoginViewModel() // Declare the variable
+        LoginView(viewModel: loginViewModel)
     }
 }

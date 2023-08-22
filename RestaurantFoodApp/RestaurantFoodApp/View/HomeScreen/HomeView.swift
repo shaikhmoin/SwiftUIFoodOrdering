@@ -14,6 +14,7 @@ struct HomeView: View {
 //    @Binding var loggedIn: Bool //For login-logout
     @StateObject private var vm = CartManager()
     @EnvironmentObject private var session: SessionManager
+    @StateObject var viewModel: LoginViewModel
 
     var body: some View {
         VStack {
@@ -116,7 +117,16 @@ struct HomeView: View {
             .scrollBounceBehavior(.basedOnSize)
             .scrollIndicators(.hidden)
             .onAppear {
-                //                UIScrollView.appearance().bounces = false
+                viewModel.getExistingUser(completion: { result in
+                    
+                    switch result {
+                    case .success(let message):
+                        print("Existing user data: \(message)")
+                        
+                    case .failure(let error):
+                        print("No existing user found: \(error)")
+                    }
+                })
             }
         }
         .navigationTitle("")
@@ -127,7 +137,8 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     
     static var previews: some View {
-        HomeView()
+        let loginViewModel = LoginViewModel() // Declare the variable
+        HomeView(viewModel: loginViewModel)
     }
     // we show the simulated view, not the BoolButtonView itself
     //    static var previews: some View {

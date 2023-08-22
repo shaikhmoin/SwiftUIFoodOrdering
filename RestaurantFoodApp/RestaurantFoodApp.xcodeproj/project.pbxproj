@@ -66,6 +66,8 @@
 		22A47B2C2A949D17004F33EC /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 22A47B2B2A949D17004F33EC /* FirebaseRemoteConfigSwift */; };
 		22A47B2E2A949D17004F33EC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 22A47B2D2A949D17004F33EC /* FirebaseStorage */; };
 		22A47B302A949D17004F33EC /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 22A47B2F2A949D17004F33EC /* FirebaseStorageCombine-Community */; };
+		22A47B342A94B66F004F33EC /* LoginAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A47B332A94B66F004F33EC /* LoginAuthModel.swift */; };
+		22A47B362A94C0AA004F33EC /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A47B352A94C0AA004F33EC /* AuthenticationManager.swift */; };
 		22C1EFCB2A8646AB00E42B12 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C1EFCA2A8646AB00E42B12 /* SplashView.swift */; };
 		22C1EFCF2A8651F100E42B12 /* currentlocation.json in Resources */ = {isa = PBXBuildFile; fileRef = 22C1EFCE2A8651F100E42B12 /* currentlocation.json */; };
 		22C1EFD12A86527E00E42B12 /* CurrentLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C1EFD02A86527E00E42B12 /* CurrentLocationView.swift */; };
@@ -105,6 +107,8 @@
 		228A73032A8E53E0005339F2 /* SignUpWithAppleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpWithAppleView.swift; sourceTree = "<group>"; };
 		229AB3552A8CFEF900F1A239 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		22A47AF82A949B6B004F33EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		22A47B332A94B66F004F33EC /* LoginAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthModel.swift; sourceTree = "<group>"; };
+		22A47B352A94C0AA004F33EC /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		22C1EFC92A86453800E42B12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		22C1EFCA2A8646AB00E42B12 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		22C1EFCE2A8651F100E42B12 /* currentlocation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currentlocation.json; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 				226EA22B2A89FA2B00D38D2F /* TrendingCard.swift */,
 				226EA2312A8A098300D38D2F /* Categories.swift */,
 				2285A21C2A8A211B0085F67A /* OurPicks.swift */,
+				22A47B332A94B66F004F33EC /* LoginAuthModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				2278945C2A8B725400FA2E20 /* CartManager.swift */,
 				228A72F62A8E417B005339F2 /* SessionManager.swift */,
 				228A72FD2A8E4A25005339F2 /* LoginViewModel.swift */,
+				22A47B352A94C0AA004F33EC /* AuthenticationManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -455,7 +461,9 @@
 				228A72EF2A8E25F6005339F2 /* RegisterView.swift in Sources */,
 				226EA22A2A89F84600D38D2F /* TrendingWeekView.swift in Sources */,
 				226EA2302A8A091600D38D2F /* CategoriesView.swift in Sources */,
+				22A47B342A94B66F004F33EC /* LoginAuthModel.swift in Sources */,
 				2285A21D2A8A211B0085F67A /* OurPicks.swift in Sources */,
+				22A47B362A94C0AA004F33EC /* AuthenticationManager.swift in Sources */,
 				228A73022A8E53B7005339F2 /* AppleSIgnUpCoordinator.swift in Sources */,
 				2249BDFA2A863CCC008C12DD /* TabbarView.swift in Sources */,
 				22762B812A861582006A93BF /* Card.swift in Sources */,

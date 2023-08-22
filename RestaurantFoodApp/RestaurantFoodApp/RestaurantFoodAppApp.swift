@@ -40,7 +40,8 @@ struct RestaurantFoodAppApp: App {
                     
                 case .loggedout:
                     NavigationView {
-                        LoginView()
+                        let loginViewModel = LoginViewModel() // Declare the variable
+                        LoginView(viewModel: loginViewModel)
                             .environmentObject(session)
                             .transition(.opacity)
                     }

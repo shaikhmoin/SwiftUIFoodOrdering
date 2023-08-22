@@ -13,6 +13,7 @@ struct SettingsView: View {
     @State private var downloadViaWifiEnabled: Bool = false
     @State private var languageIndex = 0
     @EnvironmentObject private var session: SessionManager
+    @StateObject var viewModel: LoginViewModel
 
     var languageOptions = ["English", "Arabic", "Chinese", "Danish"]
     
@@ -91,7 +92,8 @@ struct SettingsView: View {
                     
                     Button(action: {
                         print("Logout clicked")
-                        session.signOut()
+                        session.signOut()//Normal logout
+                        viewModel.signOut()//Firebase logout
 
                     }) {
                         HStack {
@@ -110,6 +112,7 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        let loginViewModel = LoginViewModel() // Declare the variable
+        SettingsView(viewModel: loginViewModel)
     }
 }

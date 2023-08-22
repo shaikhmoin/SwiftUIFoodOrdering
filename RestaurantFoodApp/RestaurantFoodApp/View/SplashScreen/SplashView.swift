@@ -29,7 +29,9 @@ struct SplashView: View {
                         
                     } else {
                         NavigationView {
-                            LoginView()
+                            
+                            let loginViewModel = LoginViewModel() // Declare the variable
+                            LoginView(viewModel: loginViewModel)
                                 .environmentObject(sessionManager)
                                 .transition(.opacity)
                         }

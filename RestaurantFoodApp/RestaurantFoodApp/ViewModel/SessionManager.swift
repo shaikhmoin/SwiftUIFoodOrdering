@@ -12,8 +12,8 @@ final class SessionManager: ObservableObject {
     enum userDefaultsKey {
         static let hasSeenOnboarding = "hasSeenOnboarding"
         static let hasSeenSingin = "hasSeenSingin"
-        
     }
+    
     enum CurrentState {
         case loggedIn
         case loggedout

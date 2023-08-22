@@ -13,7 +13,8 @@ struct TabbarView: View {
     @State var providedValue : Bool = true
     @State private var show = true
     //    @EnvironmentObject private var cart: CartManager
-    
+//    @StateObject var viewModel: LoginViewModel
+
     init() {
         UITabBar.appearance().backgroundColor = UIColor.white
     }
@@ -24,7 +25,7 @@ struct TabbarView: View {
             
             //            HomeView(loggedIn: $providedValue)
             NavigationView {
-                HomeView()
+                HomeView(viewModel: LoginViewModel())
             }
             
             .tabItem {
@@ -57,7 +58,7 @@ struct TabbarView: View {
             //                .badge(12)
             
             NavigationView {
-                SettingsView()
+                SettingsView(viewModel: LoginViewModel())
             }
             
             .tabItem {
