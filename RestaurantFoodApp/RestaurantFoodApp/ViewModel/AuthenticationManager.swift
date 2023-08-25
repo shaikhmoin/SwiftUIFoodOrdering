@@ -28,16 +28,41 @@ final class AuthenticationManager {
     static let shared = AuthenticationManager()
     private init() {}
     
-    func createUser(email:String, password: String) async throws -> AuthDataResultModel {
-        let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
-        return AuthDataResultModel(user: authDataResult.user)
-    }
-    
     func getAuthenticateUser() throws -> AuthDataResultModel {
         guard let user = Auth.auth().currentUser else {
             throw URLError(.badServerResponse)
         }
         return AuthDataResultModel(user: user)
+    }
+    
+    func createUser(email:String, password: String) async throws -> AuthDataResultModel {
+        let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
+        return AuthDataResultModel(user: authDataResult.user)
+    }
+    
+    func SignInUser(email:String, password: String) async throws -> AuthDataResultModel {
+        let authDataResult = try await Auth.auth().signIn(withEmail: email, password: password)
+        return AuthDataResultModel(user: authDataResult.user)
+    }
+    
+    func resetPassword(email:String) async throws {
+        try await Auth.auth().sendPasswordReset(withEmail: email)
+    }
+    
+    func updateEmail(email:String) async throws {
+        guard let user = Auth.auth().currentUser else {
+            throw URLError(.badServerResponse)
+        }
+        
+        try await user.updateEmail(to: email)
+    }
+    
+    func updatePassword(password:String) async throws {
+        guard let user = Auth.auth().currentUser else {
+            throw URLError(.badServerResponse)
+        }
+        
+        try await user.updatePassword(to: password)
     }
     
     func signOut() throws {

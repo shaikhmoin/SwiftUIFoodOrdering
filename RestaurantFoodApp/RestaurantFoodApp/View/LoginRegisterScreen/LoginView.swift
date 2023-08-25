@@ -18,10 +18,8 @@ struct LoginView: View {
     @State var alert = false
     @State var error = ""
     @State var title = ""
-//    @State var selection: Int? = nil
     @State var name = ""
     
-    @State private var provideValue: Int? = nil
     @State private var isSHowHomeView: Bool = false
     
     let borderColor = Color(red: 107.0/255.0, green: 164.0/255.0, blue: 252.0/255.0)
@@ -35,7 +33,7 @@ struct LoginView: View {
     
     @EnvironmentObject var sessionManager:SessionManager
     @StateObject var viewModel: LoginViewModel
-
+    
     private var isSignedIn: Bool {
         !userID.isEmpty
     }
@@ -43,8 +41,6 @@ struct LoginView: View {
     var body: some View {
         
         VStack{
-            //            Image("finance_app").resizable().frame(width: 300.0, height: 255.0, alignment: .top)
-            
             LottieView(filename: "order")
                 .frame(width: 300, height: 250)
                 .shadow(color: .orange, radius: 1, x: 0, y: 0)
@@ -101,25 +97,23 @@ struct LoginView: View {
             }
             
             // Sign in button
-            //NavigationLink(destination: CurrentLocationView(), tag: 1, selection: $selection) {
-                Button(action: {
-                    self.Verify()
-                    
-                }) {
-                    Text("Sign in")
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                        .padding(.vertical)
-                        .frame(width: UIScreen.main.bounds.width - 50)
-                }
-                .background(Color("bg"))
-                .cornerRadius(6)
-                .padding(.top, 15)
-                .alert(isPresented: $alert){()->Alert in
-                    return Alert(title: Text("\(self.title)"), message: Text("\(self.error)"), dismissButton:
-                            .default(Text("OK").fontWeight(.semibold)))
-                }
-           // }
+            Button(action: {
+                self.Verify()
+                
+            }) {
+                Text("Sign in")
+                    .foregroundColor(.white)
+                    .fontWeight(.bold)
+                    .padding(.vertical)
+                    .frame(width: UIScreen.main.bounds.width - 50)
+            }
+            .background(Color("bg"))
+            .cornerRadius(6)
+            .padding(.top, 15)
+            .alert(isPresented: $alert){()->Alert in
+                return Alert(title: Text("\(self.title)"), message: Text("\(self.error)"), dismissButton:
+                        .default(Text("OK").fontWeight(.semibold)))
+            }
             
             HStack(spacing: 5){
                 Text("Don't have an account ?")
@@ -134,7 +128,8 @@ struct LoginView: View {
                 
             }.padding(.top, 25)
             
-            if !isSignedIn {
+            //Apple signIn button
+//            if !isSignedIn {
                 SignInButtonView { success in
                     if success {
                         isSHowHomeView = true
@@ -143,13 +138,13 @@ struct LoginView: View {
                         isSHowHomeView = false
                     }
                 }
-            } else {
-                
-            }
+//            } else {
+//
+//            }
             NavigationLink("", destination: HomeView(viewModel: viewModel), isActive: $isSHowHomeView)
-        }            
-            .padding(.horizontal, 25)
-            .navigationBarHidden(true)
+        }
+        .padding(.horizontal, 25)
+        .navigationBarHidden(true)
     }
     
     private func showAppleLoginView() {
@@ -159,21 +154,63 @@ struct LoginView: View {
     func Verify(){
         if viewModel.email != "" && viewModel.password != "" {
             print("Success")
-//            self.selection = 1
-                        
             
-            viewModel.signIn(completion: { result in
+            //Signin with firebase
+            viewModel.signInWithFirebase(completion: { result in
                 
                 switch result {
                 case .success(let message):
                     print("Task completed successfully: \(message)")
+                    
+                    emailID = message.email ?? ""
+                    print(emailID)
+//                    var userDefaults = UserDefaults.standard
+                    
+//                    do{
+//                        let loginData = try NSKeyedArchiver.archivedData(withRootObject: message, requiringSecureCoding: true)
+//                        UserDefaults.standard.set(loginData, forKey: "LoginData")
+//                        UserDefaults.standard.synchronize()
+//                    }catch (let error){
+//                        #if DEBUG
+//                            print("Failed to convert UIColor to Data : \(error.localizedDescription)")
+//                        #endif
+//                    }
+//
+//                    do{
+//                        if let loginData = UserDefaults.standard.object(forKey: "LoginData") as? Data{
+//                            if let userData = try NSKeyedUnarchiver.unarchivedObject(ofClasses: [UIColor.self], from: loginData){
+//                                print(userData)
+//                            }
+//                        }
+//                    }catch (let error){
+//                        #if DEBUG
+//                            print("Failed to convert UIColor to Data : \(error.localizedDescription)")
+//                        #endif
+//                    }
+                                     
                     sessionManager.signIn()
                     
                 case .failure(let error):
                     print("Task failed with error: \(error)")
-                    self.title = "Login Error"
-                    self.error = error.localizedDescription
-                    self.alert = true
+//                    self.title = "Login Error"
+//                    self.error = error.localizedDescription
+//                    self.alert = true
+                    
+                    //Signup with firebase
+                    viewModel.signUpWithFirebase(completion: { result in
+                        
+                        switch result {
+                        case .success(let message):
+                            print("Task completed successfully: \(message)")
+                            sessionManager.signIn()
+                            
+                        case .failure(let error):
+                            print("Task failed with error: \(error)")
+                            self.title = "Login Error"
+                            self.error = error.localizedDescription
+                            self.alert = true
+                        }
+                    })
                 }
             })
             
@@ -181,44 +218,21 @@ struct LoginView: View {
             self.title = "Login Error"
             self.error = "Please fill all the content properly"
             self.alert = true
-//            self.selection = 0
         }
-        //        if self.email != "" && self.pass != ""{
-        //            Auth.auth().signIn(withEmail: self.email, password: self.pass) { (res, err) in
-        //
-        //                if err != nil{
-        //
-        //                    self.error = err!.localizedDescription
-        //                    self.title = "Login Error"
-        //                    self.alert.toggle()
-        //                    return
-        //                }
-        //
-        //                print("Login success!")
-        //                UserDefaults.standard.set(true, forKey: "status")
-        //                NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
-        //            }
-        //        }else{
-        //            self.title = "Login Error"
-        //            self.error = "Please fill all the content property"
-        //            self.alert = true
-        //        }
     }
 }
 
 struct SignInButtonView: View {
     
     @Environment(\.colorScheme) var colorScheme
-    
     @AppStorage("email") var emailID: String = ""
     @AppStorage("firstName") var firstName: String = ""
     @AppStorage("lastName") var lastName: String = ""
     @AppStorage("userID") var userID: String = ""
-    
     @AppStorage("log_Status") var log_status = false
     
     let onCompletion: (Bool) -> Void
-
+    
     var body: some View {
         SignInWithAppleButton(.continue) { request in
             request.requestedScopes = [.fullName, .email]
@@ -230,32 +244,31 @@ struct SignInButtonView: View {
                 print("Authorisation successful")
                 print(authResults.credential)
                 
-
                 switch authResults.credential {
                 case let appleIDCredential as ASAuthorizationAppleIDCredential:
-
+                    
                     //User ID
                     let userIdentifier = appleIDCredential.user
                     print(userIdentifier)
-
+                    
                     //User Info
                     let userEmail = appleIDCredential.email
                     let identityToken = appleIDCredential.identityToken
                     let firstName = appleIDCredential.fullName?.givenName
                     let lastName = appleIDCredential.fullName?.familyName
-
+                    
                     print(userEmail)
                     print(identityToken)
                     print(firstName)
                     print(lastName)
-
+                    
                     self.emailID = userEmail ?? ""
                     self.userID = userIdentifier
                     self.firstName = firstName ?? ""
                     self.lastName = lastName ?? ""
-
+                    
                     onCompletion(true)
-
+                    
                 default:
                     break
                 }

@@ -16,7 +16,9 @@ struct SettingsView: View {
     @StateObject var viewModel: LoginViewModel
 
     var languageOptions = ["English", "Arabic", "Chinese", "Danish"]
-    
+    @AppStorage("email") var emailID: String = ""
+    @StateObject private var alertManager = GlobalAlertManager()
+
     var body: some View {
         NavigationView {
             Form {
@@ -29,7 +31,7 @@ struct SettingsView: View {
                                 .frame(width:100, height: 100, alignment: .center)
                             Text("Wolf Knight")
                                 .font(.title)
-                            Text("WolfKnight@kingdom.tv")
+                            Text(emailID)
                                 .font(.subheadline)
                                 .foregroundColor(.gray)
                             Spacer()
@@ -91,6 +93,75 @@ struct SettingsView: View {
                     }
                     
                     Button(action: {
+                        viewModel.updateEmail(selectedEmail: "moinshk67@gmail.com") { result in
+                            switch result {
+                            case .success(let message):
+                                print("Success: \(message)")
+                                
+                                session.signOut()//Normal logout
+                                viewModel.signOut()//Firebase logout
+                                alertManager.showAlert(title: "Alert", message: message)
+                                
+                            case .failure(let error):
+                                print("Error: \(error)")
+                                alertManager.showAlert(title: "Alert", message: "Something wrong during changing Email")
+                            }
+                        }
+
+                    }) {
+                        HStack {
+                            Image(uiImage: UIImage(named: "PlayInBackground")!)
+                            Text("Update Email")
+                                .foregroundColor(.black)
+                        }
+                    }
+                    
+                    Button(action: {
+                        viewModel.updatePassword(selectedPassword: "123456") { result in
+                            switch result {
+                            case .success(let message):
+                                print("Success: \(message)")
+                                
+                                session.signOut()//Normal logout
+                                viewModel.signOut()//Firebase logout
+                                alertManager.showAlert(title: "Alert", message: message)
+                                
+                            case .failure(let error):
+                                print("Error: \(error)")
+                                alertManager.showAlert(title: "Alert", message: "Something wrong during changing Password")
+                            }
+                        }
+
+                    }) {
+                        HStack {
+                            Image(uiImage: UIImage(named: "PlayInBackground")!)
+                            Text("Update Password")
+                                .foregroundColor(.black)
+                        }
+                    }
+                    
+                    Button(action: {
+                        viewModel.resetPassword { result in
+                            switch result {
+                            case .success(let message):
+                                print("Success: \(message)")
+                                alertManager.showAlert(title: "Alert", message: message)
+
+                            case .failure(let error):
+                                print("Error: \(error)")
+                                alertManager.showAlert(title: "Alert", message: "Something wrong during changing Reset Password")
+                            }
+                        }
+
+                    }) {
+                        HStack {
+                            Image(uiImage: UIImage(named: "PlayInBackground")!)
+                            Text("Reset Password")
+                                .foregroundColor(.black)
+                        }
+                    }
+                    
+                    Button(action: {
                         print("Logout clicked")
                         session.signOut()//Normal logout
                         viewModel.signOut()//Firebase logout
@@ -103,6 +174,9 @@ struct SettingsView: View {
                         }
                     }
                 })
+            }
+            .alert(item: $alertManager.alertItem) { alertItem in
+                Alert(title: Text(alertItem.title), message: Text(alertItem.message), dismissButton: .default(Text("OK")))
             }
             .navigationBarTitle("Settings")
             .navigationBarHidden(true)

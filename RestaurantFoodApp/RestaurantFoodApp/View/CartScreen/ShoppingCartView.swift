@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Product: Identifiable {
+struct CartProduct: Identifiable {
     let id = UUID()
     let name: String
     let price: Double

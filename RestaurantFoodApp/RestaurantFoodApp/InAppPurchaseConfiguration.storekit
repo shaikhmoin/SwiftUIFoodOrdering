@@ -1,0 +1,48 @@
+{
+  "identifier" : "4FBEDCF6",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "4449BEA4",
+      "localizations" : [
+        {
+          "description" : "Pro for lifetime",
+          "displayName" : "Lifetime",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "pro_lifetime",
+      "referenceName" : "Lifetime",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "8F02C961",
+      "localizations" : [
+        {
+          "description" : "One week",
+          "displayName" : "OneWeek",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "one_week",
+      "referenceName" : "OneWeek",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_billingIssuesEnabled" : false
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

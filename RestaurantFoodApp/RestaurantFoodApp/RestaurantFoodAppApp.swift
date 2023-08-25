@@ -25,41 +25,48 @@ struct RestaurantFoodAppApp: App {
     @StateObject private var session = SessionManager()
     @StateObject private var cart = CartManager()
     
+    @StateObject private var purchaseManager = StorekitManager()
     
     var body: some Scene {
         WindowGroup {
             
-            //New
-            ZStack {
-                switch session.currentState {
-                case .loggedIn:
-                    TabbarView()
-                        .environmentObject(session)
-                        .environmentObject(cart)
-                        .transition(.opacity)
-                    
-                case .loggedout:
-                    NavigationView {
-                        let loginViewModel = LoginViewModel() // Declare the variable
-                        LoginView(viewModel: loginViewModel)
-                            .environmentObject(session)
-                            .transition(.opacity)
-                    }
-                    
-                case .onboarding:
-                    NavigationView {
-                        OnboardingView(action: session.completeOnboarding).navigationBarHidden(true)
-                    }
-                    
-                default:
-                    SplashView()
-                        .environmentObject(session)
-                        .transition(.opacity)
+            InAppPurchaseScreen()
+                .environmentObject(purchaseManager)
+                .task {
+                    await purchaseManager.updatePurchasedProducts() //Check any subcription purchase by current Apple ID
                 }
-            }
-            
-            .animation(.easeOut, value: session.currentState)
-            // .onAppear(perform: session.configureCurrentState) //Login Or onboarding (Only once onboarding open and then set as useerdefault)           
+
+            //New
+//            ZStack {
+//                switch session.currentState {
+//                case .loggedIn:
+//                    TabbarView()
+//                        .environmentObject(session)
+//                        .environmentObject(cart)
+//                        .transition(.opacity)
+//
+//                case .loggedout:
+//                    NavigationView {
+//                        let loginViewModel = LoginViewModel() // Declare the variable
+//                        LoginView(viewModel: loginViewModel)
+//                            .environmentObject(session)
+//                            .transition(.opacity)
+//                    }
+//
+//                case .onboarding:
+//                    NavigationView {
+//                        OnboardingView(action: session.completeOnboarding).navigationBarHidden(true)
+//                    }
+//
+//                default:
+//                    SplashView()
+//                        .environmentObject(session)
+//                        .transition(.opacity)
+//                }
+//            }
+//
+//            .animation(.easeOut, value: session.currentState)
+//            // .onAppear(perform: session.configureCurrentState) //Login Or onboarding (Only once onboarding open and then set as useerdefault)
         }
     }
 }

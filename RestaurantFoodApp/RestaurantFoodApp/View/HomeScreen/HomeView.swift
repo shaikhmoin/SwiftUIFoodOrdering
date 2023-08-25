@@ -15,6 +15,7 @@ struct HomeView: View {
     @StateObject private var vm = CartManager()
     @EnvironmentObject private var session: SessionManager
     @StateObject var viewModel: LoginViewModel
+    @State private var isTabBarHidden = false
 
     var body: some View {
         VStack {
@@ -127,6 +128,8 @@ struct HomeView: View {
                         print("No existing user found: \(error)")
                     }
                 })
+                isTabBarHidden = true // Hide the tab bar
+                UITabBar.appearance().isHidden = false
             }
         }
         .navigationTitle("")
