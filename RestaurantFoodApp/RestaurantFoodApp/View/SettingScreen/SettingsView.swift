@@ -7,20 +7,34 @@
 
 import SwiftUI
 
+struct ProductView: View {
+    var icon: String
+    var quantity: String
+    
+    var body: some View {
+        VStack {
+            Text(icon)
+            Text(quantity)
+        }
+        .padding()
+    }
+}
+
 struct SettingsView: View {
     
     @State private var isDarkModeEnabled: Bool = true
     @State private var downloadViaWifiEnabled: Bool = false
     @State private var isShowingDonationView: Bool = false
-
+    
     @State private var languageIndex = 0
     @EnvironmentObject private var session: SessionManager
     @StateObject var viewModel: LoginViewModel
-
+    
     var languageOptions = ["English", "Arabic", "Chinese", "Danish"]
     @AppStorage("email") var emailID: String = ""
     @StateObject private var alertManager = GlobalAlertManager()
     @EnvironmentObject private var purchaseManager: StorekitManager
+    @AppStorage(Persistence.consumablesCountKey) var consumableCount: Int = 0
 
     var body: some View {
         NavigationView {
@@ -110,7 +124,7 @@ struct SettingsView: View {
                                 alertManager.showAlert(title: "Alert", message: "Something wrong during changing Email")
                             }
                         }
-
+                        
                     }) {
                         HStack {
                             Image(uiImage: UIImage(named: "PlayInBackground")!)
@@ -134,7 +148,7 @@ struct SettingsView: View {
                                 alertManager.showAlert(title: "Alert", message: "Something wrong during changing Password")
                             }
                         }
-
+                        
                     }) {
                         HStack {
                             Image(uiImage: UIImage(named: "PlayInBackground")!)
@@ -149,13 +163,13 @@ struct SettingsView: View {
                             case .success(let message):
                                 print("Success: \(message)")
                                 alertManager.showAlert(title: "Alert", message: message)
-
+                                
                             case .failure(let error):
                                 print("Error: \(error)")
                                 alertManager.showAlert(title: "Alert", message: "Something wrong during changing Reset Password")
                             }
                         }
-
+                        
                     }) {
                         HStack {
                             Image(uiImage: UIImage(named: "PlayInBackground")!)
@@ -169,15 +183,16 @@ struct SettingsView: View {
                     }) {
                         HStack {
                             Image(systemName: "dollarsign.circle.fill")
+                                .foregroundColor(.black)
                             Text("Donation")
                                 .foregroundColor(.black)
                         }
                     }
                     .sheet(isPresented: $isShowingDonationView) {
                         donationView
-//                            .presentationDetents([.medium])
-                            .presentationDetents([.fraction(0.20)])
-
+                        //                            .presentationDetents([.medium])
+                            .presentationDetents([.fraction(0.30)])
+                        
                             .presentationDragIndicator(.visible)
                     }
                     
@@ -185,7 +200,7 @@ struct SettingsView: View {
                         print("Logout clicked")
                         session.signOut()//Normal logout
                         viewModel.signOut()//Firebase logout
-
+                        
                     }) {
                         HStack {
                             Image(uiImage: UIImage(named: "PlayInBackground")!)
@@ -200,16 +215,6 @@ struct SettingsView: View {
             }
             .navigationBarTitle("Settings")
             .navigationBarHidden(true)
-            
-            .task {
-                Task {
-                    do {
-                        try await purchaseManager.loadProducts()
-                    } catch {
-                        print(error)
-                    }
-                }
-            }
         }
     }
     
@@ -217,19 +222,23 @@ struct SettingsView: View {
         VStack{
             Text("Select Donation Amount")
             
+            ProductView(
+                icon: "❤️",
+                quantity: "\(consumableCount)"
+            )
+            
             HStack() {
                 ScrollView(.horizontal) {
                     HStack(spacing: 10) {
-                        
+                        //Display inapp purchase
                         ForEach(purchaseManager.products) { product in
                             DonationButtonView(amount: product.displayPrice) {
-                                // Action to perform when the button is tapped
+
                                 print(product.id)
                                 print(product.displayName)
                                 print(product.displayPrice)
-                             
                                 
-                                
+                                //Click to purchase product
                                 Task {
                                     do {
                                         print(product)
@@ -240,64 +249,34 @@ struct SettingsView: View {
                                 }
                             }
                         }
-//                        DonationButtonView(amount: "Rs. 50") {
-//                            // Action to perform when the button is tapped
-//                            print("Button Tapped")
-//                        }
-//
-//                        DonationButtonView(amount: "Rs. 100") {
-//                            // Action to perform when the button is tapped
-//                            print("Button Tapped")
-//                        }
-//
-//                        DonationButtonView(amount: "Rs. 500") {
-//                            // Action to perform when the button is tapped
-//                            print("Button Tapped")
-//                        }
-//
-//                        DonationButtonView(amount: "Rs. 1000") {
-//                            // Action to perform when the button is tapped
-//                            print("Button Tapped")
-//                        }
-//
-//                        DonationButtonView(amount: "Rs. 2000") {
-//                            // Action to perform when the button is tapped
-//                            print("Button Tapped")
-//                        }
-//
-//                        DonationButtonView(amount: "Rs. 10000") {
-//                            // Action to perform when the button is tapped
-//                            print("Button Tapped")
-//                        }
                     }
                     .padding()
                 }
             }
-           
             
-//            HStack() {
-//
-//                Button("") {
-//
-//                }
-//                .buttonStyle(DonationButtonImage(systemImageName: "airplane"))
-//
-//                Button("") {
-//
-//                }
-//                .buttonStyle(DonationButtonImage(systemImageName: "car.fill"))
-//
-//                Button("") {
-//
-//                }
-//                .buttonStyle(DonationButtonImage(systemImageName: "ferry.fill"))
-//
-//                Button("") {
-//
-//                }
-//                .buttonStyle(DonationButtonImage(systemImageName: "tram.fill"))
-//            }
-           
+            //            HStack() {
+            //
+            //                Button("") {
+            //
+            //                }
+            //                .buttonStyle(DonationButtonImage(systemImageName: "airplane"))
+            //
+            //                Button("") {
+            //
+            //                }
+            //                .buttonStyle(DonationButtonImage(systemImageName: "car.fill"))
+            //
+            //                Button("") {
+            //
+            //                }
+            //                .buttonStyle(DonationButtonImage(systemImageName: "ferry.fill"))
+            //
+            //                Button("") {
+            //
+            //                }
+            //                .buttonStyle(DonationButtonImage(systemImageName: "tram.fill"))
+            //            }
+            
         }
         .padding()
     }
@@ -322,7 +301,7 @@ struct DonationButtonView: View {
                 .fontWeight(.medium)
         }
         .foregroundColor(.white)
-//        .frame(width: 50, height: 15) // Adjust height as needed
+        //        .frame(width: 50, height: 15) // Adjust height as needed
         .padding()
         .background(Color.pink)
         .clipShape(Capsule())
@@ -332,7 +311,7 @@ struct DonationButtonView: View {
 
 struct DonationButtonImage: ButtonStyle {
     let systemImageName: String
-
+    
     func makeBody(configuration: Configuration) -> some View {
         Image(systemName: systemImageName)
             .resizable()

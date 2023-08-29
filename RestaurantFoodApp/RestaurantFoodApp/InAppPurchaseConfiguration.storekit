@@ -20,9 +20,9 @@
       "type" : "Consumable"
     },
     {
-      "displayPrice" : "2.99",
+      "displayPrice" : "5.99",
       "familyShareable" : false,
-      "internalID" : "BD884876",
+      "internalID" : "767EB96F",
       "localizations" : [
         {
           "description" : "food.hundred.propelius",
@@ -32,36 +32,6 @@
       ],
       "productID" : "food.hundred.propelius",
       "referenceName" : "100",
-      "type" : "Consumable"
-    },
-    {
-      "displayPrice" : "3.99",
-      "familyShareable" : false,
-      "internalID" : "16C33127",
-      "localizations" : [
-        {
-          "description" : "food.fivehundred.propelius",
-          "displayName" : "500",
-          "locale" : "en_US"
-        }
-      ],
-      "productID" : "food.fivehundred.propelius",
-      "referenceName" : "500",
-      "type" : "Consumable"
-    },
-    {
-      "displayPrice" : "4.99",
-      "familyShareable" : false,
-      "internalID" : "FA9D7D9C",
-      "localizations" : [
-        {
-          "description" : "food.thousand.propelius",
-          "displayName" : "1000",
-          "locale" : "en_US"
-        }
-      ],
-      "productID" : "food.thousand.propelius",
-      "referenceName" : "1000",
       "type" : "Consumable"
     }
   ],

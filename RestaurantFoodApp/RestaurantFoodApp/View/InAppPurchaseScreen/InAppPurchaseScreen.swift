@@ -32,12 +32,12 @@ struct InAppPurchaseScreen: View {
                     .font(.title)
                     .padding()
                 
-                if purchaseManager.hasUnlockedPro {
-                    Text("Choose a Subscription Plan")
-                        .font(.title)
-                        .padding()
+//                if purchaseManager.hasUnlockedPro {
+//                    Text("Choose a Subscription Plan")
+//                        .font(.title)
+//                        .padding()
                     
-                } else {
+               // } else {
                     ForEach(purchaseManager.products) { product in
                         Button {
                             print(product.displayName)
@@ -126,7 +126,7 @@ struct InAppPurchaseScreen: View {
                             }
                         }
                     }
-                }
+                //}
                 
                 Button {
                     // TODO: action
@@ -145,16 +145,6 @@ struct InAppPurchaseScreen: View {
             }
                 
             .navigationBarTitle("Subscription", displayMode: .inline)
-            
-            .task {
-                Task {
-                    do {
-                        try await purchaseManager.loadProducts()
-                    } catch {
-                        print(error)
-                    }
-                }
-            }
         }
     }
 }

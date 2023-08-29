@@ -46,12 +46,10 @@ struct ShoppingCartView: View {
     @EnvironmentObject var cart: CartManager
     @EnvironmentObject private var purchaseManager: StorekitManager
 
-//    @StateObject private var cart = CartManager()
     @State private var quantity = 0
     @State private var stepperValue = 1
     @Environment(\.presentationMode) var presentationMode
     @State private var selectedModel: CartItem? = nil
-//    @State private var shouldHide : Bool = false
     @Binding var show: Bool
     @State private(set) var selectedProduct: [Product] = []
 
@@ -169,17 +167,6 @@ struct ShoppingCartView: View {
                             .background(Color.blue)
                             .cornerRadius(15)
                             .padding()
-                    }
-                }
-            }
-        
-            .task {
-                Task {
-                    do {
-                        try await purchaseManager.loadProducts()
-                                                
-                    } catch {
-                        print(error)
                     }
                 }
             }
