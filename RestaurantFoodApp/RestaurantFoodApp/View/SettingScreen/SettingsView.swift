@@ -11,6 +11,8 @@ struct SettingsView: View {
     
     @State private var isDarkModeEnabled: Bool = true
     @State private var downloadViaWifiEnabled: Bool = false
+    @State private var isShowingDonationView: Bool = false
+
     @State private var languageIndex = 0
     @EnvironmentObject private var session: SessionManager
     @StateObject var viewModel: LoginViewModel
@@ -18,6 +20,7 @@ struct SettingsView: View {
     var languageOptions = ["English", "Arabic", "Chinese", "Danish"]
     @AppStorage("email") var emailID: String = ""
     @StateObject private var alertManager = GlobalAlertManager()
+    @EnvironmentObject private var purchaseManager: StorekitManager
 
     var body: some View {
         NavigationView {
@@ -162,6 +165,23 @@ struct SettingsView: View {
                     }
                     
                     Button(action: {
+                        isShowingDonationView.toggle()
+                    }) {
+                        HStack {
+                            Image(systemName: "dollarsign.circle.fill")
+                            Text("Donation")
+                                .foregroundColor(.black)
+                        }
+                    }
+                    .sheet(isPresented: $isShowingDonationView) {
+                        donationView
+//                            .presentationDetents([.medium])
+                            .presentationDetents([.fraction(0.20)])
+
+                            .presentationDragIndicator(.visible)
+                    }
+                    
+                    Button(action: {
                         print("Logout clicked")
                         session.signOut()//Normal logout
                         viewModel.signOut()//Firebase logout
@@ -180,7 +200,106 @@ struct SettingsView: View {
             }
             .navigationBarTitle("Settings")
             .navigationBarHidden(true)
+            
+            .task {
+                Task {
+                    do {
+                        try await purchaseManager.loadProducts()
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
         }
+    }
+    
+    var donationView: some View {
+        VStack{
+            Text("Select Donation Amount")
+            
+            HStack() {
+                ScrollView(.horizontal) {
+                    HStack(spacing: 10) {
+                        
+                        ForEach(purchaseManager.products) { product in
+                            DonationButtonView(amount: product.displayPrice) {
+                                // Action to perform when the button is tapped
+                                print(product.id)
+                                print(product.displayName)
+                                print(product.displayPrice)
+                             
+                                
+                                
+                                Task {
+                                    do {
+                                        print(product)
+                                        try await purchaseManager.purchase(product)
+                                    } catch {
+                                        print(error)
+                                    }
+                                }
+                            }
+                        }
+//                        DonationButtonView(amount: "Rs. 50") {
+//                            // Action to perform when the button is tapped
+//                            print("Button Tapped")
+//                        }
+//
+//                        DonationButtonView(amount: "Rs. 100") {
+//                            // Action to perform when the button is tapped
+//                            print("Button Tapped")
+//                        }
+//
+//                        DonationButtonView(amount: "Rs. 500") {
+//                            // Action to perform when the button is tapped
+//                            print("Button Tapped")
+//                        }
+//
+//                        DonationButtonView(amount: "Rs. 1000") {
+//                            // Action to perform when the button is tapped
+//                            print("Button Tapped")
+//                        }
+//
+//                        DonationButtonView(amount: "Rs. 2000") {
+//                            // Action to perform when the button is tapped
+//                            print("Button Tapped")
+//                        }
+//
+//                        DonationButtonView(amount: "Rs. 10000") {
+//                            // Action to perform when the button is tapped
+//                            print("Button Tapped")
+//                        }
+                    }
+                    .padding()
+                }
+            }
+           
+            
+//            HStack() {
+//
+//                Button("") {
+//
+//                }
+//                .buttonStyle(DonationButtonImage(systemImageName: "airplane"))
+//
+//                Button("") {
+//
+//                }
+//                .buttonStyle(DonationButtonImage(systemImageName: "car.fill"))
+//
+//                Button("") {
+//
+//                }
+//                .buttonStyle(DonationButtonImage(systemImageName: "ferry.fill"))
+//
+//                Button("") {
+//
+//                }
+//                .buttonStyle(DonationButtonImage(systemImageName: "tram.fill"))
+//            }
+           
+        }
+        .padding()
     }
 }
 
@@ -188,5 +307,40 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         let loginViewModel = LoginViewModel() // Declare the variable
         SettingsView(viewModel: loginViewModel)
+    }
+}
+
+struct DonationButtonView: View {
+    var amount: String
+    var action: () -> Void
+    
+    var body: some View {
+        
+        Button(action: action) {
+            Text(amount)
+                .foregroundColor(.white)
+                .fontWeight(.medium)
+        }
+        .foregroundColor(.white)
+//        .frame(width: 50, height: 15) // Adjust height as needed
+        .padding()
+        .background(Color.pink)
+        .clipShape(Capsule())
+        .fixedSize() // Button width adjusts based on content
+    }
+}
+
+struct DonationButtonImage: ButtonStyle {
+    let systemImageName: String
+
+    func makeBody(configuration: Configuration) -> some View {
+        Image(systemName: systemImageName)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .foregroundColor(.white)
+            .frame(width: 33, height: 33)
+            .padding()
+            .background(.pink)
+            .clipShape(Circle())
     }
 }

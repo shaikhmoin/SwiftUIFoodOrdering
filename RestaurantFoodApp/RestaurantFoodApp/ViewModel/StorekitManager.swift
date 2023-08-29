@@ -10,10 +10,12 @@ import SwiftUI
 
 class StorekitManager: NSObject, ObservableObject {
     
-//    private let productIds = ["com.lifetime.product", "com.weekly.product", "com.everytimeconsumable.product" , "com.yearly.product", "com.weeklyNonRenew.product" , "com.yearlyNonRenew.product"]
-    private let productIds = ["com.nonconsumablelifetime.product", "com.consumableonetime.product" , "com.autorenewable.product", "com.nonautorenewable.product"]
-    
+//    private let productIds = ["com.nonconsumablelifetime.product", "com.consumableonetime.product" , "com.autorenewable.product", "com.nonautorenewable.product"]
+    private let productIds = ["food.fifty.propelius", "food.hundred.propelius" ]
+
     @Published private(set) var products: [Product] = []
+    @Published private(set) var isSelected: [Bool] = [false, false, false, false]
+
     private var productsLoaded = false
     
     @Published private(set) var purchasedProductIDs = Set<String>()
@@ -30,6 +32,16 @@ class StorekitManager: NSObject, ObservableObject {
     
 //    init(storeKitManager: StorekitManager) {
 //        super.init()
+//        SKPaymentQueue.default().add(self)
+//    }
+    
+//    override init() {
+//        super.init() // Call the superclass's initializer first
+//        setupTransactionObserver()
+//    }
+//
+//    func setupTransactionObserver() {
+//        // Set up StoreKit transaction observer
 //        SKPaymentQueue.default().add(self)
 //    }
     
@@ -77,10 +89,25 @@ class StorekitManager: NSObject, ObservableObject {
                 self.purchasedProductIDs.remove(transaction.productID)
             }
         }
+        
         self.hasPro = !self.purchasedProductIDs.isEmpty //Store active purchases
         print(self.hasPro)
     }
 }
+
+//struct ContentView: View {
+//    @StateObject private var viewModel = ViewModel()
+//
+//    var body: some View {
+//        Text(viewModel.hasPro ? "You have a Pro subscription" : "No Pro subscription")
+//            .onAppear {
+//                Task {
+//                    await viewModel.updatePurchasedProducts()
+//                }
+//            }
+//    }
+//}
+
 
 //extension StorekitManager: SKPaymentTransactionObserver {
 //    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
@@ -89,5 +116,28 @@ class StorekitManager: NSObject, ObservableObject {
 //
 //    func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
 //        return true
+//    }
+//}
+
+//extension StorekitManager: SKPaymentTransactionObserver {
+//    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+//        // Handle transaction updates here
+//        for transaction in transactions {
+//            switch transaction.transactionState {
+//            case .purchased, .restored:
+//                // Handle successful purchase or restore
+//                purchasedProductIDs.insert(transaction.payment.productIdentifier)
+//                print(purchasedProductIDs)
+//                queue.finishTransaction(transaction)
+//            case .failed:
+//                // Handle failed purchase
+//                queue.finishTransaction(transaction)
+//            case .deferred, .purchasing:
+//                // Handle other states if needed
+//                break
+//            @unknown default:
+//                break
+//            }
+//        }
 //    }
 //}

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct CartProduct: Identifiable {
     let id = UUID()
@@ -43,6 +44,8 @@ class CartViewModel: ObservableObject {
 struct ShoppingCartView: View {
     
     @EnvironmentObject var cart: CartManager
+    @EnvironmentObject private var purchaseManager: StorekitManager
+
 //    @StateObject private var cart = CartManager()
     @State private var quantity = 0
     @State private var stepperValue = 1
@@ -50,11 +53,31 @@ struct ShoppingCartView: View {
     @State private var selectedModel: CartItem? = nil
 //    @State private var shouldHide : Bool = false
     @Binding var show: Bool
+    @State private(set) var selectedProduct: [Product] = []
+
+    var selectedProducts: [Product] {
+        var selectedProducts: [Product] = []
+        
+        for product in purchaseManager.products {
+            for items in cart.cartItems {
+                if product.id == items.product.productID {
+                    if !selectedProducts.contains(product) {
+                        selectedProducts.append(product)
+                        print(selectedProducts)
+                        print(selectedProducts.count)
+                    }
+                }
+            }
+        }
+        
+        return selectedProducts
+    }
 
     var body: some View {
         
 //        if cart.cartItems.count > 0 {
             VStack {
+                
                 HStack(spacing: 20) {
                     
                     if show {
@@ -70,7 +93,7 @@ struct ShoppingCartView: View {
                     Text("My cart")
                         .fontWeight(.heavy)
                         .font(.custom("Jost-Bold", size: 28))
-                    
+
                     Spacer()
                 }
                 .padding()
@@ -109,6 +132,33 @@ struct ShoppingCartView: View {
                     }
                     .padding([.top, .horizontal])
                     
+                    //Multiple product purchase
+//                    ForEach(selectedProducts, id: \.self) { product in
+//                        // Display your product in the view
+//
+//                        Button {
+//                            print(product)
+//
+//                            Task {
+//                                do {
+//                                    try await purchaseManager.purchase(product)
+//                                } catch {
+//                                    print(error)
+//                                }
+//                            }
+//                        } label: {
+//                            Text("Check out")
+//                                .fontWeight(.heavy)
+//                                .font(.custom("Jost-Bold", size: 28))
+//                                .foregroundColor(.white)
+//                                .padding(.vertical)
+//                                .frame(width: UIScreen.main.bounds.width - 30)
+//                                .background(Color.blue)
+//                                .cornerRadius(15)
+//                                .padding()
+//                        }
+//                    }
+                    
                     Button(action: {}) {
                         Text("Check out")
                             .fontWeight(.heavy)
@@ -122,6 +172,18 @@ struct ShoppingCartView: View {
                     }
                 }
             }
+        
+            .task {
+                Task {
+                    do {
+                        try await purchaseManager.loadProducts()
+                                                
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+        
             .background(Color.white.ignoresSafeArea())
             .navigationBarHidden(true)
             

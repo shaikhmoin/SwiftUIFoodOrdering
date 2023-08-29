@@ -5,33 +5,63 @@
   ],
   "products" : [
     {
-      "displayPrice" : "9.99",
-      "familyShareable" : false,
-      "internalID" : "4449BEA4",
-      "localizations" : [
-        {
-          "description" : "Pro for lifetime",
-          "displayName" : "Lifetime",
-          "locale" : "en_US"
-        }
-      ],
-      "productID" : "pro_lifetime",
-      "referenceName" : "Lifetime",
-      "type" : "NonConsumable"
-    },
-    {
       "displayPrice" : "0.99",
       "familyShareable" : false,
-      "internalID" : "8F02C961",
+      "internalID" : "B8127C3D",
       "localizations" : [
         {
-          "description" : "One week",
-          "displayName" : "OneWeek",
+          "description" : "food.fifty.propelius",
+          "displayName" : "50",
           "locale" : "en_US"
         }
       ],
-      "productID" : "one_week",
-      "referenceName" : "OneWeek",
+      "productID" : "food.fifty.propelius",
+      "referenceName" : "50",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "BD884876",
+      "localizations" : [
+        {
+          "description" : "food.hundred.propelius",
+          "displayName" : "100",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "food.hundred.propelius",
+      "referenceName" : "100",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "16C33127",
+      "localizations" : [
+        {
+          "description" : "food.fivehundred.propelius",
+          "displayName" : "500",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "food.fivehundred.propelius",
+      "referenceName" : "500",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "FA9D7D9C",
+      "localizations" : [
+        {
+          "description" : "food.thousand.propelius",
+          "displayName" : "1000",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "food.thousand.propelius",
+      "referenceName" : "1000",
       "type" : "Consumable"
     }
   ],
