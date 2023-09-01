@@ -15,7 +15,7 @@ struct SplashView: View {
     var body: some View {
         
         ZStack {
-            //            Color("bg")
+            //            Color("themecolor")
             
             if self.isActive {
 
@@ -56,7 +56,7 @@ struct SplashView: View {
                 }
             }
         }
-        //        .background(Color("bg"))
+        //        .background(Color("themecolor"))
     }
 }
 

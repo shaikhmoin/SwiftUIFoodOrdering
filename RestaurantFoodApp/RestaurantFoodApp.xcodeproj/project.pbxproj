@@ -21,6 +21,19 @@
 		226EA22E2A8A011A00D38D2F /* MealDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226EA22D2A8A011A00D38D2F /* MealDetails.swift */; };
 		226EA2302A8A091600D38D2F /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226EA22F2A8A091600D38D2F /* CategoriesView.swift */; };
 		226EA2322A8A098300D38D2F /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226EA2312A8A098300D38D2F /* Categories.swift */; };
+		226EB84E2AA0545400FFF08E /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226EB84D2AA0545400FFF08E /* DropDown.swift */; };
+		226EB8512AA07F4400FFF08E /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = 226EB8502AA07F4400FFF08E /* Stripe */; };
+		226EB8532AA07F4400FFF08E /* StripeApplePay in Frameworks */ = {isa = PBXBuildFile; productRef = 226EB8522AA07F4400FFF08E /* StripeApplePay */; };
+		226EB8552AA07F4400FFF08E /* StripeCardScan in Frameworks */ = {isa = PBXBuildFile; productRef = 226EB8542AA07F4400FFF08E /* StripeCardScan */; };
+		226EB8572AA07F4400FFF08E /* StripeFinancialConnections in Frameworks */ = {isa = PBXBuildFile; productRef = 226EB8562AA07F4400FFF08E /* StripeFinancialConnections */; };
+		226EB8592AA07F4400FFF08E /* StripeIdentity in Frameworks */ = {isa = PBXBuildFile; productRef = 226EB8582AA07F4400FFF08E /* StripeIdentity */; };
+		226EB85B2AA07F4400FFF08E /* StripePaymentSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 226EB85A2AA07F4400FFF08E /* StripePaymentSheet */; };
+		226EB85D2AA07F4400FFF08E /* StripePayments in Frameworks */ = {isa = PBXBuildFile; productRef = 226EB85C2AA07F4400FFF08E /* StripePayments */; };
+		226EB85F2AA07F4400FFF08E /* StripePaymentsUI in Frameworks */ = {isa = PBXBuildFile; productRef = 226EB85E2AA07F4400FFF08E /* StripePaymentsUI */; };
+		226EB8612AA09EA600FFF08E /* CheckoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226EB8602AA09EA600FFF08E /* CheckoutResponse.swift */; };
+		226EB8632AA09FB900FFF08E /* PaymentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226EB8622AA09FB900FFF08E /* PaymentConfig.swift */; };
+		226EB8662AA0A10300FFF08E /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226EB8652AA0A10300FFF08E /* CheckoutView.swift */; };
+		226EB8682AA0A1A400FFF08E /* PaymentGatewayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226EB8672AA0A1A400FFF08E /* PaymentGatewayController.swift */; };
 		2273CB582A8B59CA006763BA /* ShoppingCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273CB572A8B59CA006763BA /* ShoppingCartView.swift */; };
 		22762B6A2A86144B006A93BF /* RestaurantFoodAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22762B692A86144B006A93BF /* RestaurantFoodAppApp.swift */; };
 		22762B6C2A86144B006A93BF /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22762B6B2A86144B006A93BF /* OnboardingView.swift */; };
@@ -98,6 +111,11 @@
 		226EA22D2A8A011A00D38D2F /* MealDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetails.swift; sourceTree = "<group>"; };
 		226EA22F2A8A091600D38D2F /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		226EA2312A8A098300D38D2F /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		226EB84D2AA0545400FFF08E /* DropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDown.swift; sourceTree = "<group>"; };
+		226EB8602AA09EA600FFF08E /* CheckoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutResponse.swift; sourceTree = "<group>"; };
+		226EB8622AA09FB900FFF08E /* PaymentConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfig.swift; sourceTree = "<group>"; };
+		226EB8652AA0A10300FFF08E /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		226EB8672AA0A1A400FFF08E /* PaymentGatewayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentGatewayController.swift; sourceTree = "<group>"; };
 		2273CB572A8B59CA006763BA /* ShoppingCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartView.swift; sourceTree = "<group>"; };
 		22762B662A86144B006A93BF /* RestaurantFoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantFoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22762B692A86144B006A93BF /* RestaurantFoodAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantFoodAppApp.swift; sourceTree = "<group>"; };
@@ -145,8 +163,12 @@
 				22A47B202A949D17004F33EC /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				22A47B262A949D17004F33EC /* FirebaseMessaging in Frameworks */,
 				22A47B062A949D17004F33EC /* FirebaseAppDistribution-Beta in Frameworks */,
+				226EB85D2AA07F4400FFF08E /* StripePayments in Frameworks */,
+				226EB85F2AA07F4400FFF08E /* StripePaymentsUI in Frameworks */,
+				226EB8552AA07F4400FFF08E /* StripeCardScan in Frameworks */,
 				22A47B0A2A949D17004F33EC /* FirebaseAuthCombine-Community in Frameworks */,
 				22A47B162A949D17004F33EC /* FirebaseFirestoreCombine-Community in Frameworks */,
+				226EB85B2AA07F4400FFF08E /* StripePaymentSheet in Frameworks */,
 				22A47B002A949D17004F33EC /* FirebaseAnalyticsSwift in Frameworks */,
 				22A47B242A949D17004F33EC /* FirebaseMLModelDownloader in Frameworks */,
 				22A47B022A949D17004F33EC /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
@@ -155,14 +177,18 @@
 				22A47AFE2A949D17004F33EC /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				22A47B042A949D17004F33EC /* FirebaseAppCheck in Frameworks */,
 				22A47B282A949D17004F33EC /* FirebasePerformance in Frameworks */,
+				226EB8532AA07F4400FFF08E /* StripeApplePay in Frameworks */,
 				22A47B1E2A949D17004F33EC /* FirebaseInAppMessaging-Beta in Frameworks */,
 				22A47B1C2A949D17004F33EC /* FirebaseFunctionsCombine-Community in Frameworks */,
 				22A47B0C2A949D17004F33EC /* FirebaseCrashlytics in Frameworks */,
 				22A47B222A949D17004F33EC /* FirebaseInstallations in Frameworks */,
 				22A47B2A2A949D17004F33EC /* FirebaseRemoteConfig in Frameworks */,
 				22A47B2E2A949D17004F33EC /* FirebaseStorage in Frameworks */,
+				226EB8512AA07F4400FFF08E /* Stripe in Frameworks */,
 				22A47B0E2A949D17004F33EC /* FirebaseDatabase in Frameworks */,
+				226EB8572AA07F4400FFF08E /* StripeFinancialConnections in Frameworks */,
 				22A47B302A949D17004F33EC /* FirebaseStorageCombine-Community in Frameworks */,
+				226EB8592AA07F4400FFF08E /* StripeIdentity in Frameworks */,
 				22762B8B2A8616D4006A93BF /* Lottie in Frameworks */,
 				22A47B082A949D17004F33EC /* FirebaseAuth in Frameworks */,
 				22A47B122A949D17004F33EC /* FirebaseDynamicLinks in Frameworks */,
@@ -179,6 +205,7 @@
 			children = (
 				226C1E762A972D560052548C /* GlobalAlertView.swift */,
 				2251B8E32A9E10E700A50578 /* Persistence.swift */,
+				226EB84D2AA0545400FFF08E /* DropDown.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -190,6 +217,15 @@
 				22B19CD92A98859600043C0D /* SubscriptionView.swift */,
 			);
 			path = InAppPurchaseScreen;
+			sourceTree = "<group>";
+		};
+		226EB8642AA0A0F300FFF08E /* CheckoutView */ = {
+			isa = PBXGroup;
+			children = (
+				226EB8652AA0A10300FFF08E /* CheckoutView.swift */,
+				226EB8672AA0A1A400FFF08E /* PaymentGatewayController.swift */,
+			);
+			path = CheckoutView;
 			sourceTree = "<group>";
 		};
 		22762B5D2A86144B006A93BF = {
@@ -263,6 +299,7 @@
 		22762B792A861545006A93BF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				226EB8642AA0A0F300FFF08E /* CheckoutView */,
 				226C1E782A975B6D0052548C /* InAppPurchaseScreen */,
 				228A72ED2A8E25E4005339F2 /* LoginRegisterScreen */,
 				228A72E02A8DFBCB005339F2 /* SplashScreen */,
@@ -336,6 +373,8 @@
 			children = (
 				2273CB572A8B59CA006763BA /* ShoppingCartView.swift */,
 				229AB3552A8CFEF900F1A239 /* ItemView.swift */,
+				226EB8602AA09EA600FFF08E /* CheckoutResponse.swift */,
+				226EB8622AA09FB900FFF08E /* PaymentConfig.swift */,
 			);
 			path = CartScreen;
 			sourceTree = "<group>";
@@ -426,6 +465,14 @@
 				22A47B2B2A949D17004F33EC /* FirebaseRemoteConfigSwift */,
 				22A47B2D2A949D17004F33EC /* FirebaseStorage */,
 				22A47B2F2A949D17004F33EC /* FirebaseStorageCombine-Community */,
+				226EB8502AA07F4400FFF08E /* Stripe */,
+				226EB8522AA07F4400FFF08E /* StripeApplePay */,
+				226EB8542AA07F4400FFF08E /* StripeCardScan */,
+				226EB8562AA07F4400FFF08E /* StripeFinancialConnections */,
+				226EB8582AA07F4400FFF08E /* StripeIdentity */,
+				226EB85A2AA07F4400FFF08E /* StripePaymentSheet */,
+				226EB85C2AA07F4400FFF08E /* StripePayments */,
+				226EB85E2AA07F4400FFF08E /* StripePaymentsUI */,
 			);
 			productName = RestaurantFoodApp;
 			productReference = 22762B662A86144B006A93BF /* RestaurantFoodApp.app */;
@@ -458,6 +505,7 @@
 			packageReferences = (
 				22762B892A8616D4006A93BF /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				22A47AFA2A949D17004F33EC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				226EB84F2AA07F4400FFF08E /* XCRemoteSwiftPackageReference "stripe-ios" */,
 			);
 			productRefGroup = 22762B672A86144B006A93BF /* Products */;
 			projectDirPath = "";
@@ -493,6 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				226C1E7D2A975F270052548C /* StorekitManager.swift in Sources */,
+				226EB8612AA09EA600FFF08E /* CheckoutResponse.swift in Sources */,
 				2278945D2A8B725400FA2E20 /* CartManager.swift in Sources */,
 				226EA22C2A89FA2B00D38D2F /* TrendingCard.swift in Sources */,
 				22B19CDC2A98889700043C0D /* SubscriptionViewModel.swift in Sources */,
@@ -506,6 +555,7 @@
 				228A72FE2A8E4A25005339F2 /* LoginViewModel.swift in Sources */,
 				2273CB582A8B59CA006763BA /* ShoppingCartView.swift in Sources */,
 				226C1E772A972D560052548C /* GlobalAlertView.swift in Sources */,
+				226EB84E2AA0545400FFF08E /* DropDown.swift in Sources */,
 				2251B8E42A9E10E700A50578 /* Persistence.swift in Sources */,
 				22C1EFD12A86527E00E42B12 /* CurrentLocationView.swift in Sources */,
 				22762B6C2A86144B006A93BF /* OnboardingView.swift in Sources */,
@@ -516,9 +566,11 @@
 				226EA22A2A89F84600D38D2F /* TrendingWeekView.swift in Sources */,
 				226EA2302A8A091600D38D2F /* CategoriesView.swift in Sources */,
 				22A47B342A94B66F004F33EC /* LoginAuthModel.swift in Sources */,
+				226EB8632AA09FB900FFF08E /* PaymentConfig.swift in Sources */,
 				2285A21D2A8A211B0085F67A /* OurPicks.swift in Sources */,
 				22A47B362A94C0AA004F33EC /* AuthenticationManager.swift in Sources */,
 				228A73022A8E53B7005339F2 /* AppleSIgnUpCoordinator.swift in Sources */,
+				226EB8662AA0A10300FFF08E /* CheckoutView.swift in Sources */,
 				22B19CDA2A98859600043C0D /* SubscriptionView.swift in Sources */,
 				2249BDFA2A863CCC008C12DD /* TabbarView.swift in Sources */,
 				22762B812A861582006A93BF /* Card.swift in Sources */,
@@ -527,6 +579,7 @@
 				22762B8D2A862D6D006A93BF /* HomeView.swift in Sources */,
 				228A73042A8E53E0005339F2 /* SignUpWithAppleView.swift in Sources */,
 				22762B842A86159F006A93BF /* LottieView.swift in Sources */,
+				226EB8682AA0A1A400FFF08E /* PaymentGatewayController.swift in Sources */,
 				228A72EC2A8E1DCC005339F2 /* ProfileView.swift in Sources */,
 				22762B852A86159F006A93BF /* CardView.swift in Sources */,
 			);
@@ -741,6 +794,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		226EB84F2AA07F4400FFF08E /* XCRemoteSwiftPackageReference "stripe-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stripe/stripe-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		22762B892A8616D4006A93BF /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
@@ -760,6 +821,46 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		226EB8502AA07F4400FFF08E /* Stripe */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 226EB84F2AA07F4400FFF08E /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = Stripe;
+		};
+		226EB8522AA07F4400FFF08E /* StripeApplePay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 226EB84F2AA07F4400FFF08E /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = StripeApplePay;
+		};
+		226EB8542AA07F4400FFF08E /* StripeCardScan */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 226EB84F2AA07F4400FFF08E /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = StripeCardScan;
+		};
+		226EB8562AA07F4400FFF08E /* StripeFinancialConnections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 226EB84F2AA07F4400FFF08E /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = StripeFinancialConnections;
+		};
+		226EB8582AA07F4400FFF08E /* StripeIdentity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 226EB84F2AA07F4400FFF08E /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = StripeIdentity;
+		};
+		226EB85A2AA07F4400FFF08E /* StripePaymentSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 226EB84F2AA07F4400FFF08E /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = StripePaymentSheet;
+		};
+		226EB85C2AA07F4400FFF08E /* StripePayments */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 226EB84F2AA07F4400FFF08E /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = StripePayments;
+		};
+		226EB85E2AA07F4400FFF08E /* StripePaymentsUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 226EB84F2AA07F4400FFF08E /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = StripePaymentsUI;
+		};
 		22762B8A2A8616D4006A93BF /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 22762B892A8616D4006A93BF /* XCRemoteSwiftPackageReference "lottie-ios" */;

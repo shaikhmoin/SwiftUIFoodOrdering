@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TrendingCard : Identifiable {
+struct TrendingCard : Codable, Identifiable {
     let id = UUID()
     var image : String
     var title : String

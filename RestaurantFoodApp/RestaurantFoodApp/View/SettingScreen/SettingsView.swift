@@ -65,7 +65,7 @@ struct SettingsView: View {
                                             .stroke(Color.white, lineWidth: 2)
                                     )
                             }
-                            .background(Color.blue)
+                            .background(Color("themecolor"))
                             .cornerRadius(25)
                         }
                         Spacer()

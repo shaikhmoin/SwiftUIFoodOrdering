@@ -110,7 +110,7 @@ struct HomeView: View {
                         }
                         .padding(.bottom, 100)
                     }
-                    .padding(.top, -30)
+                    .padding(.top, -20)
                 }
             }
             .background(.white)
@@ -166,40 +166,52 @@ struct SearchBar: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)), Color(#colorLiteral(red: 0.9843164086, green: 0.9843164086, blue: 0.9843164086, alpha: 1))]), startPoint: .top, endPoint: .bottom)
-                .frame(width: UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height)*0.25, alignment: .center)
+            LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 1, green: 0.2980392157, blue: 0.262745098, alpha: 0.7016307805)), Color(#colorLiteral(red: 0.9843164086, green: 0.9843164086, blue: 0.9843164086, alpha: 1))]), startPoint: .top, endPoint: .bottom)
+//                .frame(width: UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height)*0.25, alignment: .bottom)
             
-            VStack {
+            VStack(alignment: .leading) {
                 HStack {
-                    Text("Browse")
+                    Text("Deliver To")
                         .font(.largeTitle)
                         .fontWeight(.bold)
+                        .foregroundColor(.black)
+//                    Spacer()
                     
-                    Spacer()
-                    
-                    Button(action: {}) {
-                        Image("filter")
-                            .font(.system(size: 26, weight: .heavy))
-                            .foregroundColor(.white)
-                    }
+//                    Button(action: {}) {
+//                        Image("filter")
+//                            .font(.system(size: 26, weight: .heavy))
+//                            .foregroundColor(.white)
+//                    }
                 }
-                .padding()
+                .padding(.bottom)
                 .foregroundColor(.white)
-                
-                HStack {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(.gray)
-                        .font(.title)
-                        .padding(.leading)
+               
+                ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)) {
+                    VStack (spacing: 0){
+                        HStack {
+                            DropDown().offset(y: -18)
+                        }
+                    }.zIndex(1)
                     
-                    TextField("Search...", text: $search)
-                        .font(.subheadline)
+                    HStack {
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(.gray)
+                            .font(.title)
+                            .padding(.leading)
+                        
+                        TextField("Search...", text: $search)
+                            .font(.subheadline)
+                    }
+                    
+                    .frame(width: (UIScreen.main.bounds.width) * 0.92, height: 45)
+                    .background(.white)
+                    .cornerRadius(10)
+                    .padding(.top, 20)
+                    .shadow(radius: 1)
                 }
-                
-                .frame(width: (UIScreen.main.bounds.width) * 0.92, height: 45)
-                .background(.white)
-                .cornerRadius(10)
             }
+            .padding()
+            .padding(.top, 20)
         }
     }
 }

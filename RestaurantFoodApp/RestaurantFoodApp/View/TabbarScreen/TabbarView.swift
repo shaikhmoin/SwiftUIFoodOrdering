@@ -13,7 +13,7 @@ struct TabbarView: View {
     @State var providedValue : Bool = true
     @State private var show = true
     @StateObject private var cart = CartManager()
-    
+
     init() {
         UITabBar.appearance().backgroundColor = UIColor.white
     }
@@ -64,7 +64,7 @@ struct TabbarView: View {
             }
             .tag(4)
         }
-        .accentColor(Color.blue)
+        .accentColor(Color("themecolor"))
         .onAppear() {
             //            UITabBar.appearance().barTintColor = .yellow
         }

@@ -9,15 +9,16 @@ import SwiftUI
 
 class CartManager: ObservableObject {
     
+//    @Published var cartItems: [CartItem] = []
     @Published var cartItems: [CartItem] = []
-    
+
     func addToCart(product: TrendingCard, Qty: Int) {
         if let index = cartItems.firstIndex(where: { $0.product.id == product.id }) {
             cartItems[index].quantity += 1
             print(cartItems[index])
         } else {
             print(cartItems)
-            cartItems.append(CartItem(product: product, quantity: 1))
+            cartItems.append(CartItem(product: product, quantity: 1)) // Use the standard initializer
             print(cartItems)
         }
     }

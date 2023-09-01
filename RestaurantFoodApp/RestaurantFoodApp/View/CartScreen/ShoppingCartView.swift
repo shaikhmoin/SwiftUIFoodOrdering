@@ -14,10 +14,24 @@ struct CartProduct: Identifiable {
     let price: Double
 }
 
-struct CartItem: Identifiable {
-    let id = UUID()
+struct CartItem: Codable, Identifiable {
+    var id = UUID()
     let product: TrendingCard
     var quantity: Int
+    
+//    enum CodingKeys: String, CodingKey {
+//        case id
+//        case product
+//        case quantity
+//    }
+//
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        // Decode properties based on coding keys
+//        id = try container.decode(UUID.self, forKey: .id)
+//        product = try container.decode(TrendingCard.self, forKey: .product)
+//        quantity = try container.decode(Int.self, forKey: .quantity)
+//    }
 }
 
 struct Item: Identifiable {
@@ -52,7 +66,38 @@ struct ShoppingCartView: View {
     @State private var selectedModel: CartItem? = nil
     @Binding var show: Bool
     @State private(set) var selectedProduct: [Product] = []
+    @State private var isActive: Bool = false
 
+    private func startCheckout(completion: @escaping (String?) -> Void) {
+        let url = URL(string: "https://balanced-cypress-marshmallow.glitch.me/create-payment-intent")
+        
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let encodedData = try JSONEncoder().encode(cart.cartItems)
+            request.httpBody = encodedData
+        } catch {
+            completion(nil)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { data, responce, error in
+            
+            guard let data = data, error == nil,
+                  (responce as? HTTPURLResponse)?.statusCode == 200
+            else {
+                completion(nil)
+                return
+            }
+            
+            let checkoutIntentresponse = try? JSONDecoder().decode(checkoutIntentRespomnse.self, from: data)
+            completion(checkoutIntentresponse?.clientSecret)
+            
+        }.resume()
+    }
+    
     var selectedProducts: [Product] {
         var selectedProducts: [Product] = []
         
@@ -157,16 +202,30 @@ struct ShoppingCartView: View {
 //                        }
 //                    }
                     
-                    Button(action: {}) {
-                        Text("Check out")
-                            .fontWeight(.heavy)
-                            .font(.custom("Jost-Bold", size: 28))
-                            .foregroundColor(.white)
-                            .padding(.vertical)
-                            .frame(width: UIScreen.main.bounds.width - 30)
-                            .background(Color.blue)
-                            .cornerRadius(15)
-                            .padding()
+                    
+                    NavigationLink(isActive: $isActive) {
+                        CheckoutView()
+                    } label: {
+                        Button(action: {
+                            
+                            startCheckout { clientSecret in
+                                PaymentConfig.shared.paymentIntentClientSecret = clientSecret
+                                
+                                DispatchQueue.main.async {
+                                    isActive = true
+                                }
+                            }
+                        }) {
+                            Text("Check out")
+                                .fontWeight(.heavy)
+                                .font(.custom("Jost-Bold", size: 28))
+                                .foregroundColor(.white)
+                                .padding(.vertical)
+                                .frame(width: UIScreen.main.bounds.width - 30)
+                                .background(Color("themecolor"))
+                                .cornerRadius(15)
+                                .padding()
+                        }
                     }
                 }
             }

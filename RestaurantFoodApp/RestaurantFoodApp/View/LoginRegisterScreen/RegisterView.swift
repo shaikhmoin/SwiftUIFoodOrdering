@@ -18,9 +18,8 @@ struct RegisterView: View {
     @State var alert = false
     @State var error = ""
     @State var selection: Int? = nil
-    
-    let borderColor = Color(red: 107.0/255.0, green: 164.0/255.0, blue: 252.0/255.0)
-    
+    @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
         
         VStack(alignment: .leading){
@@ -43,7 +42,7 @@ struct RegisterView: View {
                     TextField("Username or Email",text:self.$email)
                         .autocapitalization(.none)
                         .padding()
-                        .background(RoundedRectangle(cornerRadius:6).stroke(self.borderColor,lineWidth:2))
+                        .background(RoundedRectangle(cornerRadius:6).stroke(Color("themecolor"),lineWidth:1))
                         .padding(.top, 0)
                     
                     HStack(spacing: 15){
@@ -62,12 +61,13 @@ struct RegisterView: View {
                         }) {
                             //Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
                             Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
+                                .foregroundColor(Color("themecolor"))
                                 .opacity(0.8)
                         }
                     }
                     .padding()
                     .background(RoundedRectangle(cornerRadius: 6)
-                        .stroke(self.borderColor,lineWidth: 2))
+                        .stroke(Color("themecolor"),lineWidth: 1))
                     .padding(.top, 10)
                     
                     
@@ -88,12 +88,13 @@ struct RegisterView: View {
                         }) {
                             //Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
                             Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
+                                .foregroundColor(Color("themecolor"))
                                 .opacity(0.8)
                         }
                     }
                     .padding()
                     .background(RoundedRectangle(cornerRadius: 6)
-                        .stroke(self.borderColor,lineWidth: 2))
+                        .stroke(Color("themecolor"),lineWidth: 1))
                     .padding(.top, 10)
                     
                     
@@ -108,7 +109,7 @@ struct RegisterView: View {
                                 .padding(.vertical)
                                 .frame(width: UIScreen.main.bounds.width - 50)
                         }
-                        .background(Color("bg"))
+                        .background(Color("themecolor"))
                         .cornerRadius(6)
                         .padding(.top, 15)
                         .alert(isPresented: self.$alert){()->Alert in
@@ -116,6 +117,22 @@ struct RegisterView: View {
                                     .default(Text("OK").fontWeight(.semibold)))
                         }
                     }
+                    
+                    HStack(spacing: 5){
+                        Text("Already have an account ?")
+                        
+                        Button {
+                            presentationMode.wrappedValue.dismiss()
+
+                        } label: {
+                            Text("Sign In")
+                                .fontWeight(.bold)
+                                .foregroundColor(Color("themecolor"))
+                        }
+                        
+                        Text("now").multilineTextAlignment(.leading)
+                        
+                    }.padding(.top, 25)
                 }
                 .padding(.horizontal, 25)
                 .navigationBarHidden(true)

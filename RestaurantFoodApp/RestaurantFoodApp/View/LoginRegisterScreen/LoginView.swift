@@ -13,7 +13,6 @@ struct LoginView: View {
     
     @State var email = ""
     @State var pass = ""
-    @State var color = Color.black.opacity(0.7)
     @State var visible = false
     @State var alert = false
     @State var error = ""
@@ -22,7 +21,6 @@ struct LoginView: View {
     
     @State private var isSHowHomeView: Bool = false
     
-    let borderColor = Color(red: 107.0/255.0, green: 164.0/255.0, blue: 252.0/255.0)
     @Environment(\.colorScheme) var colorScheme
     
     @AppStorage("email") var emailID: String = ""
@@ -55,7 +53,7 @@ struct LoginView: View {
             TextField("Username or Email",text:self.$viewModel.email)
                 .autocapitalization(.none)
                 .padding()
-                .background(RoundedRectangle(cornerRadius:6).stroke(borderColor,lineWidth:2))
+                .background(RoundedRectangle(cornerRadius:6).stroke(Color("themecolor"),lineWidth:1))
                 .padding(.top, 0)
             
             HStack(spacing: 15){
@@ -74,13 +72,13 @@ struct LoginView: View {
                 }) {
                     //Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
                     Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
-                        .foregroundColor(self.color)
+                        .foregroundColor(Color("themecolor"))
                         .opacity(0.8)
                 }
             }
             .padding()
             .background(RoundedRectangle(cornerRadius: 6)
-                .stroke(borderColor,lineWidth: 2))
+                .stroke(Color("themecolor"),lineWidth: 1))
             .padding(.top, 10)
             
             HStack{
@@ -92,7 +90,7 @@ struct LoginView: View {
                 }) {
                     Text("Forget Password")
                         .fontWeight(.medium)
-                        .foregroundColor(Color("bg"))
+                        .foregroundColor(Color("themecolor"))
                 }.padding(.top, 10.0)
             }
             
@@ -107,7 +105,7 @@ struct LoginView: View {
                     .padding(.vertical)
                     .frame(width: UIScreen.main.bounds.width - 50)
             }
-            .background(Color("bg"))
+            .background(Color("themecolor"))
             .cornerRadius(6)
             .padding(.top, 15)
             .alert(isPresented: $alert){()->Alert in
@@ -121,7 +119,7 @@ struct LoginView: View {
                 NavigationLink(destination: RegisterView()){
                     Text("Sign up")
                         .fontWeight(.bold)
-                        .foregroundColor(Color("bg"))
+                        .foregroundColor(Color("themecolor"))
                 }
                 
                 Text("now").multilineTextAlignment(.leading)
@@ -129,18 +127,18 @@ struct LoginView: View {
             }.padding(.top, 25)
             
             //Apple signIn button
-//            if !isSignedIn {
-                SignInButtonView { success in
-                    if success {
-                        isSHowHomeView = true
-                        sessionManager.signIn()
-                    } else {
-                        isSHowHomeView = false
-                    }
+            //            if !isSignedIn {
+            SignInButtonView { success in
+                if success {
+                    isSHowHomeView = true
+                    sessionManager.signIn()
+                } else {
+                    isSHowHomeView = false
                 }
-//            } else {
-//
-//            }
+            }
+            //            } else {
+            //
+            //            }
             NavigationLink("", destination: HomeView(viewModel: viewModel), isActive: $isSHowHomeView)
         }
         .padding(.horizontal, 25)
@@ -164,37 +162,37 @@ struct LoginView: View {
                     
                     emailID = message.email ?? ""
                     print(emailID)
-//                    var userDefaults = UserDefaults.standard
+                    //                    var userDefaults = UserDefaults.standard
                     
-//                    do{
-//                        let loginData = try NSKeyedArchiver.archivedData(withRootObject: message, requiringSecureCoding: true)
-//                        UserDefaults.standard.set(loginData, forKey: "LoginData")
-//                        UserDefaults.standard.synchronize()
-//                    }catch (let error){
-//                        #if DEBUG
-//                            print("Failed to convert UIColor to Data : \(error.localizedDescription)")
-//                        #endif
-//                    }
-//
-//                    do{
-//                        if let loginData = UserDefaults.standard.object(forKey: "LoginData") as? Data{
-//                            if let userData = try NSKeyedUnarchiver.unarchivedObject(ofClasses: [UIColor.self], from: loginData){
-//                                print(userData)
-//                            }
-//                        }
-//                    }catch (let error){
-//                        #if DEBUG
-//                            print("Failed to convert UIColor to Data : \(error.localizedDescription)")
-//                        #endif
-//                    }
-                                     
+                    //                    do{
+                    //                        let loginData = try NSKeyedArchiver.archivedData(withRootObject: message, requiringSecureCoding: true)
+                    //                        UserDefaults.standard.set(loginData, forKey: "LoginData")
+                    //                        UserDefaults.standard.synchronize()
+                    //                    }catch (let error){
+                    //                        #if DEBUG
+                    //                            print("Failed to convert UIColor to Data : \(error.localizedDescription)")
+                    //                        #endif
+                    //                    }
+                    //
+                    //                    do{
+                    //                        if let loginData = UserDefaults.standard.object(forKey: "LoginData") as? Data{
+                    //                            if let userData = try NSKeyedUnarchiver.unarchivedObject(ofClasses: [UIColor.self], from: loginData){
+                    //                                print(userData)
+                    //                            }
+                    //                        }
+                    //                    }catch (let error){
+                    //                        #if DEBUG
+                    //                            print("Failed to convert UIColor to Data : \(error.localizedDescription)")
+                    //                        #endif
+                    //                    }
+                    
                     sessionManager.signIn()
                     
                 case .failure(let error):
                     print("Task failed with error: \(error)")
-//                    self.title = "Login Error"
-//                    self.error = error.localizedDescription
-//                    self.alert = true
+                    //                    self.title = "Login Error"
+                    //                    self.error = error.localizedDescription
+                    //                    self.alert = true
                     
                     //Signup with firebase
                     viewModel.signUpWithFirebase(completion: { result in

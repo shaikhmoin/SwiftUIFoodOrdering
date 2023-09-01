@@ -138,7 +138,7 @@ struct MealDetails: View {
                                 .foregroundColor(.white)
                                 .padding(.vertical, 10)
                                 .padding(.horizontal, 100)
-                                .background(Color.blue.opacity(0.9))
+                                .background(Color("themecolor").opacity(0.9))
                                 .cornerRadius(10)
                         } else {
                             Text("Add to cart")
@@ -146,7 +146,7 @@ struct MealDetails: View {
                                 .foregroundColor(.white)
                                 .padding(.vertical, 10)
                                 .padding(.horizontal, 100)
-                                .background(Color.blue.opacity(0.9))
+                                .background(Color("themecolor").opacity(0.9))
                                 .cornerRadius(10)
                         }
                     }

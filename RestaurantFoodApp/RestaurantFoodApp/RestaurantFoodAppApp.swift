@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseCore
+import Stripe
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication,
@@ -19,6 +20,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct RestaurantFoodAppApp: App {
+    
+    init() {
+        StripeAPI.defaultPublishableKey = "pk_test_51Nl4ZQSCS3n4ntHszV0rkrH4LjLcbEjP95OnzUdzCq2wSgLL3fyhJFYXmc5coquzraE4GpyqIGq7X0wETgZ3oxMb005NSd3Mo9"
+    }
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
@@ -52,6 +57,7 @@ struct RestaurantFoodAppApp: App {
                         LoginView(viewModel: loginViewModel)
                             .environmentObject(session)
                             .environmentObject(purchaseManager)
+                            .environmentObject(cart)
                             .transition(.opacity)
                     }
                     
@@ -63,6 +69,7 @@ struct RestaurantFoodAppApp: App {
                 default:
                     SplashView()
                         .environmentObject(session)
+                        .environmentObject(cart)
                         .environmentObject(purchaseManager)
                         .transition(.opacity)
                 }
