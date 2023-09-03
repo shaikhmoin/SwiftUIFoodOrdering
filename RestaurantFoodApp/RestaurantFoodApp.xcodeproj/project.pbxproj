@@ -95,6 +95,7 @@
 		22C1EFCB2A8646AB00E42B12 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C1EFCA2A8646AB00E42B12 /* SplashView.swift */; };
 		22C1EFCF2A8651F100E42B12 /* currentlocation.json in Resources */ = {isa = PBXBuildFile; fileRef = 22C1EFCE2A8651F100E42B12 /* currentlocation.json */; };
 		22C1EFD12A86527E00E42B12 /* CurrentLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C1EFD02A86527E00E42B12 /* CurrentLocationView.swift */; };
+		886D1F662AA467FE00953454 /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886D1F652AA467FE00953454 /* WishlistView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,6 +154,7 @@
 		22C1EFCA2A8646AB00E42B12 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		22C1EFCE2A8651F100E42B12 /* currentlocation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currentlocation.json; sourceTree = "<group>"; };
 		22C1EFD02A86527E00E42B12 /* CurrentLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationView.swift; sourceTree = "<group>"; };
+		886D1F652AA467FE00953454 /* WishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +311,7 @@
 		22762B792A861545006A93BF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				886D1F642AA467E500953454 /* WishlistView */,
 				22680CEA2AA2114300CE45BE /* CategoryView */,
 				226EB8642AA0A0F300FFF08E /* CheckoutView */,
 				226C1E782A975B6D0052548C /* InAppPurchaseScreen */,
@@ -429,6 +432,14 @@
 				228A72EE2A8E25F6005339F2 /* RegisterView.swift */,
 			);
 			path = LoginRegisterScreen;
+			sourceTree = "<group>";
+		};
+		886D1F642AA467E500953454 /* WishlistView */ = {
+			isa = PBXGroup;
+			children = (
+				886D1F652AA467FE00953454 /* WishlistView.swift */,
+			);
+			path = WishlistView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -558,6 +569,7 @@
 				22B19CDC2A98889700043C0D /* SubscriptionViewModel.swift in Sources */,
 				226EA2322A8A098300D38D2F /* Categories.swift in Sources */,
 				228A72F72A8E417B005339F2 /* SessionManager.swift in Sources */,
+				886D1F662AA467FE00953454 /* WishlistView.swift in Sources */,
 				229AB3562A8CFEF900F1A239 /* ItemView.swift in Sources */,
 				228A72F12A8E25FE005339F2 /* LoginView.swift in Sources */,
 				226EA22E2A8A011A00D38D2F /* MealDetails.swift in Sources */,

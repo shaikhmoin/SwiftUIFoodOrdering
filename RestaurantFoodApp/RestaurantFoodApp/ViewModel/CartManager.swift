@@ -9,8 +9,8 @@ import SwiftUI
 
 class CartManager: ObservableObject {
     
-//    @Published var cartItems: [CartItem] = []
     @Published var cartItems: [CartItem] = []
+    @Published var wishlistItems: [CartItem] = []
 
     func addToCart(product: TrendingCard, Qty: Int) {
         if let index = cartItems.firstIndex(where: { $0.product.id == product.id }) {
@@ -55,4 +55,20 @@ class CartManager: ObservableObject {
     func totalCost() -> Double {
         return cartItems.reduce(0.0) { $0 + ($1.product.price * Double($1.quantity)) }
     }
-} 
+    //Wishlist
+    func addToWishlist(product: TrendingCard) {
+        if let index = wishlistItems.firstIndex(where: { $0.product.id == product.id }) {
+            print(wishlistItems[index])
+        } else {
+            print(wishlistItems)
+            wishlistItems.append(CartItem(product: product, quantity: 1)) // Use the standard initializer
+            print(wishlistItems)
+        }
+    }
+    
+    func removeFromWishlist(cartItem: CartItem) {
+        if let index = wishlistItems.firstIndex(where: { $0.id == cartItem.id }) {
+            wishlistItems.remove(at: index)
+        }
+    }
+}

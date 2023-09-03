@@ -40,7 +40,9 @@ struct TabbarView: View {
                 }
                 .tag(1)
             
-            Text("Wishlist")
+            WishlistView()
+                .environmentObject(cart)
+            
                 .tabItem {
                     Label("Wishlist", systemImage: "heart")
                 }

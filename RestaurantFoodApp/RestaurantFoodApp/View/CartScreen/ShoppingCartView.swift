@@ -18,20 +18,6 @@ struct CartItem: Codable, Identifiable {
     var id = UUID()
     let product: TrendingCard
     var quantity: Int
-    
-//    enum CodingKeys: String, CodingKey {
-//        case id
-//        case product
-//        case quantity
-//    }
-//
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        // Decode properties based on coding keys
-//        id = try container.decode(UUID.self, forKey: .id)
-//        product = try container.decode(TrendingCard.self, forKey: .product)
-//        quantity = try container.decode(Int.self, forKey: .quantity)
-//    }
 }
 
 struct Item: Identifiable {

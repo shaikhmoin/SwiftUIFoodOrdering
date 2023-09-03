@@ -11,7 +11,7 @@ struct MealDetails: View {
     
     @State var mealDetails : TrendingCard
     @State private var quantity = 0
-    @State var heart = "heart.fill"
+    @State var heart = "heart"
     @State private var isCartClick = false
     @State private var show = true
 
@@ -19,6 +19,7 @@ struct MealDetails: View {
     @EnvironmentObject private var cart: CartManager
     @State var buttonTitle: String = "Add to Cart"
     @State var selection: Int? = nil
+    @State private var isSelectedWishlist: Bool = false
 
     var body: some View {
         
@@ -74,13 +75,32 @@ struct MealDetails: View {
                             
                             Button(action: {
                                 withAnimation(.spring(dampingFraction: 0.5)) {
-                                    heart = "heart"
+                                    isSelectedWishlist.toggle()
+                                    
+                                    if isSelectedWishlist {
+                                        cart.addToWishlist(product: mealDetails)
+                                    } else {
+//                                        cart.removeFromCart(cartItem: cart.cartItems[indexPath[0]])
+//                                        cart.removeFromWishlist(cartItem: mealDetails)
+                                        
+                                        if let index = cart.wishlistItems.firstIndex(where: { $0.product.id == mealDetails.id }) {
+                                            cart.wishlistItems.remove(at: index)
+                                        }
+                                            
+                                        print("remove")
+                                    }
                                 }
                             }, label: {
-                                Image(systemName: heart)
-                                    .font(.largeTitle)
-                                    .foregroundColor(.red)
                                 
+                                if isSelectedWishlist {
+                                    Image(systemName: "heart.fill")
+                                        .font(.largeTitle)
+                                        .foregroundColor(.red)
+                                } else  {
+                                    Image(systemName: "heart")
+                                        .font(.largeTitle)
+                                        .foregroundColor(.red)
+                                }
                             })
                             .padding(.all, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         }
@@ -118,7 +138,6 @@ struct MealDetails: View {
                     
                     Button {
                         if let index = cart.cartItems.firstIndex(where: { $0.product.id == mealDetails.id }) {
-                            //cart.addToCart(product: mealDetails, Qty: quantity)
                             if cart.cartItems.count >= 1 {
                                 isCartClick = true
                             } else {
