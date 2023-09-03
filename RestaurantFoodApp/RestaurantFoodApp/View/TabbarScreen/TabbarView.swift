@@ -11,7 +11,7 @@ struct TabbarView: View {
     
     @State private var selectedTabIndex = 0
     @State var providedValue : Bool = true
-    @State private var show = true
+    @State private var show = false
     @StateObject private var cart = CartManager()
     
     init() {
@@ -25,6 +25,7 @@ struct TabbarView: View {
             //            HomeView(loggedIn: $providedValue)
             NavigationView {
                 HomeView(viewModel: LoginViewModel())
+                    .environmentObject(cart)
             }
             
             .tabItem {

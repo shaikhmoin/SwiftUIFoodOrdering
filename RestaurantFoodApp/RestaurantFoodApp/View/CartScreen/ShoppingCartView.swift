@@ -232,7 +232,11 @@ struct ShoppingCartView: View {
         
             .background(Color.white.ignoresSafeArea())
             .navigationBarHidden(true)
-            
+            .onAppear {
+                
+                print(cart.cartItems)
+                
+            }
 //        } else {
 //            Text("Please add your items")
 //        }

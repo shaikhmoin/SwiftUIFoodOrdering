@@ -12,7 +12,7 @@ import SwiftUI
 struct HomeView: View {
     
 //    @Binding var loggedIn: Bool //For login-logout
-    @StateObject private var vm = CartManager()
+    @EnvironmentObject var vm: CartManager
     @EnvironmentObject private var session: SessionManager
     @StateObject var viewModel: LoginViewModel
     @State private var isTabBarHidden = false
