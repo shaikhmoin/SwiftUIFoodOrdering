@@ -16,7 +16,6 @@
 		226C1E7A2A975B8F0052548C /* InAppPurchaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C1E792A975B8F0052548C /* InAppPurchaseScreen.swift */; };
 		226C1E7D2A975F270052548C /* StorekitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C1E7C2A975F270052548C /* StorekitManager.swift */; };
 		226C1E812A9763920052548C /* InAppPurchaseConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 226C1E802A9763920052548C /* InAppPurchaseConfiguration.storekit */; };
-		226C1E832A9768F50052548C /* PurchaseProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C1E822A9768F50052548C /* PurchaseProduct.swift */; };
 		226EA22A2A89F84600D38D2F /* TrendingWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226EA2292A89F84600D38D2F /* TrendingWeekView.swift */; };
 		226EA22C2A89FA2B00D38D2F /* TrendingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226EA22B2A89FA2B00D38D2F /* TrendingCard.swift */; };
 		226EA22E2A8A011A00D38D2F /* MealDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226EA22D2A8A011A00D38D2F /* MealDetails.swift */; };
@@ -87,7 +86,6 @@
 		22A47B2C2A949D17004F33EC /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 22A47B2B2A949D17004F33EC /* FirebaseRemoteConfigSwift */; };
 		22A47B2E2A949D17004F33EC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 22A47B2D2A949D17004F33EC /* FirebaseStorage */; };
 		22A47B302A949D17004F33EC /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 22A47B2F2A949D17004F33EC /* FirebaseStorageCombine-Community */; };
-		22A47B342A94B66F004F33EC /* LoginAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A47B332A94B66F004F33EC /* LoginAuthModel.swift */; };
 		22A47B362A94C0AA004F33EC /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A47B352A94C0AA004F33EC /* AuthenticationManager.swift */; };
 		22B19CDA2A98859600043C0D /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B19CD92A98859600043C0D /* SubscriptionView.swift */; };
 		22B19CDC2A98889700043C0D /* SubscriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B19CDB2A98889700043C0D /* SubscriptionViewModel.swift */; };
@@ -108,7 +106,6 @@
 		226C1E792A975B8F0052548C /* InAppPurchaseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseScreen.swift; sourceTree = "<group>"; };
 		226C1E7C2A975F270052548C /* StorekitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorekitManager.swift; sourceTree = "<group>"; };
 		226C1E802A9763920052548C /* InAppPurchaseConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = InAppPurchaseConfiguration.storekit; sourceTree = "<group>"; };
-		226C1E822A9768F50052548C /* PurchaseProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseProduct.swift; sourceTree = "<group>"; };
 		226EA2292A89F84600D38D2F /* TrendingWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingWeekView.swift; sourceTree = "<group>"; };
 		226EA22B2A89FA2B00D38D2F /* TrendingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCard.swift; sourceTree = "<group>"; };
 		226EA22D2A8A011A00D38D2F /* MealDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetails.swift; sourceTree = "<group>"; };
@@ -145,7 +142,6 @@
 		228A73032A8E53E0005339F2 /* SignUpWithAppleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpWithAppleView.swift; sourceTree = "<group>"; };
 		229AB3552A8CFEF900F1A239 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		22A47AF82A949B6B004F33EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		22A47B332A94B66F004F33EC /* LoginAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthModel.swift; sourceTree = "<group>"; };
 		22A47B352A94C0AA004F33EC /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		22B19CD92A98859600043C0D /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
 		22B19CDB2A98889700043C0D /* SubscriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewModel.swift; sourceTree = "<group>"; };
@@ -302,8 +298,6 @@
 				226EA22B2A89FA2B00D38D2F /* TrendingCard.swift */,
 				226EA2312A8A098300D38D2F /* Categories.swift */,
 				2285A21C2A8A211B0085F67A /* OurPicks.swift */,
-				22A47B332A94B66F004F33EC /* LoginAuthModel.swift */,
-				226C1E822A9768F50052548C /* PurchaseProduct.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -574,7 +568,6 @@
 				228A72F12A8E25FE005339F2 /* LoginView.swift in Sources */,
 				226EA22E2A8A011A00D38D2F /* MealDetails.swift in Sources */,
 				228A72E92A8E03E1005339F2 /* SettingsView.swift in Sources */,
-				226C1E832A9768F50052548C /* PurchaseProduct.swift in Sources */,
 				228A72FE2A8E4A25005339F2 /* LoginViewModel.swift in Sources */,
 				2273CB582A8B59CA006763BA /* ShoppingCartView.swift in Sources */,
 				226C1E772A972D560052548C /* GlobalAlertView.swift in Sources */,
@@ -588,7 +581,6 @@
 				228A72EF2A8E25F6005339F2 /* RegisterView.swift in Sources */,
 				226EA22A2A89F84600D38D2F /* TrendingWeekView.swift in Sources */,
 				226EA2302A8A091600D38D2F /* CategoriesView.swift in Sources */,
-				22A47B342A94B66F004F33EC /* LoginAuthModel.swift in Sources */,
 				226EB8632AA09FB900FFF08E /* PaymentConfig.swift in Sources */,
 				2285A21D2A8A211B0085F67A /* OurPicks.swift in Sources */,
 				22A47B362A94C0AA004F33EC /* AuthenticationManager.swift in Sources */,

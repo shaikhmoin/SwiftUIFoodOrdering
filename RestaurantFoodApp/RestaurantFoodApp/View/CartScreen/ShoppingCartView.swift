@@ -129,7 +129,7 @@ struct ShoppingCartView: View {
                 
                 List {
                     ForEach(cart.cartItems) { product in
-                        ItemView(items: product) //Items view
+                        ItemView(items: product, isScreen: "Addtocart") //Items view
                     }
                     .onDelete { indexSet in
                         let indexPath = IndexPath(indexes: indexSet)

@@ -82,7 +82,7 @@ struct MealDetails: View {
                                     } else {
 //                                        cart.removeFromCart(cartItem: cart.cartItems[indexPath[0]])
 //                                        cart.removeFromWishlist(cartItem: mealDetails)
-                                        
+                                        //Remove selected items from wishlist array
                                         if let index = cart.wishlistItems.firstIndex(where: { $0.product.id == mealDetails.id }) {
                                             cart.wishlistItems.remove(at: index)
                                         }
@@ -177,6 +177,14 @@ struct MealDetails: View {
                 
                 .edgesIgnoringSafeArea(.all)
                 .background(Color.white.edgesIgnoringSafeArea(.all))
+            }
+        }
+        .onAppear {
+            print(cart.wishlistItems)
+            
+            //Check selected item is into wishlist array or not
+            if let index = cart.wishlistItems.firstIndex(where: { $0.product.id == mealDetails.id }) {
+                isSelectedWishlist.toggle()
             }
         }
     }

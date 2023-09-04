@@ -25,6 +25,8 @@ struct HomeView: View {
                     
                     VStack {
                         
+                       // OrderNowCard()
+                        
                         //Trending Week view
                         HStack {
                             Text("Trending this week")
@@ -41,7 +43,7 @@ struct HomeView: View {
                             }
                         }
                         .padding()
-                        
+
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 ForEach(testTrendingData) { meals in
@@ -67,12 +69,16 @@ struct HomeView: View {
                                 .fontWeight(.bold)
                             
                             Spacer()
-                            
-                            Button {
-                                print("View all click")
-                            } label: {
-                                Text("View all >")
-                                    .foregroundColor(.red)
+         
+                            Button(action: {
+                                // Action to perform when the button is tapped
+                            }) {
+                                NavigationLink(
+                                    destination: CategoryView().environmentObject(vm)
+                                ) {
+                                    Text("View all >")
+                                        .foregroundColor(.red)
+                                }
                             }
                         }
                         .padding()
@@ -98,13 +104,22 @@ struct HomeView: View {
                         
                         ScrollView(.vertical, showsIndicators: false) {
                             VStack {
-                                ForEach(testOurPicksData) { picks in
+//                                ForEach(testOurPicksData) { picks in
+//                                    NavigationLink(
+//                                        destination: SplashView(),
+//                                        label: {
+//                                            OurPicksView(ourPickesDT: picks)
+//                                        })
+//                                    .buttonStyle(PlainButtonStyle())
+//                                }
+                                
+                                ForEach(testTrendingData) { meals in
                                     NavigationLink(
-                                        destination: SplashView(),
+                                        destination: MealDetails(mealDetails: meals).environmentObject(vm)
+                                            .navigationBarHidden(true),
                                         label: {
-                                            OurPicksView(ourPickesDT: picks)
+                                            OurPicksView(ourPicksMeal: meals)
                                         })
-                                    .buttonStyle(PlainButtonStyle())
                                 }
                             }
                         }
@@ -213,5 +228,39 @@ struct SearchBar: View {
             .padding()
             .padding(.top, 20)
         }
+    }
+}
+
+struct OrderNowCard: View {
+    
+    var body : some View {
+        HStack(spacing:80){
+            VStack(alignment:.leading, spacing: 10){
+                Text("The Fastes In")
+                    .bold()
+                HStack{
+                    Text("Delivery")
+                        .bold()
+                    Text("Food")
+                        .foregroundColor(.pink)
+                        .bold()
+                }
+                // make it a button
+                Text("Order Now")
+                    .font(.subheadline)
+                    .foregroundColor(.white)
+                    .padding(10)
+                    .background(.pink)
+                    .cornerRadius(20)
+            }
+            .padding()
+            Image("deleviry")
+                .resizable()
+                .frame(width: 150, height: 150)
+            
+        }
+        .background(Color("lightyellow"))
+        .cornerRadius(15)
+        .padding(.top)
     }
 }

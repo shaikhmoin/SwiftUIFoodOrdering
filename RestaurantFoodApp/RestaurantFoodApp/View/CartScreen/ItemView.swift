@@ -12,6 +12,7 @@ struct ItemView: View {
     @EnvironmentObject private var cart: CartManager
     @State private var stepperValue = 1
     var items: CartItem
+    var isScreen: String = ""
 //    @State var itemsCopy : CartItem //Another method of getting data
 
     var body: some View {
@@ -27,33 +28,38 @@ struct ItemView: View {
                     .foregroundColor(.secondary)
             }
             
-            Stepper("\(stepperValue)",
-                    onIncrement: {
-                stepperValue += 1
-                print(stepperValue)
-                print(items.quantity)
+            if isScreen == "Addtocart" {
+                Stepper("\(stepperValue)",
+                        onIncrement: {
+                    stepperValue += 1
+                    print(stepperValue)
+                    print(items.quantity)
+                    
+                    cart.upodateInCart(product: items.product, Qty: stepperValue, increment: true)
+                    
+                }, onDecrement: {
+                    print(stepperValue)
+                    print(items.quantity)
+                    
+                    if items.quantity <= 1 {
+                        stepperValue = 1
+                    } else {
+                        stepperValue -= 1
+                        cart.upodateInCart(product: items.product, Qty: stepperValue, increment: false)
+                    }
+                })
+                .foregroundColor(.black)
+                .background(Color.white)
+                .frame(width: 80)
                 
-                cart.upodateInCart(product: items.product, Qty: stepperValue, increment: true)
-                
-            }, onDecrement: {
-                print(stepperValue)
-                print(items.quantity)
-                
-                if items.quantity <= 1 {
-                    stepperValue = 1
-                } else {
-                    stepperValue -= 1
-                    cart.upodateInCart(product: items.product, Qty: stepperValue, increment: false)
-                }
-            })
-            .foregroundColor(.black)
-            .background(Color.white)
-            .frame(width: 100)
-            
-            Text("\(items.quantity)")
-                .font(.headline)
-                .padding()
+                Text("\(items.quantity)")
+                    .font(.headline)
+                    .padding()
+            } else {
+                Spacer()
+            }
         }
+        .padding(.horizontal)
     }
 }
 
