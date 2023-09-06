@@ -12,6 +12,7 @@ final class SessionManager: ObservableObject {
     enum userDefaultsKey {
         static let hasSeenOnboarding = "hasSeenOnboarding"
         static let hasSeenSingin = "hasSeenSingin"
+        static let hasUserEmail = "hasUserEmail"
     }
     
     enum CurrentState {
@@ -31,6 +32,8 @@ final class SessionManager: ObservableObject {
         currentState = .loggedout
         //        UserDefaults.standard.set(false, forKey: userDefaultsKey.hasSeenOnboarding)
         UserDefaults.standard.set(false, forKey: userDefaultsKey.hasSeenSingin)
+        UserDefaults.standard.set("", forKey: userDefaultsKey.hasUserEmail)
+
     }
     
     func completeOnboarding() {

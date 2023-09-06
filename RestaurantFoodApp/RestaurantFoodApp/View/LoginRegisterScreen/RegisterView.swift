@@ -19,6 +19,8 @@ struct RegisterView: View {
     @State var error = ""
     @State var selection: Int? = nil
     @Environment(\.presentationMode) var presentationMode
+    @StateObject var viewModel: LoginViewModel
+    @EnvironmentObject var sessionManager:SessionManager
 
     var body: some View {
         
@@ -39,7 +41,7 @@ struct RegisterView: View {
                         .foregroundColor(self.color)
                         .padding(.top, 15)
                     
-                    TextField("Username or Email",text:self.$email)
+                    TextField("Username or Email",text:self.$viewModel.email)
                         .autocapitalization(.none)
                         .padding()
                         .background(RoundedRectangle(cornerRadius:6).stroke(Color("themecolor"),lineWidth:1))
@@ -48,10 +50,10 @@ struct RegisterView: View {
                     HStack(spacing: 15){
                         VStack{
                             if self.visible {
-                                TextField("Password", text: self.$pass)
+                                TextField("Password", text: self.$viewModel.password)
                                     .autocapitalization(.none)
                             } else {
-                                SecureField("Password", text: self.$pass)
+                                SecureField("Password", text: self.$viewModel.password)
                                     .autocapitalization(.none)
                             }
                         }
@@ -99,7 +101,7 @@ struct RegisterView: View {
                     
                     
                     // Sign up button
-                    NavigationLink(destination: CurrentLocationView(), tag: 1, selection: $selection) {
+                   // NavigationLink(destination: CurrentLocationView(), tag: 1, selection: $selection) {
                         Button(action: {
                             self.Register()
                         }) {
@@ -116,7 +118,7 @@ struct RegisterView: View {
                             return Alert(title: Text("Sign up error"), message: Text("\(self.error)"), dismissButton:
                                     .default(Text("OK").fontWeight(.semibold)))
                         }
-                    }
+                  //  }
                     
                     HStack(spacing: 5){
                         Text("Already have an account ?")
@@ -142,12 +144,29 @@ struct RegisterView: View {
     
     func Register(){
         
-        if self.email != ""{
+        if viewModel.email != ""{
             
-            if self.pass == self.repass{
+            if viewModel.password == self.repass{
                 
                 print("Success")
                 selection = 1
+                
+                //Signup with firebase
+                viewModel.signUpWithFirebase(completion: { result in
+                    
+                    switch result {
+                    case .success(let message):
+                        print("Task completed successfully: \(message)")
+                        UserDefaults.standard.set(viewModel.email, forKey: SessionManager.userDefaultsKey.hasUserEmail)
+                        sessionManager.signIn()
+                        
+                    case .failure(let error):
+                        print("Task failed with error: \(error)")
+                        self.error = error.localizedDescription
+                        self.alert.toggle()
+                        selection = 0
+                    }
+                })
             }
             else{
                 
@@ -198,6 +217,6 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView()
+        RegisterView(viewModel: LoginViewModel())
     }
 }

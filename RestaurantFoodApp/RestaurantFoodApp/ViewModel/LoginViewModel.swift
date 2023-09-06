@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class LoginViewModel: ObservableObject {
     
     @Published var email = ""
     @Published var password = ""
-    
+
     //Create user
     func signUpWithFirebase(completion: @escaping (Result<AuthDataResultModel, Error>) -> Void) {
         guard !email.isEmpty, !password.isEmpty else {
@@ -132,6 +133,8 @@ final class LoginViewModel: ObservableObject {
                 let returnUserData: () = try AuthenticationManager.shared.signOut()
 
                 print(returnUserData)
+                email = ""
+                password = ""
                 
                // completion(.success(returnUserData))
                 

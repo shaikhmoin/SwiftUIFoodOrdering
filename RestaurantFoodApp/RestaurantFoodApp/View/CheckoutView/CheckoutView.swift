@@ -46,18 +46,17 @@ struct CheckoutView: View {
                 ForEach(cart.cartItems) { item in
                     HStack {
 //                        Text(item.photo)
-                        Text("Heyyy")
+                        Text(item.product.title + "(\(String(format: "%.0f", item.product.price))" + " × \(item.quantity))")
                         Spacer()
-                        Text("52")
-//                        Text(formatPrice(item.price) ?? "")
+                        Text("$\(Int(item.product.price) * Int(item.quantity))")
                     }
                 }
                 
                 HStack {
                     Spacer()
-//                    Text("Total \(formatPrice(cart.cartTotal) ?? "")")
-                    Text("52")
                     Spacer()
+//                    Text("Total \(formatPrice(cart.cartTotal) ?? "")")
+                    Text("Total: $\(String(format: "%.2f", cart.totalCost()))")
                 }
                 
                 Section {

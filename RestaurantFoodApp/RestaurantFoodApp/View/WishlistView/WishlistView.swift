@@ -36,7 +36,7 @@ struct WishlistView: View {
                         }
                         
                     } else {
-                        Text("Your cart is empty.")
+                        Text("Your wishlist is empty.")
                     }
                 }
                 .background(.white)

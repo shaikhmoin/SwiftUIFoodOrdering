@@ -31,7 +31,6 @@ struct SettingsView: View {
     @StateObject var viewModel: LoginViewModel
     
     var languageOptions = ["English", "Arabic", "Chinese", "Danish"]
-    @AppStorage("email") var emailID: String = ""
     @StateObject private var alertManager = GlobalAlertManager()
     @EnvironmentObject private var purchaseManager: StorekitManager
     @AppStorage(Persistence.consumablesCountKey) var consumableCount: Int = 0
@@ -46,9 +45,9 @@ struct SettingsView: View {
                             Image(uiImage: UIImage(named: "UserProfile")!)
                                 .resizable()
                                 .frame(width:100, height: 100, alignment: .center)
-                            Text("Wolf Knight")
+                            Text("Moin Shaiklh")
                                 .font(.title)
-                            Text(emailID)
+                            Text(UserDefaults.standard.string(forKey: SessionManager.userDefaultsKey.hasUserEmail) ?? "")
                                 .font(.subheadline)
                                 .foregroundColor(.gray)
                             Spacer()

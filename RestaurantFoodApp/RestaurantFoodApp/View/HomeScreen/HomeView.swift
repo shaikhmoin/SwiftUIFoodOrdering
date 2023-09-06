@@ -25,7 +25,7 @@ struct HomeView: View {
                     
                     VStack {
                         
-                       // OrderNowCard()
+//                        OrderNowCard()
                         
                         //Trending Week view
                         HStack {
@@ -35,12 +35,12 @@ struct HomeView: View {
                             
                             Spacer()
                             
-                            Button {
-                                print("View all click")
-                            } label: {
-                                Text("View all >")
-                                    .foregroundColor(.red)
-                            }
+//                            Button {
+//                                print("View all click")
+//                            } label: {
+//                                Text("View all >")
+//                                    .foregroundColor(.red)
+//                            }
                         }
                         .padding()
 
@@ -70,16 +70,16 @@ struct HomeView: View {
                             
                             Spacer()
          
-                            Button(action: {
-                                // Action to perform when the button is tapped
-                            }) {
-                                NavigationLink(
-                                    destination: CategoryView().environmentObject(vm)
-                                ) {
-                                    Text("View all >")
-                                        .foregroundColor(.red)
-                                }
-                            }
+//                            Button(action: {
+//                                // Action to perform when the button is tapped
+//                            }) {
+//                                NavigationLink(
+//                                    destination: CategoryView().environmentObject(vm)
+//                                ) {
+//                                    Text("View all >")
+//                                        .foregroundColor(.red)
+//                                }
+//                            }
                         }
                         .padding()
                         
@@ -93,12 +93,12 @@ struct HomeView: View {
                             
                             Spacer()
                             
-                            Button {
-                                print("View all click")
-                            } label: {
-                                Text("View all >")
-                                    .foregroundColor(.red)
-                            }
+//                            Button {
+//                                print("View all click")
+//                            } label: {
+//                                Text("View all >")
+//                                    .foregroundColor(.red)
+//                            }
                         }
                         .padding()
                         
@@ -234,7 +234,7 @@ struct SearchBar: View {
 struct OrderNowCard: View {
     
     var body : some View {
-        HStack(spacing:80){
+        HStack(spacing:100){
             VStack(alignment:.leading, spacing: 10){
                 Text("The Fastes In")
                     .bold()

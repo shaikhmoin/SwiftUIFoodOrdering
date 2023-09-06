@@ -11,7 +11,6 @@
 		2251B8E42A9E10E700A50578 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2251B8E32A9E10E700A50578 /* Persistence.swift */; };
 		2267BFD62A8A1E740088EC27 /* OurPicksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2267BFD52A8A1E740088EC27 /* OurPicksView.swift */; };
 		22680CEC2AA2115200CE45BE /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22680CEB2AA2115200CE45BE /* CategoryView.swift */; };
-		226959122A97851200B9CB35 /* EntitlementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226959112A97851200B9CB35 /* EntitlementManager.swift */; };
 		226C1E772A972D560052548C /* GlobalAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C1E762A972D560052548C /* GlobalAlertView.swift */; };
 		226C1E7A2A975B8F0052548C /* InAppPurchaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C1E792A975B8F0052548C /* InAppPurchaseScreen.swift */; };
 		226C1E7D2A975F270052548C /* StorekitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C1E7C2A975F270052548C /* StorekitManager.swift */; };
@@ -101,7 +100,6 @@
 		2251B8E32A9E10E700A50578 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		2267BFD52A8A1E740088EC27 /* OurPicksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurPicksView.swift; sourceTree = "<group>"; };
 		22680CEB2AA2115200CE45BE /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
-		226959112A97851200B9CB35 /* EntitlementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementManager.swift; sourceTree = "<group>"; };
 		226C1E762A972D560052548C /* GlobalAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalAlertView.swift; sourceTree = "<group>"; };
 		226C1E792A975B8F0052548C /* InAppPurchaseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseScreen.swift; sourceTree = "<group>"; };
 		226C1E7C2A975F270052548C /* StorekitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorekitManager.swift; sourceTree = "<group>"; };
@@ -395,7 +393,6 @@
 				228A72FD2A8E4A25005339F2 /* LoginViewModel.swift */,
 				22A47B352A94C0AA004F33EC /* AuthenticationManager.swift */,
 				226C1E7C2A975F270052548C /* StorekitManager.swift */,
-				226959112A97851200B9CB35 /* EntitlementManager.swift */,
 				22B19CDB2A98889700043C0D /* SubscriptionViewModel.swift */,
 			);
 			path = ViewModel;
@@ -589,7 +586,6 @@
 				22B19CDA2A98859600043C0D /* SubscriptionView.swift in Sources */,
 				2249BDFA2A863CCC008C12DD /* TabbarView.swift in Sources */,
 				22762B812A861582006A93BF /* Card.swift in Sources */,
-				226959122A97851200B9CB35 /* EntitlementManager.swift in Sources */,
 				22680CEC2AA2115200CE45BE /* CategoryView.swift in Sources */,
 				22762B6A2A86144B006A93BF /* RestaurantFoodAppApp.swift in Sources */,
 				22762B8D2A862D6D006A93BF /* HomeView.swift in Sources */,

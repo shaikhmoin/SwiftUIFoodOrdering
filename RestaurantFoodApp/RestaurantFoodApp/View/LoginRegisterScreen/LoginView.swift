@@ -22,19 +22,8 @@ struct LoginView: View {
     @State private var isSHowHomeView: Bool = false
     
     @Environment(\.colorScheme) var colorScheme
-    
-    @AppStorage("email") var emailID: String = ""
-    @AppStorage("firstName") var firstName: String = ""
-    @AppStorage("lastName") var lastName: String = ""
-    @AppStorage("userID") var userID: String = ""
-    @AppStorage("log_Status") var log_status = false
-    
     @EnvironmentObject var sessionManager:SessionManager
     @StateObject var viewModel: LoginViewModel
-    
-    private var isSignedIn: Bool {
-        !userID.isEmpty
-    }
     
     var body: some View {
         
@@ -116,7 +105,7 @@ struct LoginView: View {
             HStack(spacing: 5){
                 Text("Don't have an account ?")
                 
-                NavigationLink(destination: RegisterView()){
+                NavigationLink(destination: RegisterView(viewModel: LoginViewModel()).environmentObject(sessionManager)){
                     Text("Sign up")
                         .fontWeight(.bold)
                         .foregroundColor(Color("themecolor"))
@@ -160,8 +149,8 @@ struct LoginView: View {
                 case .success(let message):
                     print("Task completed successfully: \(message)")
                     
-                    emailID = message.email ?? ""
-                    print(emailID)
+                    UserDefaults.standard.set(viewModel.email, forKey: SessionManager.userDefaultsKey.hasUserEmail)
+
                     //                    var userDefaults = UserDefaults.standard
                     
                     //                    do{
@@ -200,6 +189,7 @@ struct LoginView: View {
                         switch result {
                         case .success(let message):
                             print("Task completed successfully: \(message)")
+                            UserDefaults.standard.set(viewModel.email, forKey: SessionManager.userDefaultsKey.hasUserEmail)
                             sessionManager.signIn()
                             
                         case .failure(let error):
@@ -223,11 +213,6 @@ struct LoginView: View {
 struct SignInButtonView: View {
     
     @Environment(\.colorScheme) var colorScheme
-    @AppStorage("email") var emailID: String = ""
-    @AppStorage("firstName") var firstName: String = ""
-    @AppStorage("lastName") var lastName: String = ""
-    @AppStorage("userID") var userID: String = ""
-    @AppStorage("log_Status") var log_status = false
     
     let onCompletion: (Bool) -> Void
     
@@ -260,10 +245,7 @@ struct SignInButtonView: View {
                     print(firstName)
                     print(lastName)
                     
-                    self.emailID = userEmail ?? ""
-                    self.userID = userIdentifier
-                    self.firstName = firstName ?? ""
-                    self.lastName = lastName ?? ""
+                    UserDefaults.standard.set(userEmail, forKey: SessionManager.userDefaultsKey.hasUserEmail)
                     
                     onCompletion(true)
                     
