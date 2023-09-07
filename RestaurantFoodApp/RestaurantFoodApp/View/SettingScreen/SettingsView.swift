@@ -37,6 +37,9 @@ struct SettingsView: View {
     @AppStorage(Persistence.consumablesCountKey) var consumableCount: Int = 0
     @State private var userImage: UIImage? = nil
 
+    @State var shouldShowImagePicker = false
+    @State var selectedImage: UIImage?
+    
     var body: some View {
         NavigationView {
             Form {
@@ -45,11 +48,32 @@ struct SettingsView: View {
                         Spacer()
                         VStack {
                 
-                            Image(uiImage: userImage ?? UIImage(named: "UserProfile")!)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width:100, height: 100, alignment: .center)
-                                .clipShape(Circle())
+                            Button(action: {
+                                shouldShowImagePicker.toggle()
+
+                                if let selectedImage = userImage {
+                                    viewModelUserProfile.updateProfileImage(image: selectedImage) { result in
+                                        switch result {
+                                        case .success:
+                                            // Handle success (e.g., show a success message)
+                                            break
+                                        case .failure(let error):
+                                            // Handle the error (e.g., show an error message)
+                                            print("Error updating profile image: \(error.localizedDescription)")
+                                        }
+                                    }
+                                }
+                                
+                            }) {
+                                Image(uiImage: userImage ?? UIImage(named: "UserProfile")!)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width:100, height: 100, alignment: .center)
+                                    .clipShape(Circle())
+                            }
+                            
+                            
+                         
                             
                             Text("Moin Shaiklh")
                                 .font(.title)
@@ -251,6 +275,10 @@ struct SettingsView: View {
                 }
             }
         }
+        .sheet(isPresented: $shouldShowImagePicker, onDismiss: nil) {
+            ImagePicker(image: $selectedImage)
+                .ignoresSafeArea()
+        }
     }
            
     var donationView: some View {
@@ -359,3 +387,6 @@ struct DonationButtonImage: ButtonStyle {
             .clipShape(Circle())
     }
 }
+
+
+
