@@ -89,7 +89,7 @@ struct LoginView: View {
                     
                     // Sign in button
                     Button(action: {
-                        self.Verify()
+                        self.signInFromFirebase()
                         
                     }) {
                         Text("Sign in")
@@ -144,7 +144,7 @@ struct LoginView: View {
         print("ShowAppleLoginView")
     }
     
-    func Verify(){
+    func signInFromFirebase(){
         if viewModel.email != "" && viewModel.password != "" {
             print("Success")
             
@@ -156,74 +156,14 @@ struct LoginView: View {
                     print("Task completed successfully: \(message)")
                     
                     UserDefaults.standard.set(viewModel.email, forKey: SessionManager.userDefaultsKey.hasUserEmail)
-
-                    
-                    // Check if the user is logged in
-//                    if let user = Auth.auth().currentUser {
-//                        // Get the user's UID
-//                        let uid = user.uid
-//
-//                        // Reference to the Firestore database
-//                        let db = Firestore.firestore()
-//
-//                        // Reference to the user's document in Firestore (assuming a "users" collection)
-//                        let userRef = db.collection("users").document(uid)
-//
-//                        // Fetch the user's document
-//                        userRef.getDocument { document, error in
-//                            if let document = document, document.exists {
-//                                // Retrieve the image URL from the document
-//                                if let imageUrlString = document.data()?["imageUrl"] as? String {
-//                                    if let imageUrl = URL(string: imageUrlString) {
-//                                        // Perform a network request to fetch the image asynchronously
-//                                        URLSession.shared.dataTask(with: imageUrl) { data, _, error in
-//                                            if let data = data, let uiImage = UIImage(data: data) {
-//                                                // Convert UIImage to SwiftUI Image
-//                                                let swiftUIImage = Image(uiImage: uiImage)
-//
-//                                                // Update the userImage when the image data is fetched
-//                                                DispatchQueue.main.async {
-//                                                    userImage = swiftUIImage
-//                                                }
-//                                            } else {
-//                                                // Handle errors if necessary
-//                                                print("Failed to fetch or display image: \(error?.localizedDescription ?? "")")
-//                                            }
-//                                        }.resume()
-//                                    }
-//                                }
-//                            } else {
-//                                // Handle errors if necessary
-//                                print("User document not found: \(error?.localizedDescription ?? "")")
-//                            }
-//                        }
-//                    }
-                    
-                    
+            
                     sessionManager.signIn()
                     
                 case .failure(let error):
                     print("Task failed with error: \(error)")
-                    //                    self.title = "Login Error"
-                    //                    self.error = error.localizedDescription
-                    //                    self.alert = true
-                    
-                    //Signup with firebase
-                    viewModel.signUpWithFirebase(completion: { result in
-                        
-                        switch result {
-                        case .success(let message):
-                            print("Task completed successfully: \(message)")
-                            UserDefaults.standard.set(viewModel.email, forKey: SessionManager.userDefaultsKey.hasUserEmail)
-                            sessionManager.signIn()
-                            
-                        case .failure(let error):
-                            print("Task failed with error: \(error)")
-                            self.title = "Login Error"
-                            self.error = error.localizedDescription
-                            self.alert = true
-                        }
-                    })
+                    self.title = "Login Error"
+                    self.error = error.localizedDescription
+                    self.alert = true
                 }
             })
             

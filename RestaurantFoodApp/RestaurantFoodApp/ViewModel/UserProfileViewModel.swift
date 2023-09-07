@@ -19,7 +19,7 @@ struct UserData: Identifiable {
 class UserProfileViewModel: ObservableObject {
     @Published var userImage: UIImage?
     @Published private var aryUserData: [UserData] = []
-
+    
     func fetchUserData(completion: @escaping (Result<[UserData], Error>) -> Void) {
         guard let uid = Auth.auth().currentUser?.uid else {
             print("User is not authenticated.")
@@ -28,7 +28,7 @@ class UserProfileViewModel: ObservableObject {
         
         let db = Firestore.firestore()
         
-        db.collection("images").document(uid).getDocument { (document, error) in
+        db.collection("users").document(uid).getDocument { (document, error) in
             if let document = document, document.exists {
                 if let data = document.data() {
                     if let id = data["id"] as? String,
@@ -44,7 +44,7 @@ class UserProfileViewModel: ObservableObject {
                 }
             } else {
                 print("Image document not found: \(error?.localizedDescription ?? "")")
-              //  completion(.failure(error?.localizedDescription))
+                //  completion(.failure(error?.localizedDescription))
             }
         }
     }

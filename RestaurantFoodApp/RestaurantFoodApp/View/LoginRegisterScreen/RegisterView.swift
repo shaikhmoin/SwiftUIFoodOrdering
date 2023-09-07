@@ -222,7 +222,7 @@ struct RegisterView: View {
             "imageURL": imageUrl
         ]
         
-        db.collection("images").document(uid).setData(dataToSave) { error in
+        db.collection("users").document(uid).setData(dataToSave) { error in
             if let error = error {
                 print("Error saving image data to Firestore: \(error.localizedDescription)")
             } else {

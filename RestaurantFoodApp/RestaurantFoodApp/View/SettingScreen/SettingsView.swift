@@ -51,8 +51,6 @@ struct SettingsView: View {
                                 .frame(width:100, height: 100, alignment: .center)
                                 .clipShape(Circle())
                             
-//                            Image(uiImage: UIImage(named: "UserProfile")!)
-                            
                             Text("Moin Shaiklh")
                                 .font(.title)
                             Text(UserDefaults.standard.string(forKey: SessionManager.userDefaultsKey.hasUserEmail) ?? "")
@@ -225,51 +223,30 @@ struct SettingsView: View {
             
             .onAppear{
                 
-                if SessionManager.userDefaultsKey.hasUserPhoto != "" {
-                    // Load the user image when the view appears
-                    if let imageUrlString = UserDefaults.standard.string(forKey: SessionManager.userDefaultsKey.hasUserPhoto),
-                       let imageUrl = URL(string: imageUrlString) {
-                        // Perform a network request to fetch the image asynchronously
-                        URLSession.shared.dataTask(with: imageUrl) { data, _, error in
-                            if let data = data, let uiImage = UIImage(data: data) {
-                                // Update the userImage when the image data is fetched
-                                userImage = uiImage
-                            } else {
-                                // Handle errors if necessary
-                                print("Failed to fetch or display image: \(error?.localizedDescription ?? "")")
-                            }
-                        }.resume()
-                    }
-                } else {
-//                    userImage = uiImage
-                    print("coming from login flow")
-                    
-//                    viewModelUserProfile.fetchUserData()
-                    
-                    viewModelUserProfile.fetchUserData() { result in
-                        switch result {
-                        case .success(let userdata):
-                            print(userdata[0].imageURL)
-                            
-                            UserDefaults.standard.set(userdata[0].imageURL, forKey: SessionManager.userDefaultsKey.hasUserPhoto)
-                            
-                            if let imageUrlString = UserDefaults.standard.string(forKey: SessionManager.userDefaultsKey.hasUserPhoto),
-                               let imageUrl = URL(string: imageUrlString) {
-                                // Perform a network request to fetch the image asynchronously
-                                URLSession.shared.dataTask(with: imageUrl) { data, _, error in
-                                    if let data = data, let uiImage = UIImage(data: data) {
-                                        // Update the userImage when the image data is fetched
-                                        userImage = uiImage
-                                    } else {
-                                        // Handle errors if necessary
-                                        print("Failed to fetch or display image: \(error?.localizedDescription ?? "")")
-                                    }
-                                }.resume()
-                            }
-                            
-                        case .failure(let error):
-                            print("Error: \(error)")
+                //Fetch current user data and set profile image
+                viewModelUserProfile.fetchUserData() { result in
+                    switch result {
+                    case .success(let userdata):
+                        print(userdata[0].imageURL)
+                        
+                        UserDefaults.standard.set(userdata[0].imageURL, forKey: SessionManager.userDefaultsKey.hasUserPhoto)
+                        
+                        if let imageUrlString = UserDefaults.standard.string(forKey: SessionManager.userDefaultsKey.hasUserPhoto),
+                           let imageUrl = URL(string: imageUrlString) {
+                            // Perform a network request to fetch the image asynchronously
+                            URLSession.shared.dataTask(with: imageUrl) { data, _, error in
+                                if let data = data, let uiImage = UIImage(data: data) {
+                                    // Update the userImage when the image data is fetched
+                                    userImage = uiImage
+                                } else {
+                                    // Handle errors if necessary
+                                    print("Failed to fetch or display image: \(error?.localizedDescription ?? "")")
+                                }
+                            }.resume()
                         }
+                        
+                    case .failure(let error):
+                        print("Error: \(error)")
                     }
                 }
             }
