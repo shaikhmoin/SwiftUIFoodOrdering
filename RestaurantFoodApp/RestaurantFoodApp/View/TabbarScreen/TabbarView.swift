@@ -58,7 +58,7 @@ struct TabbarView: View {
             //                .badge(12)
             
             NavigationView {
-                SettingsView(viewModel: LoginViewModel())
+                SettingsView(viewModel: LoginViewModel(), viewModelUserProfile: UserProfileViewModel())
             }
             
             .tabItem {

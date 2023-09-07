@@ -29,11 +29,13 @@ struct SettingsView: View {
     @State private var languageIndex = 0
     @EnvironmentObject private var session: SessionManager
     @StateObject var viewModel: LoginViewModel
-    
+    @StateObject var viewModelUserProfile: UserProfileViewModel
+
     var languageOptions = ["English", "Arabic", "Chinese", "Danish"]
     @StateObject private var alertManager = GlobalAlertManager()
     @EnvironmentObject private var purchaseManager: StorekitManager
     @AppStorage(Persistence.consumablesCountKey) var consumableCount: Int = 0
+    @State private var userImage: UIImage? = nil
 
     var body: some View {
         NavigationView {
@@ -42,9 +44,15 @@ struct SettingsView: View {
                     HStack{
                         Spacer()
                         VStack {
-                            Image(uiImage: UIImage(named: "UserProfile")!)
+                
+                            Image(uiImage: userImage ?? UIImage(named: "UserProfile")!)
                                 .resizable()
+                                .scaledToFill()
                                 .frame(width:100, height: 100, alignment: .center)
+                                .clipShape(Circle())
+                            
+//                            Image(uiImage: UIImage(named: "UserProfile")!)
+                            
                             Text("Moin Shaiklh")
                                 .font(.title)
                             Text(UserDefaults.standard.string(forKey: SessionManager.userDefaultsKey.hasUserEmail) ?? "")
@@ -214,9 +222,60 @@ struct SettingsView: View {
             }
             .navigationBarTitle("Settings")
             .navigationBarHidden(true)
+            
+            .onAppear{
+                
+                if SessionManager.userDefaultsKey.hasUserPhoto != "" {
+                    // Load the user image when the view appears
+                    if let imageUrlString = UserDefaults.standard.string(forKey: SessionManager.userDefaultsKey.hasUserPhoto),
+                       let imageUrl = URL(string: imageUrlString) {
+                        // Perform a network request to fetch the image asynchronously
+                        URLSession.shared.dataTask(with: imageUrl) { data, _, error in
+                            if let data = data, let uiImage = UIImage(data: data) {
+                                // Update the userImage when the image data is fetched
+                                userImage = uiImage
+                            } else {
+                                // Handle errors if necessary
+                                print("Failed to fetch or display image: \(error?.localizedDescription ?? "")")
+                            }
+                        }.resume()
+                    }
+                } else {
+//                    userImage = uiImage
+                    print("coming from login flow")
+                    
+//                    viewModelUserProfile.fetchUserData()
+                    
+                    viewModelUserProfile.fetchUserData() { result in
+                        switch result {
+                        case .success(let userdata):
+                            print(userdata[0].imageURL)
+                            
+                            UserDefaults.standard.set(userdata[0].imageURL, forKey: SessionManager.userDefaultsKey.hasUserPhoto)
+                            
+                            if let imageUrlString = UserDefaults.standard.string(forKey: SessionManager.userDefaultsKey.hasUserPhoto),
+                               let imageUrl = URL(string: imageUrlString) {
+                                // Perform a network request to fetch the image asynchronously
+                                URLSession.shared.dataTask(with: imageUrl) { data, _, error in
+                                    if let data = data, let uiImage = UIImage(data: data) {
+                                        // Update the userImage when the image data is fetched
+                                        userImage = uiImage
+                                    } else {
+                                        // Handle errors if necessary
+                                        print("Failed to fetch or display image: \(error?.localizedDescription ?? "")")
+                                    }
+                                }.resume()
+                            }
+                            
+                        case .failure(let error):
+                            print("Error: \(error)")
+                        }
+                    }
+                }
+            }
         }
     }
-    
+           
     var donationView: some View {
         VStack{
             Text("Select Donation Amount")
@@ -284,7 +343,8 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         let loginViewModel = LoginViewModel() // Declare the variable
-        SettingsView(viewModel: loginViewModel)
+        let userProfileViewModel = UserProfileViewModel() // Declare the variable
+        SettingsView(viewModel: loginViewModel, viewModelUserProfile: userProfileViewModel)
     }
 }
 

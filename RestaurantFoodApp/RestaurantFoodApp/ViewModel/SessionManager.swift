@@ -13,6 +13,7 @@ final class SessionManager: ObservableObject {
         static let hasSeenOnboarding = "hasSeenOnboarding"
         static let hasSeenSingin = "hasSeenSingin"
         static let hasUserEmail = "hasUserEmail"
+        static let hasUserPhoto = ""
     }
     
     enum CurrentState {
@@ -24,8 +25,10 @@ final class SessionManager: ObservableObject {
     @Published private(set) var currentState: CurrentState?
     
     func signIn() {
-        currentState = .loggedIn
-        UserDefaults.standard.set(true, forKey: userDefaultsKey.hasSeenSingin)
+        DispatchQueue.main.async {
+            self.currentState = .loggedIn
+            UserDefaults.standard.set(true, forKey: userDefaultsKey.hasSeenSingin)
+        }
     }
     
     func signOut() {
@@ -33,7 +36,8 @@ final class SessionManager: ObservableObject {
         //        UserDefaults.standard.set(false, forKey: userDefaultsKey.hasSeenOnboarding)
         UserDefaults.standard.set(false, forKey: userDefaultsKey.hasSeenSingin)
         UserDefaults.standard.set("", forKey: userDefaultsKey.hasUserEmail)
-
+        UserDefaults.standard.set("", forKey: userDefaultsKey.hasUserPhoto)
+        
     }
     
     func completeOnboarding() {

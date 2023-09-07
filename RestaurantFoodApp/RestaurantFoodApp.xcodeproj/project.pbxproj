@@ -93,6 +93,8 @@
 		22C1EFCF2A8651F100E42B12 /* currentlocation.json in Resources */ = {isa = PBXBuildFile; fileRef = 22C1EFCE2A8651F100E42B12 /* currentlocation.json */; };
 		22C1EFD12A86527E00E42B12 /* CurrentLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C1EFD02A86527E00E42B12 /* CurrentLocationView.swift */; };
 		886D1F662AA467FE00953454 /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886D1F652AA467FE00953454 /* WishlistView.swift */; };
+		88FB3AFC2AA9D69A00A3DAD1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FB3AFB2AA9D69A00A3DAD1 /* ImagePicker.swift */; };
+		88FB3B002AAA0F8F00A3DAD1 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FB3AFF2AAA0F8F00A3DAD1 /* UserProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,6 +151,8 @@
 		22C1EFCE2A8651F100E42B12 /* currentlocation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currentlocation.json; sourceTree = "<group>"; };
 		22C1EFD02A86527E00E42B12 /* CurrentLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationView.swift; sourceTree = "<group>"; };
 		886D1F652AA467FE00953454 /* WishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
+		88FB3AFB2AA9D69A00A3DAD1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		88FB3AFF2AAA0F8F00A3DAD1 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +216,7 @@
 				226C1E762A972D560052548C /* GlobalAlertView.swift */,
 				2251B8E32A9E10E700A50578 /* Persistence.swift */,
 				226EB84D2AA0545400FFF08E /* DropDown.swift */,
+				88FB3AFB2AA9D69A00A3DAD1 /* ImagePicker.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 			children = (
 				2278945C2A8B725400FA2E20 /* CartManager.swift */,
 				228A72F62A8E417B005339F2 /* SessionManager.swift */,
+				88FB3AFF2AAA0F8F00A3DAD1 /* UserProfileViewModel.swift */,
 				228A72FD2A8E4A25005339F2 /* LoginViewModel.swift */,
 				22A47B352A94C0AA004F33EC /* AuthenticationManager.swift */,
 				226C1E7C2A975F270052548C /* StorekitManager.swift */,
@@ -556,6 +562,7 @@
 				226C1E7D2A975F270052548C /* StorekitManager.swift in Sources */,
 				226EB8612AA09EA600FFF08E /* CheckoutResponse.swift in Sources */,
 				2278945D2A8B725400FA2E20 /* CartManager.swift in Sources */,
+				88FB3AFC2AA9D69A00A3DAD1 /* ImagePicker.swift in Sources */,
 				226EA22C2A89FA2B00D38D2F /* TrendingCard.swift in Sources */,
 				22B19CDC2A98889700043C0D /* SubscriptionViewModel.swift in Sources */,
 				226EA2322A8A098300D38D2F /* Categories.swift in Sources */,
@@ -570,6 +577,7 @@
 				226C1E772A972D560052548C /* GlobalAlertView.swift in Sources */,
 				226EB84E2AA0545400FFF08E /* DropDown.swift in Sources */,
 				2251B8E42A9E10E700A50578 /* Persistence.swift in Sources */,
+				88FB3B002AAA0F8F00A3DAD1 /* UserProfileViewModel.swift in Sources */,
 				22C1EFD12A86527E00E42B12 /* CurrentLocationView.swift in Sources */,
 				22762B6C2A86144B006A93BF /* OnboardingView.swift in Sources */,
 				2267BFD62A8A1E740088EC27 /* OurPicksView.swift in Sources */,

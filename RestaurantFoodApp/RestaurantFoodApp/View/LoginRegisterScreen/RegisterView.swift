@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseStorage
 
 struct RegisterView: View {
     
@@ -17,24 +19,39 @@ struct RegisterView: View {
     @State var revisible = false
     @State var alert = false
     @State var error = ""
-    @State var selection: Int? = nil
     @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: LoginViewModel
     @EnvironmentObject var sessionManager:SessionManager
-
+    @State var shouldShowImagePicker = false
+    @State var selectedImage: UIImage?
+    
     var body: some View {
         
-        VStack(alignment: .leading){
-            
-            GeometryReader{_ in
-                
-                VStack{
-                    LottieView(filename: "order")
-                        .frame(width: 300, height: 250)
-                        .shadow(color: .orange, radius: 1, x: 0, y: 0)
-                        .clipShape(Circle())
-                        .padding()
-                    
+        //        NavigationView {
+        GeometryReader { geometry in
+            ScrollView {
+                VStack {
+                    Button {
+                        shouldShowImagePicker.toggle()
+                    } label: {
+                        VStack {
+                            if let image = self.selectedImage {
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 128, height: 128)
+                                    .cornerRadius(64)
+                            } else {
+                                Image(systemName: "person.fill")
+                                    .font(.system(size: 64))
+                                    .padding()
+                                    .foregroundColor(Color(.label))
+                            }
+                        }
+                        .overlay(RoundedRectangle(cornerRadius: 64)
+                            .stroke(Color.black, lineWidth: 3)
+                        )
+                    }
                     Text("Sign up a new account")
                         .font(.title)
                         .fontWeight(.bold)
@@ -101,31 +118,29 @@ struct RegisterView: View {
                     
                     
                     // Sign up button
-                   // NavigationLink(destination: CurrentLocationView(), tag: 1, selection: $selection) {
-                        Button(action: {
-                            self.Register()
-                        }) {
-                            Text("Sign up")
-                                .foregroundColor(.white)
-                                .fontWeight(.bold)
-                                .padding(.vertical)
-                                .frame(width: UIScreen.main.bounds.width - 50)
-                        }
-                        .background(Color("themecolor"))
-                        .cornerRadius(6)
-                        .padding(.top, 15)
-                        .alert(isPresented: self.$alert){()->Alert in
-                            return Alert(title: Text("Sign up error"), message: Text("\(self.error)"), dismissButton:
-                                    .default(Text("OK").fontWeight(.semibold)))
-                        }
-                  //  }
+                    Button(action: {
+                        self.createNewAccount()
+                    }) {
+                        Text("Sign up")
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                            .padding(.vertical)
+                            .frame(width: UIScreen.main.bounds.width - 50)
+                    }
+                    .background(Color("themecolor"))
+                    .cornerRadius(6)
+                    .padding(.top, 15)
+                    .alert(isPresented: self.$alert){()->Alert in
+                        return Alert(title: Text("Sign up error"), message: Text("\(self.error)"), dismissButton:
+                                .default(Text("OK").fontWeight(.semibold)))
+                    }
                     
                     HStack(spacing: 5){
                         Text("Already have an account ?")
                         
                         Button {
                             presentationMode.wrappedValue.dismiss()
-
+                            
                         } label: {
                             Text("Sign In")
                                 .fontWeight(.bold)
@@ -135,21 +150,94 @@ struct RegisterView: View {
                         Text("now").multilineTextAlignment(.leading)
                         
                     }.padding(.top, 25)
+                    
+                    
                 }
                 .padding(.horizontal, 25)
-                .navigationBarHidden(true)
+                .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+            }
+        }
+        .navigationBarHidden(true)
+        .sheet(isPresented: $shouldShowImagePicker, onDismiss: nil) {
+            ImagePicker(image: $selectedImage)
+                .ignoresSafeArea()
+        }
+    }
+    
+     private func uploadphotoToStorage() {
+        
+        guard selectedImage != nil else { //check selected image is nil or not
+            return
+        }
+        
+        guard let uid = Auth.auth().currentUser?.uid else { //check current user with a valid UID
+            return
+        }
+        
+        let storageref = Storage.storage().reference() //create storage reference
+        
+        guard let imageData = self.selectedImage?.jpegData(compressionQuality: 0.5) else { return } //convert image into data
+        
+        let fileref = storageref.child("images/\(UUID().uuidString).jpg")
+        
+        //upload photo to storage
+        fileref.putData(imageData, metadata: nil) { metadata, err in
+            if let err = err {
+                print("Failed to push image to Storage: \(err)")
+                return
+            }
+            
+            fileref.downloadURL { url, err in
+                if let err = err {
+                    print("Failed to retrieve downloadURL: \(err)")
+                    return
+                }
+                
+                print("Successfully stored image with url: \(url?.absoluteString ?? "")")
+                print(url?.absoluteString)
+                UserDefaults.standard.set(url?.absoluteString, forKey: SessionManager.userDefaultsKey.hasUserPhoto)
+                
+                //https://firebasestorage.googleapis.com:443/v0/b/restaurantfoodapp-e8233.appspot.com/o/tUnjbtEyZ4PnfbE8GfGGd4V5BJn2?alt=media&token=7ff82e13-40c5-443a-8f72-ac16ed510dc5
+                
+                if let imageUrl = url?.absoluteString {
+                    // Save user data to Firestore
+                    saveuserDataToFirestore(imageUrl: imageUrl)
+                }
             }
         }
     }
     
-    func Register(){
+    private func saveuserDataToFirestore(imageUrl: String) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print("User is not authenticated.")
+            return
+        }
+        
+        let db = Firestore.firestore()
+        
+        let dataToSave: [String: Any] = [
+            "id": uid,
+            "name": "This is an uploaded image.",
+            "email": "This is an uploaded image.",
+            "imageURL": imageUrl
+        ]
+        
+        db.collection("images").document(uid).setData(dataToSave) { error in
+            if let error = error {
+                print("Error saving image data to Firestore: \(error.localizedDescription)")
+            } else {
+                print("Image data saved successfully!")
+            }
+        }
+    }
+  
+    private func createNewAccount(){
         
         if viewModel.email != ""{
             
             if viewModel.password == self.repass{
                 
                 print("Success")
-                selection = 1
                 
                 //Signup with firebase
                 viewModel.signUpWithFirebase(completion: { result in
@@ -158,13 +246,14 @@ struct RegisterView: View {
                     case .success(let message):
                         print("Task completed successfully: \(message)")
                         UserDefaults.standard.set(viewModel.email, forKey: SessionManager.userDefaultsKey.hasUserEmail)
-                        sessionManager.signIn()
+                        self.uploadphotoToStorage() //upload photo to storage and firestore db
                         
+                        sessionManager.signIn()
+
                     case .failure(let error):
                         print("Task failed with error: \(error)")
                         self.error = error.localizedDescription
                         self.alert.toggle()
-                        selection = 0
                     }
                 })
             }
@@ -172,14 +261,12 @@ struct RegisterView: View {
                 
                 self.error = "Password mismatch"
                 self.alert.toggle()
-                selection = 0
             }
         }
         else{
             
             self.error = "Please fill all the contents properly"
             self.alert.toggle()
-            selection = 0
         }
         
         //        if self.email != ""{

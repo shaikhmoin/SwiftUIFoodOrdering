@@ -8,6 +8,8 @@
 import SwiftUI
 import AuthenticationServices
 import FirebaseAuth
+import Firebase
+import FirebaseStorage
 
 struct LoginView: View {
     
@@ -27,111 +29,115 @@ struct LoginView: View {
     
     var body: some View {
         
-        VStack{
-            LottieView(filename: "order")
-                .frame(width: 300, height: 250)
-                .shadow(color: .orange, radius: 1, x: 0, y: 0)
-                .clipShape(Circle())
-                .padding()
-            
-            Text("Sign in to your account")
-                .font(.title)
-                .fontWeight(.bold)
-                .padding(.top, 15)
-            
-            TextField("Username or Email",text:self.$viewModel.email)
-                .autocapitalization(.none)
-                .padding()
-                .background(RoundedRectangle(cornerRadius:6).stroke(Color("themecolor"),lineWidth:1))
-                .padding(.top, 0)
-            
-            HStack(spacing: 15){
+        GeometryReader { geometry in
+            ScrollView {
                 VStack{
-                    if self.visible {
-                        TextField("Password", text: self.$viewModel.password)
-                            .autocapitalization(.none)
-                    } else {
-                        SecureField("Password", text: self.$viewModel.password)
-                            .autocapitalization(.none)
-                    }
-                }
-                
-                Button(action: {
-                    self.visible.toggle()
-                }) {
-                    //Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
-                    Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
-                        .foregroundColor(Color("themecolor"))
-                        .opacity(0.8)
-                }
-            }
-            .padding()
-            .background(RoundedRectangle(cornerRadius: 6)
-                .stroke(Color("themecolor"),lineWidth: 1))
-            .padding(.top, 10)
-            
-            HStack{
-                Spacer()
-                Button(action: {
-                    print("Reset password click")
-                    // self.ResetPassword()
-                    self.visible.toggle()
-                }) {
-                    Text("Forget Password")
-                        .fontWeight(.medium)
-                        .foregroundColor(Color("themecolor"))
-                }.padding(.top, 10.0)
-            }
-            
-            // Sign in button
-            Button(action: {
-                self.Verify()
-                
-            }) {
-                Text("Sign in")
-                    .foregroundColor(.white)
-                    .fontWeight(.bold)
-                    .padding(.vertical)
-                    .frame(width: UIScreen.main.bounds.width - 50)
-            }
-            .background(Color("themecolor"))
-            .cornerRadius(6)
-            .padding(.top, 15)
-            .alert(isPresented: $alert){()->Alert in
-                return Alert(title: Text("\(self.title)"), message: Text("\(self.error)"), dismissButton:
-                        .default(Text("OK").fontWeight(.semibold)))
-            }
-            
-            HStack(spacing: 5){
-                Text("Don't have an account ?")
-                
-                NavigationLink(destination: RegisterView(viewModel: LoginViewModel()).environmentObject(sessionManager)){
-                    Text("Sign up")
+                    LottieView(filename: "order")
+                        .frame(width: 300, height: 250)
+                        .shadow(color: .orange, radius: 1, x: 0, y: 0)
+                        .clipShape(Circle())
+                        .padding()
+                    
+                    Text("Sign in to your account")
+                        .font(.title)
                         .fontWeight(.bold)
-                        .foregroundColor(Color("themecolor"))
+                        .padding(.top, 15)
+                    
+                    TextField("Username or Email",text:self.$viewModel.email)
+                        .autocapitalization(.none)
+                        .padding()
+                        .background(RoundedRectangle(cornerRadius:6).stroke(Color("themecolor"),lineWidth:1))
+                        .padding(.top, 0)
+                    
+                    HStack(spacing: 15){
+                        VStack{
+                            if self.visible {
+                                TextField("Password", text: self.$viewModel.password)
+                                    .autocapitalization(.none)
+                            } else {
+                                SecureField("Password", text: self.$viewModel.password)
+                                    .autocapitalization(.none)
+                            }
+                        }
+                        
+                        Button(action: {
+                            self.visible.toggle()
+                        }) {
+                            //Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
+                            Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
+                                .foregroundColor(Color("themecolor"))
+                                .opacity(0.8)
+                        }
+                    }
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 6)
+                        .stroke(Color("themecolor"),lineWidth: 1))
+                    .padding(.top, 10)
+                    
+                    HStack{
+                        Spacer()
+                        Button(action: {
+                            print("Reset password click")
+                            // self.ResetPassword()
+                            self.visible.toggle()
+                        }) {
+                            Text("Forget Password")
+                                .fontWeight(.medium)
+                                .foregroundColor(Color("themecolor"))
+                        }.padding(.top, 10.0)
+                    }
+                    
+                    // Sign in button
+                    Button(action: {
+                        self.Verify()
+                        
+                    }) {
+                        Text("Sign in")
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                            .padding(.vertical)
+                            .frame(width: UIScreen.main.bounds.width - 50)
+                    }
+                    .background(Color("themecolor"))
+                    .cornerRadius(6)
+                    .padding(.top, 15)
+                    .alert(isPresented: $alert){()->Alert in
+                        return Alert(title: Text("\(self.title)"), message: Text("\(self.error)"), dismissButton:
+                                .default(Text("OK").fontWeight(.semibold)))
+                    }
+                    
+                    HStack(spacing: 5){
+                        Text("Don't have an account ?")
+                        
+                        NavigationLink(destination: RegisterView(viewModel: LoginViewModel()).environmentObject(sessionManager)){
+                            Text("Sign up")
+                                .fontWeight(.bold)
+                                .foregroundColor(Color("themecolor"))
+                        }
+                        
+                        Text("now").multilineTextAlignment(.leading)
+                        
+                    }.padding(.top, 25)
+                    
+                    //Apple signIn button
+                    //            if !isSignedIn {
+                    SignInButtonView { success in
+                        if success {
+                            isSHowHomeView = true
+                            sessionManager.signIn()
+                        } else {
+                            isSHowHomeView = false
+                        }
+                    }
+                    //            } else {
+                    //
+                    //            }
+                    NavigationLink("", destination: HomeView(viewModel: viewModel), isActive: $isSHowHomeView)
                 }
-                
-                Text("now").multilineTextAlignment(.leading)
-                
-            }.padding(.top, 25)
-            
-            //Apple signIn button
-            //            if !isSignedIn {
-            SignInButtonView { success in
-                if success {
-                    isSHowHomeView = true
-                    sessionManager.signIn()
-                } else {
-                    isSHowHomeView = false
-                }
+                .padding(.horizontal, 25)
+                .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
             }
-            //            } else {
-            //
-            //            }
-            NavigationLink("", destination: HomeView(viewModel: viewModel), isActive: $isSHowHomeView)
         }
-        .padding(.horizontal, 25)
-        .navigationBarHidden(true)
     }
     
     private func showAppleLoginView() {
@@ -151,29 +157,48 @@ struct LoginView: View {
                     
                     UserDefaults.standard.set(viewModel.email, forKey: SessionManager.userDefaultsKey.hasUserEmail)
 
-                    //                    var userDefaults = UserDefaults.standard
                     
-                    //                    do{
-                    //                        let loginData = try NSKeyedArchiver.archivedData(withRootObject: message, requiringSecureCoding: true)
-                    //                        UserDefaults.standard.set(loginData, forKey: "LoginData")
-                    //                        UserDefaults.standard.synchronize()
-                    //                    }catch (let error){
-                    //                        #if DEBUG
-                    //                            print("Failed to convert UIColor to Data : \(error.localizedDescription)")
-                    //                        #endif
-                    //                    }
-                    //
-                    //                    do{
-                    //                        if let loginData = UserDefaults.standard.object(forKey: "LoginData") as? Data{
-                    //                            if let userData = try NSKeyedUnarchiver.unarchivedObject(ofClasses: [UIColor.self], from: loginData){
-                    //                                print(userData)
-                    //                            }
-                    //                        }
-                    //                    }catch (let error){
-                    //                        #if DEBUG
-                    //                            print("Failed to convert UIColor to Data : \(error.localizedDescription)")
-                    //                        #endif
-                    //                    }
+                    // Check if the user is logged in
+//                    if let user = Auth.auth().currentUser {
+//                        // Get the user's UID
+//                        let uid = user.uid
+//
+//                        // Reference to the Firestore database
+//                        let db = Firestore.firestore()
+//
+//                        // Reference to the user's document in Firestore (assuming a "users" collection)
+//                        let userRef = db.collection("users").document(uid)
+//
+//                        // Fetch the user's document
+//                        userRef.getDocument { document, error in
+//                            if let document = document, document.exists {
+//                                // Retrieve the image URL from the document
+//                                if let imageUrlString = document.data()?["imageUrl"] as? String {
+//                                    if let imageUrl = URL(string: imageUrlString) {
+//                                        // Perform a network request to fetch the image asynchronously
+//                                        URLSession.shared.dataTask(with: imageUrl) { data, _, error in
+//                                            if let data = data, let uiImage = UIImage(data: data) {
+//                                                // Convert UIImage to SwiftUI Image
+//                                                let swiftUIImage = Image(uiImage: uiImage)
+//
+//                                                // Update the userImage when the image data is fetched
+//                                                DispatchQueue.main.async {
+//                                                    userImage = swiftUIImage
+//                                                }
+//                                            } else {
+//                                                // Handle errors if necessary
+//                                                print("Failed to fetch or display image: \(error?.localizedDescription ?? "")")
+//                                            }
+//                                        }.resume()
+//                                    }
+//                                }
+//                            } else {
+//                                // Handle errors if necessary
+//                                print("User document not found: \(error?.localizedDescription ?? "")")
+//                            }
+//                        }
+//                    }
+                    
                     
                     sessionManager.signIn()
                     
