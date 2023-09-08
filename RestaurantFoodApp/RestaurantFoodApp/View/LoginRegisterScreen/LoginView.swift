@@ -142,7 +142,7 @@ struct LoginView: View {
                         //            } else {
                         //
                         //            }
-                        NavigationLink("", destination: HomeView(viewModel: viewModel), isActive: $isSHowHomeView)
+//                        NavigationLink("", destination: HomeView(viewModel: viewModel), isActive: $isSHowHomeView)
                     }
                     .padding(.horizontal, 25)
                     .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)

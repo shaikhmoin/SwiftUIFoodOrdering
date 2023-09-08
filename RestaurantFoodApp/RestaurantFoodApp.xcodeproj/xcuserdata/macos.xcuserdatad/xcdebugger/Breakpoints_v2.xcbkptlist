@@ -3,4 +3,165 @@
    uuid = "E46A9D52-D7FF-40A4-866D-E1C9BA1963A9"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C370AAB4-9B5F-48B6-8202-918762D5F023"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestaurantFoodApp/View/HomeScreen/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "C370AAB4-9B5F-48B6-8202-918762D5F023 - 70fab4d9ff70a638"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestaurantFoodApp.HomeView.body.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/HomeScreen/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "650">
+               </Location>
+               <Location
+                  uuid = "C370AAB4-9B5F-48B6-8202-918762D5F023 - 5c3ace2d177d0fa4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0 in RestaurantFoodApp.HomeView.body.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/HomeScreen/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "103">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FEF03147-19D1-4105-86D1-A1D96C9CB065"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestaurantFoodApp/View/HomeScreen/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "FEF03147-19D1-4105-86D1-A1D96C9CB065 - c2c5cc7058a6fafa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static RestaurantFoodApp.HomeView_Previews.previews.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/HomeScreen/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "155"
+                  endingLineNumber = "155"
+                  offsetFromSymbolStart = "55">
+               </Location>
+               <Location
+                  uuid = "FEF03147-19D1-4105-86D1-A1D96C9CB065 - c2c5cc7058a6fad5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static RestaurantFoodApp.HomeView_Previews.previews.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/HomeScreen/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "154"
+                  endingLineNumber = "154"
+                  offsetFromSymbolStart = "481">
+               </Location>
+               <Location
+                  uuid = "FEF03147-19D1-4105-86D1-A1D96C9CB065 - 5c3ace2d177d0e38"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0 in RestaurantFoodApp.HomeView.body.getter : some"
+                  moduleName = "RestaurantFoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macos/Documents/Projects/SwiftUITutorials/SwiftUIFoodOrdering/SwiftUIFoodOrdering/RestaurantFoodApp/RestaurantFoodApp/View/HomeScreen/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "150"
+                  endingLineNumber = "150"
+                  offsetFromSymbolStart = "1062">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "439F9A53-C2A1-433A-8893-106DB77C716F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestaurantFoodApp/View/HomeScreen/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0A5466BB-8EA8-4178-B10C-62D56BB23953"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestaurantFoodApp/ViewModel/ProductService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "addProduct(product:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5EBFD08C-9C72-4ADC-8707-D0D5B66FC6A8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestaurantFoodApp/ViewModel/ProductService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "addProduct(product:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -15,6 +15,7 @@ struct HomeView: View {
     @EnvironmentObject var vm: CartManager
     @EnvironmentObject private var session: SessionManager
     @StateObject var viewModel: LoginViewModel
+    @StateObject var viewModelProductService: ProductService
 
     var body: some View {
         VStack {
@@ -57,6 +58,7 @@ struct HomeView: View {
                                 .padding(.bottom, 10)
                                 .padding(.leading, 30)
                             }
+                            .padding(.trailing, 30)
                         }
                         
                         //Categories View
@@ -140,6 +142,20 @@ struct HomeView: View {
                         print("No existing user found: \(error)")
                     }
                 })
+                
+                let product1 = FoodProduct(categoryID: "1", categoryName: "Pizza", name: "Veg Cheese Pizza", description: "Hot and spicy", price: 12.00, imageURL: "")
+                let product2 = FoodProduct(categoryID: "1", categoryName: "Pizza", name: "Chicken Cheese Pizza", description: "Hot and spicy", price: 15.00, imageURL: "")
+                let product3 = FoodProduct(categoryID: "2", categoryName: "Burger", name: "Double Dacker Burger", description: "Best seller", price: 20.00, imageURL: "")
+
+                viewModelProductService.addProduct(product: product1)
+                viewModelProductService.addProduct(product: product2)
+                viewModelProductService.addProduct(product: product3)
+                
+                viewModelProductService.getProductsByCategory(categoryID: "1") { products in
+                    // Use the retrieved products in your SwiftUI view
+                    print(products)
+                    print(products.count)
+                }
             }
         }
         .navigationTitle("")
@@ -152,7 +168,9 @@ struct HomeView_Previews: PreviewProvider {
     
     static var previews: some View {
         let loginViewModel = LoginViewModel() // Declare the variable
-        HomeView(viewModel: loginViewModel)
+        let productServiceViewModel = ProductService() // Declare the variable
+
+        HomeView(viewModel: loginViewModel, viewModelProductService: productServiceViewModel)
     }
     // we show the simulated view, not the BoolButtonView itself
     //    static var previews: some View {

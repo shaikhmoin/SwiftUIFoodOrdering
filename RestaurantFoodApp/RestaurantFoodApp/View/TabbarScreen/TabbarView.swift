@@ -24,7 +24,8 @@ struct TabbarView: View {
             
             //            HomeView(loggedIn: $providedValue)
             NavigationView {
-                HomeView(viewModel: LoginViewModel())
+                HomeView(viewModel: LoginViewModel(),
+                         viewModelProductService: ProductService())
                     .environmentObject(cart)
             }
             

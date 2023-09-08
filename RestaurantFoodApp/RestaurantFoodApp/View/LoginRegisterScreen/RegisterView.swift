@@ -147,8 +147,6 @@ struct RegisterView: View {
                         Text("now").multilineTextAlignment(.leading)
                         
                     }.padding(.top, 25)
-                    
-                    
                 }
                 .padding(.horizontal, 25)
                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)

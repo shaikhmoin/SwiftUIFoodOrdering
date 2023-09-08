@@ -37,6 +37,7 @@
 		2275D1462AAAE0D2009156E3 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 2275D1452AAAE0D2009156E3 /* NVActivityIndicatorView */; };
 		2275D1482AAAE0D2009156E3 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 2275D1472AAAE0D2009156E3 /* NVActivityIndicatorViewExtended */; };
 		2275D14E2AAAFC17009156E3 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D14D2AAAFC17009156E3 /* ActivityIndicator.swift */; };
+		2275D1502AAB405C009156E3 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D14F2AAB405C009156E3 /* ProductService.swift */; };
 		22762B6A2A86144B006A93BF /* RestaurantFoodAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22762B692A86144B006A93BF /* RestaurantFoodAppApp.swift */; };
 		22762B6C2A86144B006A93BF /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22762B6B2A86144B006A93BF /* OnboardingView.swift */; };
 		22762B6E2A86144D006A93BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22762B6D2A86144D006A93BF /* Assets.xcassets */; };
@@ -121,6 +122,7 @@
 		226EB8672AA0A1A400FFF08E /* PaymentGatewayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentGatewayController.swift; sourceTree = "<group>"; };
 		2273CB572A8B59CA006763BA /* ShoppingCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartView.swift; sourceTree = "<group>"; };
 		2275D14D2AAAFC17009156E3 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		2275D14F2AAB405C009156E3 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		22762B662A86144B006A93BF /* RestaurantFoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantFoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22762B692A86144B006A93BF /* RestaurantFoodAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantFoodAppApp.swift; sourceTree = "<group>"; };
 		22762B6B2A86144B006A93BF /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 				22A47B352A94C0AA004F33EC /* AuthenticationManager.swift */,
 				226C1E7C2A975F270052548C /* StorekitManager.swift */,
 				22B19CDB2A98889700043C0D /* SubscriptionViewModel.swift */,
+				2275D14F2AAB405C009156E3 /* ProductService.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				226EB8682AA0A1A400FFF08E /* PaymentGatewayController.swift in Sources */,
 				228A72EC2A8E1DCC005339F2 /* ProfileView.swift in Sources */,
 				22762B852A86159F006A93BF /* CardView.swift in Sources */,
+				2275D1502AAB405C009156E3 /* ProductService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

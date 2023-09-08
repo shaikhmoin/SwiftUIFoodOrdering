@@ -137,7 +137,7 @@ struct Food: Identifiable {
     var price: String
 }
 
-var categories = ["Fruits", "Vegetables", "Dairy", "Meat", "Fruits", "Vegetables", "Dairy"]
+var categories = ["Pizza", "Drinks", "Tacos", "Fries", "Top", "Burger"]
 
 var fData = [
     Food(title: "Peaches", image: "1", amount: "1 lb", cardColor: "GrayColor", price: "$2.99"),
@@ -155,5 +155,4 @@ class Colors {
    static let color1 = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 1)
    static let color2 = UIColor(displayP3Red: 2, green: 2, blue: 2, alpha: 1)
    static let color3 = UIColor(displayP3Red: 3, green: 3, blue: 3, alpha: 1)
-
 }
