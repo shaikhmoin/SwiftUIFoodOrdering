@@ -30,16 +30,17 @@ struct SettingsView: View {
     @EnvironmentObject private var session: SessionManager
     @StateObject var viewModel: LoginViewModel
     @StateObject var viewModelUserProfile: UserProfileViewModel
-
+    
     var languageOptions = ["English", "Arabic", "Chinese", "Danish"]
     @StateObject private var alertManager = GlobalAlertManager()
     @EnvironmentObject private var purchaseManager: StorekitManager
     @AppStorage(Persistence.consumablesCountKey) var consumableCount: Int = 0
-    @State private var userImage: UIImage? = nil
-
+    //    @State private var userImage: UIImage? = nil
+    
     @State var shouldShowImagePicker = false
     @State var selectedImage: UIImage?
-    
+    @State private var isLoading = false
+
     var body: some View {
         NavigationView {
             Form {
@@ -47,33 +48,35 @@ struct SettingsView: View {
                     HStack{
                         Spacer()
                         VStack {
-                
-                            Button(action: {
-                                shouldShowImagePicker.toggle()
-
-                                if let selectedImage = userImage {
-                                    viewModelUserProfile.updateProfileImage(image: selectedImage) { result in
-                                        switch result {
-                                        case .success:
-                                            // Handle success (e.g., show a success message)
-                                            break
-                                        case .failure(let error):
-                                            // Handle the error (e.g., show an error message)
-                                            print("Error updating profile image: \(error.localizedDescription)")
-                                        }
-                                    }
-                                }
+                            if let image = self.selectedImage {
                                 
-                            }) {
-                                Image(uiImage: userImage ?? UIImage(named: "UserProfile")!)
+                                Image(uiImage: image)
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width:100, height: 100, alignment: .center)
                                     .clipShape(Circle())
+                                    .padding(.top)
                             }
-                            
-                            
-                         
+                            else {
+                                Image("UserProfile")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width:100, height: 100, alignment: .center)
+                                    .clipShape(Circle())
+                                    .padding(.top)
+                            }
+                          
+                            // Button to change profile picture
+                            Button(action: {
+                                isLoading = true
+                                shouldShowImagePicker.toggle()
+                                
+                            }) {
+                                Text("Change Profile")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.blue)
+                            }
+                            .padding()
                             
                             Text("Moin Shaiklh")
                                 .font(.title)
@@ -95,10 +98,14 @@ struct SettingsView: View {
                                     )
                             }
                             .background(Color("themecolor"))
+//                            .padding()
                             .cornerRadius(25)
+                            Spacer()
                         }
                         Spacer()
                     }
+//                    .background(.yellow)
+
                 }
                 
                 Section(header: Text("Food Orders"), content: {
@@ -261,7 +268,8 @@ struct SettingsView: View {
                             URLSession.shared.dataTask(with: imageUrl) { data, _, error in
                                 if let data = data, let uiImage = UIImage(data: data) {
                                     // Update the userImage when the image data is fetched
-                                    userImage = uiImage
+                                    //                                    userImage = uiImage
+                                    self.selectedImage = uiImage
                                 } else {
                                     // Handle errors if necessary
                                     print("Failed to fetch or display image: \(error?.localizedDescription ?? "")")
@@ -275,12 +283,31 @@ struct SettingsView: View {
                 }
             }
         }
-        .sheet(isPresented: $shouldShowImagePicker, onDismiss: nil) {
+        
+        //Select new image and update on fireba serrver
+        .sheet(isPresented: $shouldShowImagePicker, onDismiss: {
+            // This code will be executed when the ImagePicker is dismissed
+            if let image = self.selectedImage {
+                viewModelUserProfile.updateProfileImage(image: image) { result in
+                    switch result {
+                    case .success:
+                        // Handle success (e.g., show a success message)
+                        isLoading = false
+                        break
+                    case .failure(let error):
+                        // Handle the error (e.g., show an error message)
+                        isLoading = false
+                        print("Error updating profile image: \(error.localizedDescription)")
+                    }
+                }
+            }
+        }) {
             ImagePicker(image: $selectedImage)
                 .ignoresSafeArea()
         }
+        .modifier(ActivityIndicatorModifier(isLoading: isLoading))
     }
-           
+    
     var donationView: some View {
         VStack{
             Text("Select Donation Amount")
@@ -296,7 +323,7 @@ struct SettingsView: View {
                         //Display inapp purchase
                         ForEach(purchaseManager.products) { product in
                             DonationButtonView(amount: product.displayPrice) {
-
+                                
                                 print(product.id)
                                 print(product.displayName)
                                 print(product.displayPrice)

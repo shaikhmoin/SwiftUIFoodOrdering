@@ -187,6 +187,7 @@ struct MealDetails: View {
                 isSelectedWishlist.toggle()
             }
         }
+//        .toolbar(.hidden, for: .tabBar)
     }
     
     func forTrailingZero(_ temp: Double) -> String {

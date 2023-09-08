@@ -15,7 +15,6 @@ struct HomeView: View {
     @EnvironmentObject var vm: CartManager
     @EnvironmentObject private var session: SessionManager
     @StateObject var viewModel: LoginViewModel
-    @State private var isTabBarHidden = false
 
     var body: some View {
         VStack {
@@ -24,9 +23,7 @@ struct HomeView: View {
                     SearchBar()
                     
                     VStack {
-                        
-//                        OrderNowCard()
-                        
+                                                
                         //Trending Week view
                         HStack {
                             Text("Trending this week")
@@ -143,12 +140,11 @@ struct HomeView: View {
                         print("No existing user found: \(error)")
                     }
                 })
-                isTabBarHidden = true // Hide the tab bar
-                UITabBar.appearance().isHidden = false
             }
         }
         .navigationTitle("")
         .navigationBarHidden(true)
+        .toolbar(.visible, for: .tabBar)
     }
 }
 

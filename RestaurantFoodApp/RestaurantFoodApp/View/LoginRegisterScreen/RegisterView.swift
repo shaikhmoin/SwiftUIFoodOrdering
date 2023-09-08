@@ -17,14 +17,15 @@ struct RegisterView: View {
     @State var color = Color.black.opacity(0.7)
     @State var visible = false
     @State var revisible = false
-    @State var alert = false
-    @State var error = ""
+   
     @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: LoginViewModel
     @EnvironmentObject var sessionManager:SessionManager
     @State var shouldShowImagePicker = false
     @State var selectedImage: UIImage?
-    
+    @State private var isLoading = false
+    @StateObject private var alertManager = GlobalAlertManager()
+
     var body: some View {
         
         //        NavigationView {
@@ -130,10 +131,6 @@ struct RegisterView: View {
                     .background(Color("themecolor"))
                     .cornerRadius(6)
                     .padding(.top, 15)
-                    .alert(isPresented: self.$alert){()->Alert in
-                        return Alert(title: Text("Sign up error"), message: Text("\(self.error)"), dismissButton:
-                                .default(Text("OK").fontWeight(.semibold)))
-                    }
                     
                     HStack(spacing: 5){
                         Text("Already have an account ?")
@@ -162,6 +159,10 @@ struct RegisterView: View {
             ImagePicker(image: $selectedImage)
                 .ignoresSafeArea()
         }
+        .alert(item: $alertManager.alertItem) { alertItem in
+            Alert(title: Text(alertItem.title), message: Text(alertItem.message), dismissButton: .default(Text("OK")))
+        }
+        .modifier(ActivityIndicatorModifier(isLoading: isLoading))
     }
     
      private func uploadphotoToStorage() {
@@ -234,11 +235,10 @@ struct RegisterView: View {
     private func createNewAccount(){
         
         if viewModel.email != ""{
-            
             if viewModel.password == self.repass{
                 
-                print("Success")
-                
+                isLoading = true
+
                 //Signup with firebase
                 viewModel.signUpWithFirebase(completion: { result in
                     
@@ -247,58 +247,27 @@ struct RegisterView: View {
                         print("Task completed successfully: \(message)")
                         UserDefaults.standard.set(viewModel.email, forKey: SessionManager.userDefaultsKey.hasUserEmail)
                         self.uploadphotoToStorage() //upload photo to storage and firestore db
-                        
+                        isLoading = false
+
                         sessionManager.signIn()
 
                     case .failure(let error):
                         print("Task failed with error: \(error)")
-                        self.error = error.localizedDescription
-                        self.alert.toggle()
+                        isLoading = false
+
+                        alertManager.showAlert(title: "Alert", message: error.localizedDescription)
                     }
                 })
             }
-            else{
-                
-                self.error = "Password mismatch"
-                self.alert.toggle()
+            else {
+                isLoading = false
+                alertManager.showAlert(title: "Alert", message: "Password mismatch")
             }
         }
         else{
-            
-            self.error = "Please fill all the contents properly"
-            self.alert.toggle()
+            isLoading = false
+            alertManager.showAlert(title: "Alert", message: "Please fill all the contents properly")
         }
-        
-        //        if self.email != ""{
-        //
-        //            if self.pass == self.repass{
-        //
-        //                Auth.auth().createUser(withEmail: self.email, password: self.pass) { (res, err) in
-        //
-        //                    if err != nil{
-        //
-        //                        self.error = err!.localizedDescription
-        //                        self.alert.toggle()
-        //                        return
-        //                    }
-        //
-        //                    print("success")
-        //
-        //                    UserDefaults.standard.set(true, forKey: "status")
-        //                    NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
-        //                }
-        //            }
-        //            else{
-        //
-        //                self.error = "Password mismatch"
-        //                self.alert.toggle()
-        //            }
-        //        }
-        //        else{
-        //
-        //            self.error = "Please fill all the contents properly"
-        //            self.alert.toggle()
-        //        }
     }
 }
 

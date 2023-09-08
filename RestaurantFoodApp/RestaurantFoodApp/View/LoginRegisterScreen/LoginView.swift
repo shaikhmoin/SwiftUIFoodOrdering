@@ -66,7 +66,6 @@ struct LoginView: View {
                             Button(action: {
                                 self.visible.toggle()
                             }) {
-                                //Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
                                 Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
                                     .foregroundColor(Color("themecolor"))
                                     .opacity(0.8)
@@ -104,9 +103,6 @@ struct LoginView: View {
                         
                         // Sign in button
                         Button(action: {
-                            
-                            isLoading.toggle()
-                            
                             self.signInFromFirebase()
                             
                         }) {
@@ -119,7 +115,7 @@ struct LoginView: View {
                         .background(Color("themecolor"))
                         .cornerRadius(6)
                         .padding(.top, 15)
-                        
+
                         HStack(spacing: 5){
                             Text("Don't have an account ?")
                             
@@ -150,25 +146,6 @@ struct LoginView: View {
                     }
                     .padding(.horizontal, 25)
                     .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-                    
-//                    if isLoading {
-//                        // Semi-transparent black background with a blur effect
-//                        Color.black.opacity(0.7)
-////                            .blur(radius: 5)
-//                            .ignoresSafeArea()
-//
-//                        // Centered BallPulse loader
-//                        VStack {
-//                            Spacer()
-//                            HStack {
-//                                Spacer()
-//                                BallPulse()
-//                                    .frame(width: 150, height: 150) // Adjust the size as needed
-//                                Spacer()
-//                            }
-//                            Spacer()
-//                        }
-//                    }
                 }
             }
            
@@ -176,6 +153,7 @@ struct LoginView: View {
         .alert(item: $alertManager.alertItem) { alertItem in
             Alert(title: Text(alertItem.title), message: Text(alertItem.message), dismissButton: .default(Text("OK")))
         }
+        .modifier(ActivityIndicatorModifier(isLoading: isLoading))
     }
     
     private func showAppleLoginView() {
@@ -184,7 +162,8 @@ struct LoginView: View {
     
     func signInFromFirebase(){
         if viewModel.email != "" && viewModel.password != "" {
-            print("Success")
+            
+            isLoading = true
             
             //Signin with firebase
             viewModel.signInWithFirebase(completion: { result in
@@ -194,12 +173,12 @@ struct LoginView: View {
                     print("Task completed successfully: \(message)")
                     
                     UserDefaults.standard.set(viewModel.email, forKey: SessionManager.userDefaultsKey.hasUserEmail)
-                    isLoading = true
-
+                    isLoading = false
                     sessionManager.signIn()
                     
                 case .failure(let error):
                     print("Task failed with error: \(error)")
+                    isLoading = false
                     alertManager.showAlert(title: "Alert", message: error.localizedDescription)
 
                 }
