@@ -34,6 +34,32 @@
 		226EB8662AA0A10300FFF08E /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226EB8652AA0A10300FFF08E /* CheckoutView.swift */; };
 		226EB8682AA0A1A400FFF08E /* PaymentGatewayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226EB8672AA0A1A400FFF08E /* PaymentGatewayController.swift */; };
 		2273CB582A8B59CA006763BA /* ShoppingCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273CB572A8B59CA006763BA /* ShoppingCartView.swift */; };
+		2275D12C2AAADF48009156E3 /* BallScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D1142AAADF46009156E3 /* BallScale.swift */; };
+		2275D12D2AAADF48009156E3 /* BallBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D1152AAADF47009156E3 /* BallBeat.swift */; };
+		2275D12E2AAADF48009156E3 /* BallScaleRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D1162AAADF47009156E3 /* BallScaleRipple.swift */; };
+		2275D12F2AAADF48009156E3 /* BallClipRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D1172AAADF47009156E3 /* BallClipRotate.swift */; };
+		2275D1302AAADF48009156E3 /* BallZigZagDeflect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D1182AAADF47009156E3 /* BallZigZagDeflect.swift */; };
+		2275D1312AAADF48009156E3 /* SquareSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D1192AAADF47009156E3 /* SquareSpin.swift */; };
+		2275D1322AAADF48009156E3 /* BallTrianglePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D11A2AAADF47009156E3 /* BallTrianglePath.swift */; };
+		2275D1332AAADF48009156E3 /* BallClipRotatePulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D11B2AAADF47009156E3 /* BallClipRotatePulse.swift */; };
+		2275D1342AAADF48009156E3 /* SemiCircleSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D11C2AAADF47009156E3 /* SemiCircleSpin.swift */; };
+		2275D1352AAADF48009156E3 /* CubeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D11D2AAADF47009156E3 /* CubeTransition.swift */; };
+		2275D1362AAADF48009156E3 /* KeyframeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D11E2AAADF47009156E3 /* KeyframeAnimation.swift */; };
+		2275D1372AAADF48009156E3 /* LineScalePulseOutRapid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D11F2AAADF47009156E3 /* LineScalePulseOutRapid.swift */; };
+		2275D1382AAADF48009156E3 /* BallClipRotateMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D1202AAADF47009156E3 /* BallClipRotateMultiple.swift */; };
+		2275D1392AAADF48009156E3 /* BallPulseSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D1212AAADF47009156E3 /* BallPulseSync.swift */; };
+		2275D13A2AAADF48009156E3 /* LineScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D1222AAADF47009156E3 /* LineScale.swift */; };
+		2275D13B2AAADF48009156E3 /* BallRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D1232AAADF48009156E3 /* BallRotate.swift */; };
+		2275D13C2AAADF48009156E3 /* BallScaleRippleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D1242AAADF48009156E3 /* BallScaleRippleMultiple.swift */; };
+		2275D13D2AAADF48009156E3 /* BallPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D1252AAADF48009156E3 /* BallPulse.swift */; };
+		2275D13E2AAADF48009156E3 /* LineScalePulseOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D1262AAADF48009156E3 /* LineScalePulseOut.swift */; };
+		2275D13F2AAADF48009156E3 /* BallGridPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D1272AAADF48009156E3 /* BallGridPulse.swift */; };
+		2275D1402AAADF48009156E3 /* BallZigZag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D1282AAADF48009156E3 /* BallZigZag.swift */; };
+		2275D1412AAADF48009156E3 /* TriangleSkewSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D1292AAADF48009156E3 /* TriangleSkewSpin.swift */; };
+		2275D1422AAADF48009156E3 /* LineScaleParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D12A2AAADF48009156E3 /* LineScaleParty.swift */; };
+		2275D1432AAADF48009156E3 /* BallGridBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D12B2AAADF48009156E3 /* BallGridBeat.swift */; };
+		2275D1462AAAE0D2009156E3 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 2275D1452AAAE0D2009156E3 /* NVActivityIndicatorView */; };
+		2275D1482AAAE0D2009156E3 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 2275D1472AAAE0D2009156E3 /* NVActivityIndicatorViewExtended */; };
 		22762B6A2A86144B006A93BF /* RestaurantFoodAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22762B692A86144B006A93BF /* RestaurantFoodAppApp.swift */; };
 		22762B6C2A86144B006A93BF /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22762B6B2A86144B006A93BF /* OnboardingView.swift */; };
 		22762B6E2A86144D006A93BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22762B6D2A86144D006A93BF /* Assets.xcassets */; };
@@ -117,6 +143,30 @@
 		226EB8652AA0A10300FFF08E /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		226EB8672AA0A1A400FFF08E /* PaymentGatewayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentGatewayController.swift; sourceTree = "<group>"; };
 		2273CB572A8B59CA006763BA /* ShoppingCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartView.swift; sourceTree = "<group>"; };
+		2275D1142AAADF46009156E3 /* BallScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallScale.swift; sourceTree = "<group>"; };
+		2275D1152AAADF47009156E3 /* BallBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallBeat.swift; sourceTree = "<group>"; };
+		2275D1162AAADF47009156E3 /* BallScaleRipple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallScaleRipple.swift; sourceTree = "<group>"; };
+		2275D1172AAADF47009156E3 /* BallClipRotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallClipRotate.swift; sourceTree = "<group>"; };
+		2275D1182AAADF47009156E3 /* BallZigZagDeflect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallZigZagDeflect.swift; sourceTree = "<group>"; };
+		2275D1192AAADF47009156E3 /* SquareSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareSpin.swift; sourceTree = "<group>"; };
+		2275D11A2AAADF47009156E3 /* BallTrianglePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallTrianglePath.swift; sourceTree = "<group>"; };
+		2275D11B2AAADF47009156E3 /* BallClipRotatePulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallClipRotatePulse.swift; sourceTree = "<group>"; };
+		2275D11C2AAADF47009156E3 /* SemiCircleSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemiCircleSpin.swift; sourceTree = "<group>"; };
+		2275D11D2AAADF47009156E3 /* CubeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeTransition.swift; sourceTree = "<group>"; };
+		2275D11E2AAADF47009156E3 /* KeyframeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyframeAnimation.swift; sourceTree = "<group>"; };
+		2275D11F2AAADF47009156E3 /* LineScalePulseOutRapid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineScalePulseOutRapid.swift; sourceTree = "<group>"; };
+		2275D1202AAADF47009156E3 /* BallClipRotateMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallClipRotateMultiple.swift; sourceTree = "<group>"; };
+		2275D1212AAADF47009156E3 /* BallPulseSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallPulseSync.swift; sourceTree = "<group>"; };
+		2275D1222AAADF47009156E3 /* LineScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineScale.swift; sourceTree = "<group>"; };
+		2275D1232AAADF48009156E3 /* BallRotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallRotate.swift; sourceTree = "<group>"; };
+		2275D1242AAADF48009156E3 /* BallScaleRippleMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallScaleRippleMultiple.swift; sourceTree = "<group>"; };
+		2275D1252AAADF48009156E3 /* BallPulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallPulse.swift; sourceTree = "<group>"; };
+		2275D1262AAADF48009156E3 /* LineScalePulseOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineScalePulseOut.swift; sourceTree = "<group>"; };
+		2275D1272AAADF48009156E3 /* BallGridPulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallGridPulse.swift; sourceTree = "<group>"; };
+		2275D1282AAADF48009156E3 /* BallZigZag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallZigZag.swift; sourceTree = "<group>"; };
+		2275D1292AAADF48009156E3 /* TriangleSkewSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleSkewSpin.swift; sourceTree = "<group>"; };
+		2275D12A2AAADF48009156E3 /* LineScaleParty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineScaleParty.swift; sourceTree = "<group>"; };
+		2275D12B2AAADF48009156E3 /* BallGridBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallGridBeat.swift; sourceTree = "<group>"; };
 		22762B662A86144B006A93BF /* RestaurantFoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantFoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22762B692A86144B006A93BF /* RestaurantFoodAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantFoodAppApp.swift; sourceTree = "<group>"; };
 		22762B6B2A86144B006A93BF /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -179,6 +229,7 @@
 				22A47AFE2A949D17004F33EC /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				22A47B042A949D17004F33EC /* FirebaseAppCheck in Frameworks */,
 				22A47B282A949D17004F33EC /* FirebasePerformance in Frameworks */,
+				2275D1462AAAE0D2009156E3 /* NVActivityIndicatorView in Frameworks */,
 				226EB8532AA07F4400FFF08E /* StripeApplePay in Frameworks */,
 				22A47B1E2A949D17004F33EC /* FirebaseInAppMessaging-Beta in Frameworks */,
 				22A47B1C2A949D17004F33EC /* FirebaseFunctionsCombine-Community in Frameworks */,
@@ -186,6 +237,7 @@
 				22A47B222A949D17004F33EC /* FirebaseInstallations in Frameworks */,
 				22A47B2A2A949D17004F33EC /* FirebaseRemoteConfig in Frameworks */,
 				22A47B2E2A949D17004F33EC /* FirebaseStorage in Frameworks */,
+				2275D1482AAAE0D2009156E3 /* NVActivityIndicatorViewExtended in Frameworks */,
 				226EB8512AA07F4400FFF08E /* Stripe in Frameworks */,
 				22A47B0E2A949D17004F33EC /* FirebaseDatabase in Frameworks */,
 				226EB8572AA07F4400FFF08E /* StripeFinancialConnections in Frameworks */,
@@ -213,6 +265,7 @@
 		226C1E752A972D480052548C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2275D1132AAADF2D009156E3 /* LoaderView */,
 				226C1E762A972D560052548C /* GlobalAlertView.swift */,
 				2251B8E32A9E10E700A50578 /* Persistence.swift */,
 				226EB84D2AA0545400FFF08E /* DropDown.swift */,
@@ -237,6 +290,37 @@
 				226EB8672AA0A1A400FFF08E /* PaymentGatewayController.swift */,
 			);
 			path = CheckoutView;
+			sourceTree = "<group>";
+		};
+		2275D1132AAADF2D009156E3 /* LoaderView */ = {
+			isa = PBXGroup;
+			children = (
+				2275D1152AAADF47009156E3 /* BallBeat.swift */,
+				2275D1172AAADF47009156E3 /* BallClipRotate.swift */,
+				2275D1202AAADF47009156E3 /* BallClipRotateMultiple.swift */,
+				2275D11B2AAADF47009156E3 /* BallClipRotatePulse.swift */,
+				2275D12B2AAADF48009156E3 /* BallGridBeat.swift */,
+				2275D1272AAADF48009156E3 /* BallGridPulse.swift */,
+				2275D1252AAADF48009156E3 /* BallPulse.swift */,
+				2275D1212AAADF47009156E3 /* BallPulseSync.swift */,
+				2275D1232AAADF48009156E3 /* BallRotate.swift */,
+				2275D1142AAADF46009156E3 /* BallScale.swift */,
+				2275D1162AAADF47009156E3 /* BallScaleRipple.swift */,
+				2275D1242AAADF48009156E3 /* BallScaleRippleMultiple.swift */,
+				2275D11A2AAADF47009156E3 /* BallTrianglePath.swift */,
+				2275D1282AAADF48009156E3 /* BallZigZag.swift */,
+				2275D1182AAADF47009156E3 /* BallZigZagDeflect.swift */,
+				2275D11D2AAADF47009156E3 /* CubeTransition.swift */,
+				2275D11E2AAADF47009156E3 /* KeyframeAnimation.swift */,
+				2275D1222AAADF47009156E3 /* LineScale.swift */,
+				2275D12A2AAADF48009156E3 /* LineScaleParty.swift */,
+				2275D1262AAADF48009156E3 /* LineScalePulseOut.swift */,
+				2275D11F2AAADF47009156E3 /* LineScalePulseOutRapid.swift */,
+				2275D11C2AAADF47009156E3 /* SemiCircleSpin.swift */,
+				2275D1192AAADF47009156E3 /* SquareSpin.swift */,
+				2275D1292AAADF48009156E3 /* TriangleSkewSpin.swift */,
+			);
+			path = LoaderView;
 			sourceTree = "<group>";
 		};
 		22762B5D2A86144B006A93BF = {
@@ -492,6 +576,8 @@
 				226EB85A2AA07F4400FFF08E /* StripePaymentSheet */,
 				226EB85C2AA07F4400FFF08E /* StripePayments */,
 				226EB85E2AA07F4400FFF08E /* StripePaymentsUI */,
+				2275D1452AAAE0D2009156E3 /* NVActivityIndicatorView */,
+				2275D1472AAAE0D2009156E3 /* NVActivityIndicatorViewExtended */,
 			);
 			productName = RestaurantFoodApp;
 			productReference = 22762B662A86144B006A93BF /* RestaurantFoodApp.app */;
@@ -525,6 +611,7 @@
 				22762B892A8616D4006A93BF /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				22A47AFA2A949D17004F33EC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				226EB84F2AA07F4400FFF08E /* XCRemoteSwiftPackageReference "stripe-ios" */,
+				2275D1442AAAE0D2009156E3 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = 22762B672A86144B006A93BF /* Products */;
 			projectDirPath = "";
@@ -561,19 +648,29 @@
 			files = (
 				226C1E7D2A975F270052548C /* StorekitManager.swift in Sources */,
 				226EB8612AA09EA600FFF08E /* CheckoutResponse.swift in Sources */,
+				2275D1362AAADF48009156E3 /* KeyframeAnimation.swift in Sources */,
+				2275D1432AAADF48009156E3 /* BallGridBeat.swift in Sources */,
+				2275D12F2AAADF48009156E3 /* BallClipRotate.swift in Sources */,
 				2278945D2A8B725400FA2E20 /* CartManager.swift in Sources */,
 				88FB3AFC2AA9D69A00A3DAD1 /* ImagePicker.swift in Sources */,
+				2275D1392AAADF48009156E3 /* BallPulseSync.swift in Sources */,
 				226EA22C2A89FA2B00D38D2F /* TrendingCard.swift in Sources */,
+				2275D12C2AAADF48009156E3 /* BallScale.swift in Sources */,
 				22B19CDC2A98889700043C0D /* SubscriptionViewModel.swift in Sources */,
 				226EA2322A8A098300D38D2F /* Categories.swift in Sources */,
+				2275D12D2AAADF48009156E3 /* BallBeat.swift in Sources */,
 				228A72F72A8E417B005339F2 /* SessionManager.swift in Sources */,
 				886D1F662AA467FE00953454 /* WishlistView.swift in Sources */,
 				229AB3562A8CFEF900F1A239 /* ItemView.swift in Sources */,
+				2275D1372AAADF48009156E3 /* LineScalePulseOutRapid.swift in Sources */,
 				228A72F12A8E25FE005339F2 /* LoginView.swift in Sources */,
+				2275D13D2AAADF48009156E3 /* BallPulse.swift in Sources */,
 				226EA22E2A8A011A00D38D2F /* MealDetails.swift in Sources */,
 				228A72E92A8E03E1005339F2 /* SettingsView.swift in Sources */,
+				2275D1302AAADF48009156E3 /* BallZigZagDeflect.swift in Sources */,
 				228A72FE2A8E4A25005339F2 /* LoginViewModel.swift in Sources */,
 				2273CB582A8B59CA006763BA /* ShoppingCartView.swift in Sources */,
+				2275D1382AAADF48009156E3 /* BallClipRotateMultiple.swift in Sources */,
 				226C1E772A972D560052548C /* GlobalAlertView.swift in Sources */,
 				226EB84E2AA0545400FFF08E /* DropDown.swift in Sources */,
 				2251B8E42A9E10E700A50578 /* Persistence.swift in Sources */,
@@ -581,25 +678,39 @@
 				22C1EFD12A86527E00E42B12 /* CurrentLocationView.swift in Sources */,
 				22762B6C2A86144B006A93BF /* OnboardingView.swift in Sources */,
 				2267BFD62A8A1E740088EC27 /* OurPicksView.swift in Sources */,
+				2275D13E2AAADF48009156E3 /* LineScalePulseOut.swift in Sources */,
 				226C1E7A2A975B8F0052548C /* InAppPurchaseScreen.swift in Sources */,
+				2275D13C2AAADF48009156E3 /* BallScaleRippleMultiple.swift in Sources */,
 				22C1EFCB2A8646AB00E42B12 /* SplashView.swift in Sources */,
 				228A72EF2A8E25F6005339F2 /* RegisterView.swift in Sources */,
 				226EA22A2A89F84600D38D2F /* TrendingWeekView.swift in Sources */,
+				2275D1412AAADF48009156E3 /* TriangleSkewSpin.swift in Sources */,
+				2275D1332AAADF48009156E3 /* BallClipRotatePulse.swift in Sources */,
 				226EA2302A8A091600D38D2F /* CategoriesView.swift in Sources */,
 				226EB8632AA09FB900FFF08E /* PaymentConfig.swift in Sources */,
+				2275D1342AAADF48009156E3 /* SemiCircleSpin.swift in Sources */,
 				2285A21D2A8A211B0085F67A /* OurPicks.swift in Sources */,
 				22A47B362A94C0AA004F33EC /* AuthenticationManager.swift in Sources */,
 				228A73022A8E53B7005339F2 /* AppleSIgnUpCoordinator.swift in Sources */,
+				2275D1422AAADF48009156E3 /* LineScaleParty.swift in Sources */,
 				226EB8662AA0A10300FFF08E /* CheckoutView.swift in Sources */,
 				22B19CDA2A98859600043C0D /* SubscriptionView.swift in Sources */,
 				2249BDFA2A863CCC008C12DD /* TabbarView.swift in Sources */,
 				22762B812A861582006A93BF /* Card.swift in Sources */,
 				22680CEC2AA2115200CE45BE /* CategoryView.swift in Sources */,
 				22762B6A2A86144B006A93BF /* RestaurantFoodAppApp.swift in Sources */,
+				2275D1402AAADF48009156E3 /* BallZigZag.swift in Sources */,
+				2275D1322AAADF48009156E3 /* BallTrianglePath.swift in Sources */,
+				2275D13A2AAADF48009156E3 /* LineScale.swift in Sources */,
+				2275D13F2AAADF48009156E3 /* BallGridPulse.swift in Sources */,
+				2275D1352AAADF48009156E3 /* CubeTransition.swift in Sources */,
 				22762B8D2A862D6D006A93BF /* HomeView.swift in Sources */,
 				228A73042A8E53E0005339F2 /* SignUpWithAppleView.swift in Sources */,
+				2275D12E2AAADF48009156E3 /* BallScaleRipple.swift in Sources */,
+				2275D1312AAADF48009156E3 /* SquareSpin.swift in Sources */,
 				22762B842A86159F006A93BF /* LottieView.swift in Sources */,
 				226EB8682AA0A1A400FFF08E /* PaymentGatewayController.swift in Sources */,
+				2275D13B2AAADF48009156E3 /* BallRotate.swift in Sources */,
 				228A72EC2A8E1DCC005339F2 /* ProfileView.swift in Sources */,
 				22762B852A86159F006A93BF /* CardView.swift in Sources */,
 			);
@@ -822,6 +933,14 @@
 				kind = branch;
 			};
 		};
+		2275D1442AAAE0D2009156E3 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		22762B892A8616D4006A93BF /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
@@ -880,6 +999,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 226EB84F2AA07F4400FFF08E /* XCRemoteSwiftPackageReference "stripe-ios" */;
 			productName = StripePaymentsUI;
+		};
+		2275D1452AAAE0D2009156E3 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2275D1442AAAE0D2009156E3 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		2275D1472AAAE0D2009156E3 /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2275D1442AAAE0D2009156E3 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
 		};
 		22762B8A2A8616D4006A93BF /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;

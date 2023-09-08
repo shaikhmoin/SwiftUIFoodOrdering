@@ -10,15 +10,14 @@ import AuthenticationServices
 import FirebaseAuth
 import Firebase
 import FirebaseStorage
+import NVActivityIndicatorView
+import NVActivityIndicatorViewExtended
 
 struct LoginView: View {
     
     @State var email = ""
     @State var pass = ""
     @State var visible = false
-    @State var alert = false
-    @State var error = ""
-    @State var title = ""
     @State var name = ""
     
     @State private var isSHowHomeView: Bool = false
@@ -26,117 +25,156 @@ struct LoginView: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var sessionManager:SessionManager
     @StateObject var viewModel: LoginViewModel
-    
+    @StateObject private var alertManager = GlobalAlertManager()
+    @State private var isLoading = false
+
     var body: some View {
         
         GeometryReader { geometry in
             ScrollView {
-                VStack{
-                    LottieView(filename: "order")
-                        .frame(width: 300, height: 250)
-                        .shadow(color: .orange, radius: 1, x: 0, y: 0)
-                        .clipShape(Circle())
-                        .padding()
+                ZStack {
+                    VStack{
+                
+                        LottieView(filename: "order")
+                            .frame(width: 300, height: 250)
+                            .shadow(color: .orange, radius: 1, x: 0, y: 0)
+                            .clipShape(Circle())
+                            .padding()
+                        
+                        Text("Sign in to your account")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .padding(.top, 15)
+                        
+                        TextField("Username or Email",text:self.$viewModel.email)
+                            .autocapitalization(.none)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius:6).stroke(Color("themecolor"),lineWidth:1))
+                            .padding(.top, 0)
                     
-                    Text("Sign in to your account")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .padding(.top, 15)
-                    
-                    TextField("Username or Email",text:self.$viewModel.email)
-                        .autocapitalization(.none)
-                        .padding()
-                        .background(RoundedRectangle(cornerRadius:6).stroke(Color("themecolor"),lineWidth:1))
-                        .padding(.top, 0)
-                    
-                    HStack(spacing: 15){
-                        VStack{
-                            if self.visible {
-                                TextField("Password", text: self.$viewModel.password)
-                                    .autocapitalization(.none)
-                            } else {
-                                SecureField("Password", text: self.$viewModel.password)
-                                    .autocapitalization(.none)
+                        HStack(spacing: 15){
+                            VStack{
+                                if self.visible {
+                                    TextField("Password", text: self.$viewModel.password)
+                                        .autocapitalization(.none)
+                                } else {
+                                    SecureField("Password", text: self.$viewModel.password)
+                                        .autocapitalization(.none)
+                                }
+                            }
+                            
+                            Button(action: {
+                                self.visible.toggle()
+                            }) {
+                                //Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
+                                Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
+                                    .foregroundColor(Color("themecolor"))
+                                    .opacity(0.8)
                             }
                         }
+                        .padding()
+                        .background(RoundedRectangle(cornerRadius: 6)
+                            .stroke(Color("themecolor"),lineWidth: 1))
+                        .padding(.top, 10)
                         
-                        Button(action: {
-                            self.visible.toggle()
-                        }) {
-                            //Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
-                            Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
-                                .foregroundColor(Color("themecolor"))
-                                .opacity(0.8)
+                        HStack{
+                            Spacer()
+                            Button(action: {
+                                print("Reset password click")
+                                // self.ResetPassword()
+                                
+                                viewModel.resetPassword { result in
+                                    switch result {
+                                    case .success(let message):
+                                        print("Success: \(message)")
+                                        alertManager.showAlert(title: "Alert", message: message)
+                                        
+                                    case .failure(let error):
+                                        print("Error: \(error)")
+                                        alertManager.showAlert(title: "Alert", message: "Something wrong during changing Reset Password")
+                                    }
+                                }
+                                
+                            }) {
+                                Text("Forget Password")
+                                    .fontWeight(.medium)
+                                    .foregroundColor(Color("themecolor"))
+                            }.padding(.top, 10.0)
                         }
-                    }
-                    .padding()
-                    .background(RoundedRectangle(cornerRadius: 6)
-                        .stroke(Color("themecolor"),lineWidth: 1))
-                    .padding(.top, 10)
-                    
-                    HStack{
-                        Spacer()
+                        
+                        // Sign in button
                         Button(action: {
-                            print("Reset password click")
-                            // self.ResetPassword()
-                            self.visible.toggle()
+                            
+                            isLoading.toggle()
+                            
+                            self.signInFromFirebase()
+                            
                         }) {
-                            Text("Forget Password")
-                                .fontWeight(.medium)
-                                .foregroundColor(Color("themecolor"))
-                        }.padding(.top, 10.0)
-                    }
-                    
-                    // Sign in button
-                    Button(action: {
-                        self.signInFromFirebase()
-                        
-                    }) {
-                        Text("Sign in")
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                            .padding(.vertical)
-                            .frame(width: UIScreen.main.bounds.width - 50)
-                    }
-                    .background(Color("themecolor"))
-                    .cornerRadius(6)
-                    .padding(.top, 15)
-                    .alert(isPresented: $alert){()->Alert in
-                        return Alert(title: Text("\(self.title)"), message: Text("\(self.error)"), dismissButton:
-                                .default(Text("OK").fontWeight(.semibold)))
-                    }
-                    
-                    HStack(spacing: 5){
-                        Text("Don't have an account ?")
-                        
-                        NavigationLink(destination: RegisterView(viewModel: LoginViewModel()).environmentObject(sessionManager)){
-                            Text("Sign up")
+                            Text("Sign in")
+                                .foregroundColor(.white)
                                 .fontWeight(.bold)
-                                .foregroundColor(Color("themecolor"))
+                                .padding(.vertical)
+                                .frame(width: UIScreen.main.bounds.width - 50)
                         }
+                        .background(Color("themecolor"))
+                        .cornerRadius(6)
+                        .padding(.top, 15)
                         
-                        Text("now").multilineTextAlignment(.leading)
+                        HStack(spacing: 5){
+                            Text("Don't have an account ?")
+                            
+                            NavigationLink(destination: RegisterView(viewModel: LoginViewModel()).environmentObject(sessionManager)){
+                                Text("Sign up")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color("themecolor"))
+                            }
+                            
+                            Text("now").multilineTextAlignment(.leading)
+                            
+                        }.padding(.top, 25)
                         
-                    }.padding(.top, 25)
-                    
-                    //Apple signIn button
-                    //            if !isSignedIn {
-                    SignInButtonView { success in
-                        if success {
-                            isSHowHomeView = true
-                            sessionManager.signIn()
-                        } else {
-                            isSHowHomeView = false
+                        //Apple signIn button
+                        //            if !isSignedIn {
+                        SignInButtonView { success in
+                            if success {
+                                isSHowHomeView = true
+                                sessionManager.signIn()
+                            } else {
+                                isSHowHomeView = false
+                            }
                         }
+                        //            } else {
+                        //
+                        //            }
+                        NavigationLink("", destination: HomeView(viewModel: viewModel), isActive: $isSHowHomeView)
                     }
-                    //            } else {
-                    //
-                    //            }
-                    NavigationLink("", destination: HomeView(viewModel: viewModel), isActive: $isSHowHomeView)
+                    .padding(.horizontal, 25)
+                    .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+                    
+//                    if isLoading {
+//                        // Semi-transparent black background with a blur effect
+//                        Color.black.opacity(0.7)
+////                            .blur(radius: 5)
+//                            .ignoresSafeArea()
+//
+//                        // Centered BallPulse loader
+//                        VStack {
+//                            Spacer()
+//                            HStack {
+//                                Spacer()
+//                                BallPulse()
+//                                    .frame(width: 150, height: 150) // Adjust the size as needed
+//                                Spacer()
+//                            }
+//                            Spacer()
+//                        }
+//                    }
                 }
-                .padding(.horizontal, 25)
-                .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
             }
+           
+        }
+        .alert(item: $alertManager.alertItem) { alertItem in
+            Alert(title: Text(alertItem.title), message: Text(alertItem.message), dismissButton: .default(Text("OK")))
         }
     }
     
@@ -156,21 +194,19 @@ struct LoginView: View {
                     print("Task completed successfully: \(message)")
                     
                     UserDefaults.standard.set(viewModel.email, forKey: SessionManager.userDefaultsKey.hasUserEmail)
-            
+                    isLoading = true
+
                     sessionManager.signIn()
                     
                 case .failure(let error):
                     print("Task failed with error: \(error)")
-                    self.title = "Login Error"
-                    self.error = error.localizedDescription
-                    self.alert = true
+                    alertManager.showAlert(title: "Alert", message: error.localizedDescription)
+
                 }
             })
             
         } else {
-            self.title = "Login Error"
-            self.error = "Please fill all the content properly"
-            self.alert = true
+            alertManager.showAlert(title: "Alert", message: "Please fill all the content properly")
         }
     }
 }
